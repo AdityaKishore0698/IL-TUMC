@@ -52,6 +52,9 @@ def main():
     p.add_argument("--width", type=int, default=1280)
     p.add_argument("--height", type=int, default=720)
     p.add_argument("--ensemble_m", type=float, default=0.1, help="temporal-ensembling weight decay (chunked models)")
+    p.add_argument("--exec_horizon", type=int, default=0,
+                   help="chunked models: execute this many actions of each chunk in a row, then predict again "
+                        "(no ensembling); 0 = temporal ensembling every step")
     p.add_argument("--log", default="", help="save joint positions and actions per control step to this .npz")
     p.add_argument("--seed", type=int, default=-1,
                    help="repeat index: >= 0 perturbs the initial joint positions (MuJoCo itself is deterministic)")
@@ -87,6 +90,7 @@ def main():
     vel_log, fell_at, upright_steps = [], None, 0
     chunk = 0  # read from the first output
     pending = {}  # control step -> list of (age-weighted) predictions for it
+    queue = []    # actions left from the current chunk (--exec_horizon)
     qpos_log, act_log = [], []
 
     renderer = writer = cam = None
@@ -137,6 +141,10 @@ def main():
             chunk = chunk or len(pred) // n_act
             if chunk == 1:
                 action = pred
+            elif a.exec_horizon > 0:  # receding horizon: commit to the next actions of one chunk
+                if not queue:
+                    queue = list(pred.reshape(chunk, n_act)[:a.exec_horizon])
+                action = queue.pop(0).astype(np.float32)
             else:  # temporal ensembling over the overlapping chunks
                 for i, a_future in enumerate(pred.reshape(chunk, n_act)):
                     pending.setdefault(frame + i, []).append(a_future)
@@ -176,7 +184,8 @@ def main():
     if a.log:
         os.makedirs(os.path.dirname(os.path.abspath(a.log)), exist_ok=True)
         np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), dt=dt * decimation,
-                 fell_at=-1.0 if fell_at is None else fell_at, chunk=chunk, ensemble_m=a.ensemble_m)
+                 fell_at=-1.0 if fell_at is None else fell_at, chunk=chunk, ensemble_m=a.ensemble_m,
+                 exec_horizon=a.exec_horizon)
 
 
 if __name__ == "__main__":

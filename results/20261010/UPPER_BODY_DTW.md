@@ -183,3 +183,26 @@ of the labels) reproduces the human label in 72 % of fitted runs and 78 % of hel
 are B's small "both" waves that a viewer still sees. Until it is above about 90 %, human labels from the
 click tool are the primary upper-body evaluation (the paper also judges by eye), with the automatic
 measure as a secondary number.
+
+## Executing chunks without averaging (no retraining)
+
+`play_trans.py --exec_horizon h`: predict a chunk, execute its next h actions in a row, then predict again
+(no ensembling). 12 commands × 6 starts (deterministic + 5 seeds) = 72 runs each; oscillation detector
+(threshold 0.061) as the automatic upper-body number.
+
+| Execution | Survive 8 s | Mean arm oscillation | Detector: commanded hand |
+|---|---|---|---|
+| A (no chunks) | 72/72 | 0.112 | 30/72 |
+| B, h = 1 (first action of a fresh chunk every step) | 69/72 | 0.077 | 18/72 |
+| B, h = 2 | 62/72 | 0.052 | 6/72 |
+| B, h = 4 | 25/72 | 0.054 | 15/72 |
+| B, h = 8 | 1/72 | 0.060 | 18/72 |
+| B, ensembling m = 0.5 (earlier) | 30/60 | 0.055 | — |
+
+* Executing several actions without feedback ruins balance (h = 8: 1 of 72 runs survives) and does not
+  bring the waving back. h = 1 is the best way to run B: it stays up almost as well as A and waves more
+  than with ensembling, but still less than A.
+* By this measure, chunking does not improve waving in closed loop in any execution mode; text
+  standardisation (A) is the change that helps. A's weakness is hand selectivity: it waves both arms for
+  24/24 "both", 20/24 "right" and 8/24 "left" commands.
+* Human check pending: `results/videos/ub/label_bh1.html` (B, h = 1, 12 videos).

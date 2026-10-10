@@ -39,6 +39,24 @@ MAX_MATCH = 2.0                                      # worst held-out ALMI-X wav
 REFS_PER_CLASS = 60                                  # references kept per class (distinct motions)
 
 
+OSC_WAVING = 0.061  # band-passed arm RMS above which an arm counts as waving (fitted on 18 human-labelled
+                    # runs, 78 % agreement on 18 held-out runs; see results/20261010/UPPER_BODY_DTW.md)
+
+
+def oscillation(x, hp=25, lp=3):
+    """Back-and-forth motion of one arm (T, 4): RMS of the joint angles after removing a 0.5 s moving average
+    (slow posture changes) and a 3-step smoothing (jitter), averaged over the joints."""
+    def smooth(v, n):
+        return np.stack([np.convolve(np.pad(v[:, j], (n // 2, n - 1 - n // 2), mode="edge"), np.ones(n) / n, "valid")
+                         for j in range(v.shape[1])], 1)
+    r = smooth(x - smooth(x, hp), lp)
+    return float(np.sqrt((r ** 2).mean(0)).mean())
+
+
+def osc_label(left, right, t=OSC_WAVING):
+    return {(True, True): "both", (True, False): "left", (False, True): "right", (False, False): "none"}[(left > t, right > t)]
+
+
 def hand_of(text):
     m = re.search(r"wave (left|right|both)", text)
     return m.group(1) if m else None
@@ -163,15 +181,18 @@ def score(args):
         if len(arms) < MIN_STEPS:
             print(f"{os.path.basename(path)}: \"{text}\" -> unscorable (fell after {len(arms)} steps)")
             rows.append(dict(run=os.path.basename(path), text=text, asked=want, waves="unscorable", success=0,
-                             quality=float("nan"), survival=survival))
+                             quality=float("nan"), survival=survival, osc_left=float("nan"), osc_right=float("nan"),
+                             osc_waves="unscorable", osc_success=0))
             continue
+        ol, orr = oscillation(arms[:, :4]), oscillation(arms[:, 4:])
         pred, sc = refs.classify(arms)
         print(f"{os.path.basename(path)}: \"{text}\" -> waves {pred} "
               f"({'correct' if pred == want else 'WRONG, asked ' + str(want)}); "
               f"DTW to left/right/both {sc['left']:.3f} / {sc['right']:.3f} / {sc['both']:.3f}; "
               f"scored {len(arms)} steps")
         rows.append(dict(run=os.path.basename(path), text=text, asked=want, waves=pred, success=int(pred == want),
-                         quality=sc[want], survival=survival))
+                         quality=sc[want], survival=survival, osc_left=ol, osc_right=orr,
+                         osc_waves=osc_label(ol, orr), osc_success=int(osc_label(ol, orr) == want)))
     if args.csv:
         import csv
         with open(args.csv, "w", newline="") as f:
@@ -181,7 +202,10 @@ def score(args):
     print(f"SUMMARY {n} runs: upper-body success {sum(r['success'] for r in rows)}/{n}, "
           f"no clear wave {sum(r['waves'] == 'none' for r in rows)}, unscorable {sum(r['waves'] == 'unscorable' for r in rows)}, "
           f"mean DTW to the asked class {np.nanmean([r['quality'] for r in rows]):.3f}, "
-          f"mean survival {np.mean([r['survival'] for r in rows]):.2f} s")
+          f"mean survival {np.mean([r['survival'] for r in rows]):.2f} s, "
+          f"full 8 s {sum(r['survival'] >= 7.99 for r in rows)}/{n}; oscillation detector success "
+          f"{sum(r['osc_success'] for r in rows)}/{n}, mean arm oscillation "
+          f"{np.nanmean([max(r['osc_left'], r['osc_right']) for r in rows]):.3f}")
 
 
 def main():
