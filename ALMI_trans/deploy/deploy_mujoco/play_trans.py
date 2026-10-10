@@ -53,6 +53,9 @@ def main():
     p.add_argument("--height", type=int, default=720)
     p.add_argument("--ensemble_m", type=float, default=0.1, help="temporal-ensembling weight decay (chunked models)")
     p.add_argument("--log", default="", help="save joint positions and actions per control step to this .npz")
+    p.add_argument("--seed", type=int, default=-1,
+                   help="repeat index: >= 0 perturbs the initial joint positions (MuJoCo itself is deterministic)")
+    p.add_argument("--init_noise", type=float, default=0.05, help="uniform initial joint noise (rad) when --seed >= 0")
     a = p.parse_args()
 
     with open(a.config) as f:
@@ -72,6 +75,9 @@ def main():
     m = mujoco.MjModel.from_xml_path(cfg["xml_path"])
     d = mujoco.MjData(m)
     m.opt.timestep = dt
+    if a.seed >= 0:  # repeats differ only by a small random initial pose
+        rng = np.random.default_rng(a.seed)
+        d.qpos[7:] += rng.uniform(-a.init_noise, a.init_noise, size=n_act)
 
     action = np.zeros(n_act, np.float32)
     target = default.copy()

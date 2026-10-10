@@ -67,3 +67,40 @@ committed arm motion), large m follows the newest prediction (reactive balance).
 
 Caveat: MuJoCo is deterministic, so each command is one run; differences of one or two commands are
 within what a different command set could change.
+
+## Repeats with random initial pose (5 per command, 60 runs per model)
+
+MuJoCo is deterministic, so `play_trans.py --seed s` perturbs the initial joint positions by up to
+±0.05 rad; `SEEDS="0 1 2 3 4" bash scripts/eval_upper_body.sh ...`. 95 % Wilson intervals.
+
+| Model | Upper-body success | 95 % CI | wave left / right / both | Survive full 8 s |
+|---|---|---|---|---|
+| Baseline CL-20sl | 1/60 = 2 % | 0–9 % | 1 / 0 / 0 of 20 | 60/60 |
+| A: text standardisation | 8/60 = 13 % | 7–24 % | 6 / 1 / 1 | 60/60 |
+| B, m = 0.3 | 36/60 = 60 % | 47–71 % | 19 / 2 / 15 | 12/60 |
+| **B, m = 0.5** | **38/60 = 63 %** | 51–74 % | 19 / 4 / 15 | 30/60 |
+| B, m = 2 | 21/60 = 35 % | 24–48 % | 4 / 1 / 16 | 55/60 |
+
+* The upper-body gain of action chunking is far outside the noise: 63 % against 2 % (intervals do not
+  overlap). Text standardisation alone gives 13 %.
+* Balance is the cost. With the initial-pose noise only half of B's runs at m = 0.5 survive 8 s (10 of
+  12 without noise); m = 2 keeps 55 of 60 upright but halves the arm success. The deterministic grid
+  over-stated B's stability.
+* "Wave right" stays the weak case (4 of 20 at m = 0.5; 16 of the other runs wave both arms).
+
+## Why "wave right" becomes "wave both"
+
+* **Not the text.** Teacher-forced on ALMI-X windows, B picks the correct hand word as the best fit in
+  472/477 left, 482/488 right and 535/535 both windows (the hand-swap test of the training data). After
+  standardisation the features of "wave right" and "wave both" are the closest pair (cosine 0.90, against
+  0.84 left-right), but the model still separates them offline.
+* **A closed-loop drift.** In the right-hand runs B's left arm leaves its rest pose within 0.6 s
+  (shoulder roll +0.7, yaw +1.2 rad, where the reference right waves keep the left arm near −0.16 / 0.05)
+  and then stays there while the right arm moves little (activity 0.2 rad, reference 0.38). The model
+  never saw such states in training, so the error is not corrected. This is a covariate-shift problem of
+  behaviour cloning, not a language problem.
+
+## Videos
+
+`results/videos/ub/upper_body_wave_{left,right,both}.mp4` (gitignored): baseline, A and B (m = 0.5) side
+by side, "Robot go forward slowly and wave <hand>.", deterministic start.
