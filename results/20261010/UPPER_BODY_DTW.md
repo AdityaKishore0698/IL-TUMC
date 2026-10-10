@@ -206,3 +206,30 @@ measure as a secondary number.
   standardisation (A) is the change that helps. A's weakness is hand selectivity: it waves both arms for
   24/24 "both", 20/24 "right" and 8/24 "left" commands.
 * Human check pending: `results/videos/ub/label_bh1.html` (B, h = 1, 12 videos).
+
+Human check of B, h = 1 (`human_labels_bh1.csv`): the commanded hand is waved in 1 of 12 runs (forward
+slowly, wave both); 10 runs show no wave. Together with B at m = 0.5 (2/12), this closes the chunking
+branch: A (5/12) remains the best model by eye.
+
+## Contrastive hand guidance at inference (no retraining)
+
+`play_trans.py --hand_guidance s` runs the policy on the command and on the same command with the two other
+hand words, and executes out(text) + s · (out(text) − mean of the others), pushing the action away from
+what the other hand words would do. Model A, 72 runs per strength, oscillation detector:
+
+| Guidance s | Survive 8 s | Arm oscillation | Wave left: left | Wave right: right | Wave both: both | Total |
+|---|---|---|---|---|---|---|
+| 0 (A) | 72/72 | 0.112 | 4/24 | 2/24 | 24/24 | 30/72 |
+| 0.5 | 71/72 | 0.104 | 6/24 | 3/24 | 23/24 | 32/72 |
+| 1 | 72/72 | 0.085 | 4/24 | 0/24 | 15/24 | 19/72 |
+| 2 | 72/72 | 0.059 | 16/24 | 3/24 | 1/24 | 20/72 |
+| 4 | 68/72 | 0.070 | **24/24** | **11/24** | 4/24 | 39/72 |
+
+* Strong guidance fixes the single-hand commands: "wave left" goes from 4 to 24 of 24, "wave right" from 2
+  to 11 of 24, with 68 of 72 runs still upright.
+* It removes the waving on "wave both": pushing away from both "left" and "right" cancels both arms.
+  "Both" does not contradict either single hand, so guidance is only meaningful for single-hand commands.
+  Guidance on single-hand commands (s = 4) and none on "wave both" would give 24 + 11 + 24 = 59/72 by the
+  detector (82 %), against 30/72 for A.
+* Human check pending: `results/videos/ub/label_ag4.html` (8 single-hand runs; A's "wave both" runs were
+  already labelled 4/4 correct).

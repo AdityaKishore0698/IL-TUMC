@@ -59,6 +59,8 @@ def main():
     p.add_argument("--seed", type=int, default=-1,
                    help="repeat index: >= 0 perturbs the initial joint positions (MuJoCo itself is deterministic)")
     p.add_argument("--init_noise", type=float, default=0.05, help="uniform initial joint noise (rad) when --seed >= 0")
+    p.add_argument("--hand_guidance", type=float, default=0.0,
+                   help="contrastive guidance s: out = out(text) + s * (out(text) - mean out(other hand words)); 0 = off")
     a = p.parse_args()
 
     with open(a.config) as f:
@@ -70,8 +72,13 @@ def main():
 
     clip_model, _ = clip.load("./pretrained/ViT-B-32.pt", device="cpu", jit=False)
     clip_model.eval()
+    texts = [a.text]
+    if a.hand_guidance:  # the same command with the two other hand words, as the directions to move away from
+        import re
+        hand = re.search(r"wave (left|right|both)", a.text).group(1)
+        texts += [a.text.replace(f"wave {hand}", f"wave {h}") for h in ("left", "right", "both") if h != hand]
     with torch.no_grad():
-        text_feat = clip_model.encode_text(clip.tokenize(a.text, truncate=True)).float()
+        text_feat = clip_model.encode_text(clip.tokenize(texts, truncate=True)).float()
     policy = torch.jit.load(a.policy)
     policy.eval()
 
@@ -136,7 +143,8 @@ def main():
                 history[:, frame - 1] = o
             else:
                 history = torch.cat((history[:, 1:], o.unsqueeze(1)), dim=1)
-            out = policy(history, text_feat).numpy().squeeze()
+            out = policy(history.expand(len(texts), -1, -1), text_feat).numpy()
+            out = out[0] + a.hand_guidance * (out[0] - out[1:].mean(0)) if a.hand_guidance else out[0]
             pred = (out[frame] if frame < a.seq_len else out[-1]).astype(np.float32)
             chunk = chunk or len(pred) // n_act
             if chunk == 1:
@@ -185,7 +193,7 @@ def main():
         os.makedirs(os.path.dirname(os.path.abspath(a.log)), exist_ok=True)
         np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), dt=dt * decimation,
                  fell_at=-1.0 if fell_at is None else fell_at, chunk=chunk, ensemble_m=a.ensemble_m,
-                 exec_horizon=a.exec_horizon)
+                 exec_horizon=a.exec_horizon, hand_guidance=a.hand_guidance)
 
 
 if __name__ == "__main__":
