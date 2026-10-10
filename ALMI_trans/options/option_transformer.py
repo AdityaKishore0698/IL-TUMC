@@ -67,6 +67,8 @@ def get_args_parser():
     parser.add_argument("--pred-action", action='store_true', help="only pred action")
     parser.add_argument("--chunk", type=int, default=1, help="action chunk size: actions predicted per position (1 = original)")
     parser.add_argument("--max-iter", type=int, default=0, help="stop after this many optimizer steps (0 = no limit)")
+    parser.add_argument("--mirror-aug", type=float, default=0.0,
+                        help="probability of reflecting a training window left-right (utils/mirror.py)")
     parser.add_argument("--text-norm", action='store_true', help="standardise CLIP text features over the training captions")
     parser.add_argument("--use-tokenizer", action='store_true', help="use tokenizer")
     parser.add_argument("--add-noise", action='store_true', help="add noise in obs-action in training")

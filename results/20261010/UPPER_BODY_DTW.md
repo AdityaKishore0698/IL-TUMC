@@ -233,3 +233,34 @@ what the other hand words would do. Model A, 72 runs per strength, oscillation d
   detector (82 %), against 30/72 for A.
 * Human check pending: `results/videos/ub/label_ag4.html` (8 single-hand runs; A's "wave both" runs were
   already labelled 4/4 correct).
+
+## Human check of guidance, and the right-hand problem
+
+Labels `human_labels_ag4.csv` (A with guidance s = 4, mean mode): "wave left" waved the left hand in **4 of 4**
+runs; "wave right" waved **nothing in 4 of 4**. With A's own "wave both" runs (4/4), A + guidance on
+single-hand commands reaches **8/12 by eye**, against 5/12 for A and 1/12 for the baseline.
+
+The right hand is a separate problem, which no CL-20sl variant has solved (baseline, A, B, guidance: never a
+right-only wave):
+
+* **Per-arm guidance** (each arm contrasted with the word that flips only its role) does not help:
+  "wave right" 3/24 at s = 4 by the detector, versus 24/24 for "wave left".
+* **Not a start-up problem.** Starting with "wave both" (both arms waving after 2 s) and then switching to
+  "wave right" keeps the right arm waving in only 1 of 4 commands; switching to "wave left" keeps the left
+  arm waving in 2 of 4 (and both arms in a third).
+* **Not the data quantity.** ALMI-X has 28 left, 30 right and 33 both source clips (41 commands each), and
+  the right waves are as large as the left ones (oscillation 0.081 vs 0.084).
+* **Not the text** (offline the model separates the hands, see above).
+
+So the model has learned a weaker right-arm wave than left-arm wave. The fix tried next is **left-right
+mirror augmentation** (`utils/mirror.py`): every training window is reflected in the robot's sagittal plane
+with probability 0.5 (left and right joints swap, roll and yaw joints change sign, gravity-y and the roll/yaw
+angular velocities change sign, the two gait phases swap, and "left"/"right" swap in the caption). A mirrored
+"wave left" is a "wave right", so the model gets as much right-wave data as left-wave data and is pushed to
+treat the arms symmetrically. The default pose is mirror-symmetric under this map; in a MuJoCo open-loop
+replay the mirrored action sequence reproduces the mirrored joint trajectory to within 0.04 rad except the
+ankle roll joints (0.13–0.17 rad, ground contact), which suggests a small left-right difference in the MuJoCo
+robot model rather than an error in the map.
+
+Run C (`cl20sl_tn_mir_20261010_e6ce4c9wip`, text standardisation + mirror augmentation, 126k steps) started
+20:15 on cir, about 6 it/s.

@@ -15,6 +15,7 @@ import utils.utils_model as utils_model
 from dataset import dataset_CL_20sl
 
 import models.almi_trans as trans
+from utils import mirror
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -109,6 +110,11 @@ while nb_epoch <= args.total_epoch:
         clip_text, obs_actions = batch
 
         bs = obs_actions.shape[0]; seq_len = obs_actions.shape[1] - args.chunk
+        if args.mirror_aug > 0:
+            # symmetry augmentation: reflect a random part of the batch (states, actions and caption)
+            flip = torch.rand(bs) < args.mirror_aug
+            obs_actions[flip] = mirror.mirror_obs(obs_actions[flip])
+            clip_text = [mirror.mirror_caption(c) if f else c for c, f in zip(clip_text, flip.tolist())]
 
         history = obs_actions[:, :seq_len, :]
         if args.add_noise:
