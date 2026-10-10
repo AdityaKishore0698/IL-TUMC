@@ -1,0 +1,13 @@
+run,text,asked,waves,success,quality,survival
+cl20sl_go_backward_moderately_both.npz,Robot go backward moderately and wave both.,both,none,0,2.1705757379984227,8.0
+cl20sl_go_backward_moderately_left.npz,Robot go backward moderately and wave left.,left,none,0,2.8537328044753973,8.0
+cl20sl_go_backward_moderately_right.npz,Robot go backward moderately and wave right.,right,none,0,2.9088717224221705,8.0
+cl20sl_go_forward_slowly_both.npz,Robot go forward slowly and wave both.,both,none,0,2.38133731243421,8.0
+cl20sl_go_forward_slowly_left.npz,Robot go forward slowly and wave left.,left,none,0,2.7870071322111785,8.0
+cl20sl_go_forward_slowly_right.npz,Robot go forward slowly and wave right.,right,left,0,2.9318901759054334,8.0
+cl20sl_go_left_fast_both.npz,Robot go left fast and wave both.,both,none,0,2.5424120362408593,8.0
+cl20sl_go_left_fast_left.npz,Robot go left fast and wave left.,left,none,0,2.785395447978059,8.0
+cl20sl_go_left_fast_right.npz,Robot go left fast and wave right.,right,none,0,2.8846928134864465,8.0
+cl20sl_go_right_fast_both.npz,Robot go right fast and wave both.,both,none,0,2.27006291460991,8.0
+cl20sl_go_right_fast_left.npz,Robot go right fast and wave left.,left,none,0,2.7544303305845883,8.0
+cl20sl_go_right_fast_right.npz,Robot go right fast and wave right.,right,none,0,2.866274366299856,8.0

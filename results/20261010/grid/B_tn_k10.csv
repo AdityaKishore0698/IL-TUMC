@@ -1,0 +1,13 @@
+run,text,asked,waves,success,quality,survival
+B_tn_k10_go_backward_moderately_both.npz,Robot go backward moderately and wave both.,both,both,1,0.4871120619466881,4.76
+B_tn_k10_go_backward_moderately_left.npz,Robot go backward moderately and wave left.,left,left,1,1.382245744781958,5.76
+B_tn_k10_go_backward_moderately_right.npz,Robot go backward moderately and wave right.,right,both,0,2.8608777731715938,6.82
+B_tn_k10_go_forward_slowly_both.npz,Robot go forward slowly and wave both.,both,right,0,2.6765964525071846,5.54
+B_tn_k10_go_forward_slowly_left.npz,Robot go forward slowly and wave left.,left,left,1,1.3556133588581238,3.74
+B_tn_k10_go_forward_slowly_right.npz,Robot go forward slowly and wave right.,right,both,0,2.8804807452756727,3.64
+B_tn_k10_go_left_fast_both.npz,Robot go left fast and wave both.,both,both,1,0.7372239965823846,2.7
+B_tn_k10_go_left_fast_left.npz,Robot go left fast and wave left.,left,left,1,1.3329741155169264,2.88
+B_tn_k10_go_left_fast_right.npz,Robot go left fast and wave right.,right,both,0,2.7407832290394394,2.66
+B_tn_k10_go_right_fast_both.npz,Robot go right fast and wave both.,both,both,1,0.5210714205324821,5.0600000000000005
+B_tn_k10_go_right_fast_left.npz,Robot go right fast and wave left.,left,left,1,1.2175123663233423,5.7
+B_tn_k10_go_right_fast_right.npz,Robot go right fast and wave right.,right,both,0,2.8663954887916154,5.24

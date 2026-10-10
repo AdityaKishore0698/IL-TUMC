@@ -68,6 +68,7 @@ def main():
     p.add_argument("--duration", type=float, default=8.0)
     p.add_argument("--record", default="")
     p.add_argument("--no_viewer", action="store_true")
+    p.add_argument("--log", default="", help="save joint positions and actions per control step to this .npz")
     a = p.parse_args()
 
     n_tokens, actions = generate_actions(a.trans, a.vq, a.text)
@@ -100,6 +101,7 @@ def main():
 
     target, frame, counter = default.copy(), 0, 0
     vel_log, fell_at, upright_steps = [], None, 0
+    qpos_log, act_log = [], []
     for _ in range(int(a.duration / dt)):
         if viewer is not None and not viewer.is_running():
             break
@@ -112,6 +114,8 @@ def main():
         target = actions[min(frame, len(actions) - 1)] * cfg["action_scale"] + default
         frame += 1
         quat = d.qpos[3:7]
+        qpos_log.append(d.qpos[7:].copy())
+        act_log.append(actions[min(frame - 1, len(actions) - 1)].copy())
         v = world_to_body(quat, d.qvel[0:3])
         vel_log.append([v[0], v[1], d.qvel[5]])
         if fell_at is None and (d.qpos[2] < 0.5 or gravity_orientation(quat)[2] > -0.5):
@@ -134,6 +138,10 @@ def main():
     print(f"average velocity while upright: vx {v[0]:+.2f} m/s, vy {v[1]:+.2f} m/s, yaw rate {v[2]:+.2f} rad/s")
     if a.record:
         print(f"video: {a.record}")
+    if a.log:
+        os.makedirs(os.path.dirname(os.path.abspath(a.log)), exist_ok=True)
+        np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), dt=dt * decimation,
+                 fell_at=-1.0 if fell_at is None else fell_at, n_tokens=n_tokens)
 
 
 if __name__ == "__main__":

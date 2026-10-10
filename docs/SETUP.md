@@ -35,7 +35,7 @@ Nothing under `data/`, `third_party/`, `ALMI_RL/logs/` or `ALMI_trans/output/` g
 ```
 upstream  github.com/TeleHuman/ALMI-Open        ──►  master   pristine upstream, never committed to
                                                               tag upstream-base-93f3eec
-origin    github.com/AdityaKishore0698/ALMI     ◄─►  main     all our work: docs, fixes, eval scripts
+origin    github.com/AdityaKishore0698/IL-TUMC  ◄─►  main     all our work: docs, fixes, eval scripts
 ```
 
 * All work goes on `main` or on short-lived branches (`exp/<name>`, `fix/<name>`) that merge into `main`.
