@@ -104,3 +104,82 @@ MuJoCo is deterministic, so `play_trans.py --seed s` perturbs the initial joint 
 
 `results/videos/ub/upper_body_wave_{left,right,both}.mp4` (gitignored): baseline, A and B (m = 0.5) side
 by side, "Robot go forward slowly and wave <hand>.", deterministic start.
+
+## Second check against visual judgement: the DTW measure is not reliable yet
+
+The 9 forward-slowly runs (baseline, A, B; deterministic) judged by eye on 2026-10-10:
+
+| Run | Judged by eye | DTW measure | Agree on success? |
+|---|---|---|---|
+| baseline, wave left | none (arms held up, no wave) | none | yes |
+| baseline, wave right | left (wrong hand) | left | yes |
+| baseline, wave both | both (right weaker) | none | **no** |
+| A, wave left | left (low) | left | yes |
+| A, wave right | both | none | yes (both failures) |
+| A, wave both | both | none | **no** |
+| B, wave left | none (arms down) | left | **no** |
+| B, wave right | none (arms up, still) | both | yes (both failures) |
+| B, wave both | both for a few seconds, then arms down | both | yes |
+
+Success agrees in 6 of 9, the hand in 4 of 9. Two failure modes:
+
+* **Posture counted as a wave.** DTW on joint angles is dominated by where the arm is, not by whether it
+  oscillates, so a still arm in a wave-like posture matches the references (B, wave left).
+* **Real waves rejected.** Waves that differ in amplitude or height from ALMI-X (A, baseline on
+  "wave both") are farther than the 2.0 limit and become "no clear wave".
+
+An oscillation (band-passed joint motion) detector calibrated on ALMI-X separates waving from idle arms
+there (96 % balanced accuracy), but its threshold does not transfer: walking makes idle arms jitter about
+twice as much in closed loop as in the dataset, and falls make every joint move. Thresholds therefore have
+to be set on human-labelled closed-loop runs, not on the dataset.
+
+Also: the 8 s "forward slowly, wave left" CL-20sl run was labelled "left" in the first live-viewer session
+and "none" now (deterministic, so the first 8 s are identical), which shows why a measured criterion is
+needed.
+
+**Consequence:** the success rates above (2 % / 13 % / 63 %) measure "closest to an ALMI-X wave", not
+"waves the commanded hand". They stay provisional until the measure agrees with labelled runs.
+
+**Next:** label all 36 runs (`results/20261010/human_labels.csv`, videos
+`results/videos/ub/upper_body_*.mp4`), then fit and validate the measure (waving = oscillation, which
+hand = per-arm oscillation, DTW only for quality) on half and test it on the other half.
+
+## Human-labelled evaluation (36 runs) — the reference result for now
+
+Labels: `results/20261010/human_labels.csv`, made with `results/videos/ub/label.html` (click-to-label,
+2× playback; about 3 minutes for 12 three-panel videos). 12 commands, deterministic start, B at m = 0.5.
+
+| Model | Waves the commanded hand | left / right / both commands | What it waves on "right" commands |
+|---|---|---|---|
+| Baseline CL-20sl | 1/12 | 0 / 0 / 1 | none ×3, left ×1 |
+| **A: text standardisation** | **5/12** | 1 / 0 / 4 | both ×3, none ×1 |
+| B: A + chunks of 10, m = 0.5 | 2/12 | 0 / 0 / 2 | both ×2, none ×2 |
+
+This reverses the DTW ranking: by eye A is best, and B mostly does not wave at all. A has a "wave both"
+bias (it waves both arms for every "wave both" and for 3 of 4 "wave right" commands); no model ever waves
+the right hand alone.
+
+### Why B stops waving: temporal ensembling damps the oscillation
+
+Arm oscillation (RMS of band-passed arm joints, larger arm, mean over the 12 grid runs):
+
+| Model | Oscillation |
+|---|---|
+| Baseline | 0.058 |
+| A | 0.109 |
+| B, m = 0 / 0.1 / 0.3 / 0.5 | 0.058 / 0.065 / 0.058 / 0.055 |
+| B, m = 1 / 2 | 0.077 / 0.078 |
+| B, m = 50 (newest prediction only) | 0.098 |
+
+Averaging overlapping chunk predictions removes about half of the arm motion. A wave is periodic, and
+predictions of the same future step made at different times disagree in phase, so their weighted average
+flattens the wave. ACT's temporal ensembling was designed for smooth manipulation trajectories, where this
+does not happen. Without ensembling (m = 50), B oscillates almost as much as A.
+
+### Automatic measure, status
+
+An oscillation detector (one threshold on the band-passed arm motion, fitted on the forward/backward half
+of the labels) reproduces the human label in 72 % of fitted runs and 78 % of held-out runs. Its main misses
+are B's small "both" waves that a viewer still sees. Until it is above about 90 %, human labels from the
+click tool are the primary upper-body evaluation (the paper also judges by eye), with the automatic
+measure as a secondary number.
