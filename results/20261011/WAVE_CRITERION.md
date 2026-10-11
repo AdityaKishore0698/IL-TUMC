@@ -68,3 +68,30 @@ C25 behaves like A without its strength: it waves both arms for most commands, a
 commanded arm keeps swinging (left 0.34 rad) but drops below the shoulder (median hand height −0.33 m), so
 the single-hand commands fail the height condition. A quarter of mirrored data neither keeps A's "wave both"
 nor gives C's left/right selectivity. A + guidance stays the main method.
+
+## Stronger guidance for single-hand commands
+
+A, right-hand commands only (4 commands × 6 starts = 24 runs), wave criterion:
+
+| Guidance | Correct right wave | Upright 8 s |
+|---|---|---|
+| mean, s = 2 / 4 / 6 / 8 / 12 | 0 / 6 / 9 / 7 / 5 of 24 | 24 / 20 / 16 / 3 / 2 of 24 |
+| per arm, s = 8 / **12** / 16 | 9 / **18** / 13 of 24 | 23 / **20** / 14 of 24 |
+
+Mean guidance above s = 4 tips the robot over; per-arm guidance (each arm contrasted with the word that
+flips only its role) tolerates much stronger guidance. Per arm, s = 12 on the left-hand commands: 20/24
+correct, 24/24 upright.
+
+**Final method:** A (text standardisation) + per-arm guidance s = 12 on single-hand commands, no guidance on
+"wave both". On the 72 runs used to choose s: 61/72 (85 %; left 20/24, right 18/24, both 23/24), 68/72 upright.
+
+**Held-out check** (new starts, seeds 5–9, 60 runs; s chosen above, not here):
+
+| Model | Correct wave | Left | Right | Both | Upright 8 s |
+|---|---|---|---|---|---|
+| Baseline CL-20sl | 4/60 (7 %, CI 3–16 %) | 3/20 | 0/20 | 1/20 | 60/60 |
+| **Final method** | **47/60 (78 %, CI 66–87 %)** | 18/20 | 9/20 | 20/20 | 51/60 |
+
+The right hand dropped from 18/24 to 9/20 on new starts (the choice of s was optimistic for it), and 8 of the 9
+falls are right-hand commands: strong guidance on the right arm costs balance. Human blind check of 24 held-out
+runs (final method and baseline, seed 5): `results/videos/ub/label_final.html`.

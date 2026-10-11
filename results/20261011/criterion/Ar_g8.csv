@@ -1,0 +1,25 @@
+run,text,asked,waves,success,left_time,right_time,left_swing,right_swing,left_height,right_height,survival
+Ar_g8_go_backward_moderately_right.npz,Robot go backward moderately and wave right.,right,right,1,0.0,0.54,0.124,0.505,-0.687,0.088,7.24
+Ar_g8_go_backward_moderately_right_s0.npz,Robot go backward moderately and wave right.,right,none,0,0.15,0.15,0.0,0.0,-inf,-inf,3.72
+Ar_g8_go_backward_moderately_right_s1.npz,Robot go backward moderately and wave right.,right,right,1,0.0,0.65,0.144,0.31,-0.63,0.18,6.26
+Ar_g8_go_backward_moderately_right_s2.npz,Robot go backward moderately and wave right.,right,none,0,0.23,0.0,0.0,0.0,-inf,-inf,3.48
+Ar_g8_go_backward_moderately_right_s3.npz,Robot go backward moderately and wave right.,right,right,1,0.0,0.77,0.029,0.318,-0.7,0.484,6.66
+Ar_g8_go_backward_moderately_right_s4.npz,Robot go backward moderately and wave right.,right,right,1,0.0,0.88,0.142,0.347,-0.675,0.222,7.5200000000000005
+Ar_g8_go_forward_slowly_right.npz,Robot go forward slowly and wave right.,right,none,0,0.12,0.0,0.0,0.0,-inf,-inf,2.84
+Ar_g8_go_forward_slowly_right_s0.npz,Robot go forward slowly and wave right.,right,none,0,0.12,0.0,0.0,0.0,-inf,-inf,4.0
+Ar_g8_go_forward_slowly_right_s1.npz,Robot go forward slowly and wave right.,right,none,0,0.15,0.0,0.0,0.0,-inf,-inf,2.86
+Ar_g8_go_forward_slowly_right_s2.npz,Robot go forward slowly and wave right.,right,none,0,0.23,0.0,0.0,0.0,-inf,-inf,3.52
+Ar_g8_go_forward_slowly_right_s3.npz,Robot go forward slowly and wave right.,right,none,0,0.0,0.23,0.277,0.361,-0.605,-0.466,5.18
+Ar_g8_go_forward_slowly_right_s4.npz,Robot go forward slowly and wave right.,right,none,0,0.08,0.0,0.0,0.0,-inf,-inf,3.86
+Ar_g8_go_left_fast_right.npz,Robot go left fast and wave right.,right,none,0,0.0,0.12,0.0,0.0,-inf,-inf,4.32
+Ar_g8_go_left_fast_right_s0.npz,Robot go left fast and wave right.,right,none,0,0.0,0.38,0.0,0.0,-inf,-inf,4.24
+Ar_g8_go_left_fast_right_s1.npz,Robot go left fast and wave right.,right,right,1,0.0,0.62,0.059,0.284,-0.701,0.315,6.0200000000000005
+Ar_g8_go_left_fast_right_s2.npz,Robot go left fast and wave right.,right,none,0,0.0,0.0,0.0,0.0,-inf,-inf,1.96
+Ar_g8_go_left_fast_right_s3.npz,Robot go left fast and wave right.,right,right,1,0.0,0.81,0.077,0.43,-0.704,0.11,8.0
+Ar_g8_go_left_fast_right_s4.npz,Robot go left fast and wave right.,right,none,0,0.0,0.23,0.0,0.0,-inf,-inf,3.24
+Ar_g8_go_right_fast_right.npz,Robot go right fast and wave right.,right,none,0,0.0,0.0,0.0,0.0,-inf,-inf,2.74
+Ar_g8_go_right_fast_right_s0.npz,Robot go right fast and wave right.,right,left,0,0.88,0.0,0.28,0.154,0.162,-0.593,8.0
+Ar_g8_go_right_fast_right_s1.npz,Robot go right fast and wave right.,right,right,1,0.0,0.88,0.042,0.289,-0.709,0.134,8.0
+Ar_g8_go_right_fast_right_s2.npz,Robot go right fast and wave right.,right,none,0,0.0,0.0,0.0,0.0,-inf,-inf,3.36
+Ar_g8_go_right_fast_right_s3.npz,Robot go right fast and wave right.,right,left,0,0.65,0.0,0.245,0.25,0.137,-0.439,5.88
+Ar_g8_go_right_fast_right_s4.npz,Robot go right fast and wave right.,right,none,0,0.0,0.38,0.044,0.378,-0.717,-0.177,5.28

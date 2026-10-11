@@ -1,0 +1,25 @@
+run,text,asked,waves,success,quality,survival,osc_left,osc_right,osc_waves,osc_success
+Ar_g6_go_backward_moderately_right.npz,Robot go backward moderately and wave right.,right,right,1,1.4456502090013548,8.0,0.07023753668625171,0.07701721408651811,both,0
+Ar_g6_go_backward_moderately_right_s0.npz,Robot go backward moderately and wave right.,right,right,1,1.740169187063838,8.0,0.07430234899853258,0.09865302770856182,both,0
+Ar_g6_go_backward_moderately_right_s1.npz,Robot go backward moderately and wave right.,right,right,1,1.2712066946103675,8.0,0.04812595259468271,0.09106260210753013,right,1
+Ar_g6_go_backward_moderately_right_s2.npz,Robot go backward moderately and wave right.,right,right,1,1.63121943298921,8.0,0.0774882177600494,0.09212886800308649,both,0
+Ar_g6_go_backward_moderately_right_s3.npz,Robot go backward moderately and wave right.,right,right,1,1.2917479303745163,8.0,0.03735571828066803,0.10723424173915616,right,1
+Ar_g6_go_backward_moderately_right_s4.npz,Robot go backward moderately and wave right.,right,right,1,1.5908168633581927,8.0,0.07263939198750737,0.09721010153442053,both,0
+Ar_g6_go_forward_slowly_right.npz,Robot go forward slowly and wave right.,right,both,0,3.0937917927316123,4.0600000000000005,0.08782712573474082,0.0904715957662049,both,0
+Ar_g6_go_forward_slowly_right_s0.npz,Robot go forward slowly and wave right.,right,both,0,3.0672179576115512,3.8200000000000003,0.108200070984175,0.09604880638267638,both,0
+Ar_g6_go_forward_slowly_right_s1.npz,Robot go forward slowly and wave right.,right,right,1,1.4530766040045913,8.0,0.046909554079111064,0.11319812819238993,right,1
+Ar_g6_go_forward_slowly_right_s2.npz,Robot go forward slowly and wave right.,right,left,0,2.6419247611311736,4.16,0.10081552350923981,0.07765692423050019,both,0
+Ar_g6_go_forward_slowly_right_s3.npz,Robot go forward slowly and wave right.,right,right,1,1.9476734290494,6.8,0.09055670964074426,0.09290275913372394,both,0
+Ar_g6_go_forward_slowly_right_s4.npz,Robot go forward slowly and wave right.,right,both,0,3.0617603314920006,4.14,0.10092649356497627,0.08922272082740984,both,0
+Ar_g6_go_left_fast_right.npz,Robot go left fast and wave right.,right,right,1,1.2794128911576663,8.0,0.05241814496243939,0.09348638236521685,right,1
+Ar_g6_go_left_fast_right_s0.npz,Robot go left fast and wave right.,right,right,1,1.1873015656821988,8.0,0.05807305058343006,0.10526241567103761,right,1
+Ar_g6_go_left_fast_right_s1.npz,Robot go left fast and wave right.,right,right,1,1.1865537927014833,5.22,0.07209684312661316,0.12362397315699802,both,0
+Ar_g6_go_left_fast_right_s2.npz,Robot go left fast and wave right.,right,right,1,1.3308001441226966,8.0,0.05754030457878656,0.10511771463786879,right,1
+Ar_g6_go_left_fast_right_s3.npz,Robot go left fast and wave right.,right,right,1,1.3204815352262227,8.0,0.05661844089925397,0.09347589048772983,right,1
+Ar_g6_go_left_fast_right_s4.npz,Robot go left fast and wave right.,right,right,1,1.351093362742652,8.0,0.05281484650018061,0.10748122570022739,right,1
+Ar_g6_go_right_fast_right.npz,Robot go right fast and wave right.,right,right,1,1.348141059060425,8.0,0.04701304089424928,0.07810610132046407,right,1
+Ar_g6_go_right_fast_right_s0.npz,Robot go right fast and wave right.,right,both,0,2.9689175029930293,8.0,0.08690412525735047,0.06750588283631487,both,0
+Ar_g6_go_right_fast_right_s1.npz,Robot go right fast and wave right.,right,right,1,1.3856886607398229,8.0,0.04885379739349037,0.0960543024685116,right,1
+Ar_g6_go_right_fast_right_s2.npz,Robot go right fast and wave right.,right,none,0,2.4886866754908286,2.54,0.1642983335085371,0.127493162054941,both,0
+Ar_g6_go_right_fast_right_s3.npz,Robot go right fast and wave right.,right,both,0,2.9376411701936362,6.5200000000000005,0.0880499692635295,0.07487997080780903,both,0
+Ar_g6_go_right_fast_right_s4.npz,Robot go right fast and wave right.,right,right,1,1.4823981637170116,8.0,0.05274994475071107,0.13917137807135996,right,1

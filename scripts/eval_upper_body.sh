@@ -2,7 +2,7 @@
 # Closed-loop upper-body evaluation of an exported CL-type policy in MuJoCo (Mac or cir, CPU):
 # every locomotion command x every hand x every repeat (SEEDS, default one deterministic run), 8 s each,
 # joint traces logged, then scored with the DTW measure (upper_body_metric.py).
-# Writes <out>/<name>_*.npz and <out>/<name>.csv. JOBS runs in parallel (default 1).
+# Writes <out>/<name>_*.npz and <out>/<name>.csv. JOBS runs in parallel (default 1); HANDS limits the hands.
 #
 # Usage (from ALMI_trans/): bash ../scripts/eval_upper_body.sh <policy.pt> <name> <out dir> [extra play_trans args]
 set -euo pipefail
@@ -13,7 +13,7 @@ mkdir -p "$OUT"
 SEEDS=${SEEDS:--1}; JOBS=${JOBS:-1}
 for seed in $SEEDS; do
   for loco in "go forward slowly" "go backward moderately" "go right fast" "go left fast"; do
-    for hand in left right both; do
+    for hand in ${HANDS:-left right both}; do
       text="Robot $loco and wave $hand."
       slug=$(echo "$loco $hand" | tr ' ' '_')
       [ "$seed" -ge 0 ] && slug="${slug}_s$seed"
