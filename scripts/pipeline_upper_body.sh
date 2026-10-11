@@ -3,7 +3,7 @@
 # hyper-parameters) for the same number of optimizer steps as the reproduced baseline, with:
 #   A. text-feature standardisation (--text-norm), one action per step
 #   B. text-feature standardisation + action chunks of 10 (--chunk 10)
-#   C. text-feature standardisation + left-right mirror augmentation (RUNS=tn_mir)
+#   C. text-feature standardisation + left-right mirror augmentation (RUNS=tn_mir, p = 0.5; tn_mir25, p = 0.25)
 # After each run: TorchScript export and the text-sensitivity check (eval_text_sensitivity.py).
 #
 # Usage: bash pipeline_upper_body.sh <tag>      e.g. tag = 20261001_f313925wip
@@ -25,6 +25,7 @@ for variant in $RUNS; do
     tn_k10) extra="--text-norm --chunk 10" ;;
     k10)    extra="--chunk 10" ;;
     tn_mir) extra="--text-norm --mirror-aug 0.5" ;;
+    tn_mir25) extra="--text-norm --mirror-aug 0.25" ;;
     *)      say "unknown variant $variant"; continue ;;
   esac
   R=cl20sl_${variant}_${TAG}
