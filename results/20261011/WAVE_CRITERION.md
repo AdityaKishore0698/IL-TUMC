@@ -50,3 +50,21 @@ guidance on "wave both".
 Criterion against these labels: 35/48 (73 %); pooled over both blind sets 62/80 (78 %), equal to the rater's
 own repeat agreement. Most misses are waves the rater accepted with a swing of 0.14–0.20 rad or held for 38–46 %
 of the time, just under the 0.21 rad and 50 % limits.
+
+## C25: mirror augmentation at p = 0.25
+
+Run `cl20sl_tn_mir25_20261011_2676168wip` (11:14–16:39, 126k steps, final loss 0.00085; hand-swap ratio 1.55,
+like A's 1.57). Wave criterion, 72 runs each:
+
+| Model | Correct wave | Left | Right | Both | Upright |
+|---|---|---|---|---|---|
+| C25 | 16/72 | 0/24 | 2/24 | 14/24 | 72/72 |
+| C25 + guidance s = 4 | 17/72 | 0/24 | 4/24 | 13/24 | 72/72 |
+| C25 + guidance on single-hand commands | 18/72 | 0/24 | 4/24 | 14/24 | 72/72 |
+| (A + guidance on single-hand commands) | 33/72 | 4/24 | 6/24 | 23/24 | 68/72 |
+| (C + guidance) | 31/72 | 23/24 | 8/24 | 0/24 | 72/72 |
+
+C25 behaves like A without its strength: it waves both arms for most commands, and with guidance the
+commanded arm keeps swinging (left 0.34 rad) but drops below the shoulder (median hand height −0.33 m), so
+the single-hand commands fail the height condition. A quarter of mirrored data neither keeps A's "wave both"
+nor gives C's left/right selectivity. A + guidance stays the main method.
