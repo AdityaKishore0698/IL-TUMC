@@ -24,4 +24,4 @@ for seed in $SEEDS; do
   done
 done
 wait
-$PY upper_body_metric.py score --refs "$REFS" --csv "$OUT/$NAME.csv" "$OUT/${NAME}_"*.npz | tail -1
+$PY upper_body_metric.py score --refs "$REFS" --csv "$OUT/$NAME.csv" "$OUT/${NAME}_go_"*.npz | tail -1
