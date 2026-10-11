@@ -32,3 +32,21 @@ resting arms (0.067 rad) agreed in 23 of 32: small swings are not called waves b
 Tie-break set (12 commands × 2 new starts per model, `results/videos/ub/tie/`), criterion: A + guidance 13/24
 (left 4/8, right 2/8, both 7/8), C + guidance 10/24 (left 8/8, right 2/8, both 0/8). Human blind labels:
 pending (`results/videos/ub/label_tie.html`).
+
+## Tie-break, human blind labels (48 runs: 12 commands × 2 new starts × 2 models)
+
+`human_labels_tie.csv`, criterion shown on the page, model hidden, random order.
+
+| Model | Correct wave | Left | Right | Both |
+|---|---|---|---|---|
+| A + guidance on single-hand commands | 17/24 (71 %, 95 % CI 51–85 %) | 8/8 | 1/8 | 8/8 |
+| C + guidance | 15/24 (63 %, 43–79 %) | 8/8 | 3/8 | 4/8 |
+
+Paired by command and start: A + guidance alone succeeded in 5 pairs, C + guidance alone in 3 (sign test
+p = 0.73). **No significant difference: the tie stands.** Over both blind sets (36 runs each): A + guidance
+23/36 (64 %), C + guidance 21/36 (58 %). They differ in where they fail: A + guidance on "wave right", C +
+guidance on "wave both".
+
+Criterion against these labels: 35/48 (73 %); pooled over both blind sets 62/80 (78 %), equal to the rater's
+own repeat agreement. Most misses are waves the rater accepted with a swing of 0.14–0.20 rad or held for 38–46 %
+of the time, just under the 0.21 rad and 50 % limits.
