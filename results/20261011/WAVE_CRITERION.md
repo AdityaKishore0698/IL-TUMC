@@ -95,3 +95,13 @@ correct, 24/24 upright.
 The right hand dropped from 18/24 to 9/20 on new starts (the choice of s was optimistic for it), and 8 of the 9
 falls are right-hand commands: strong guidance on the right arm costs balance. Human blind check of 24 held-out
 runs (final method and baseline, seed 5): `results/videos/ub/label_final.html`.
+
+Human blind check of 24 held-out runs (seed 5, model hidden, `human_labels_final.csv`):
+
+| Model | Correct wave | Left | Right | Both |
+|---|---|---|---|---|
+| Baseline CL-20sl | 0/12 | 0/4 | 0/4 | 0/4 |
+| **Final method** | **8/12** | 4/4 | 0/4 | 4/4 |
+
+The criterion agrees with these labels in 22 of 24 runs. Left and both are solved by eye; the right hand is not
+(3 of the 4 right-hand runs fell, at 5.5–7.9 s).
