@@ -1,9 +1,22 @@
 import math
+from typing import Optional
+
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
 from torch.distributions import Categorical
 import models.pos_encoding as pos_encoding
+
+HANDS = ("left", "right", "both")
+HAND_NONE = len(HANDS)  # index of the dropped / unknown hand
+
+
+def hand_index(text):
+    """Hand token of a caption: 0 left, 1 right, 2 both, 3 none."""
+    import re
+    m = re.search(r"wave (left|right|both)", text)
+    return HANDS.index(m.group(1)) if m else HAND_NONE
+
 
 class ALMITransformer(nn.Module):
     def __init__(self, 
@@ -32,11 +45,15 @@ class ALMITransformer(nn.Module):
         """Standardise CLIP text features with statistics of the training captions (see CrossCondTransBase)."""
         self.trans_base.set_text_norm(mean, std)
 
+    def set_hand_token(self):
+        """Condition on an explicit hand token (see CrossCondTransBase.hand_emb)."""
+        self.trans_base.use_hand = True
+
     def get_block_size(self):
         return self.block_size
 
-    def forward(self, idxs, clip_feature):
-        feat = self.trans_base(idxs, clip_feature)
+    def forward(self, idxs, clip_feature, hand: Optional[torch.Tensor] = None):
+        feat = self.trans_base(idxs, clip_feature, hand)
         out = self.trans_head(feat)
         return out
 
@@ -151,6 +168,11 @@ class CrossCondTransBase(nn.Module):
         # is called; the statistics are then saved in the checkpoint (old checkpoints load unchanged).
         self.register_buffer("text_mean", torch.zeros(clip_dim), persistent=False)
         self.register_buffer("text_std", torch.ones(clip_dim), persistent=False)
+        # Explicit hand token: 0 left, 1 right, 2 both, 3 unknown/dropped. Its embedding is added to the text token,
+        # so the hand reaches the model independently of how CLIP encodes the caption. Off (unused) unless
+        # set_hand_token() is called; checkpoints without it load unchanged.
+        self.hand_emb = nn.Embedding(len(HANDS) + 1, embed_dim)
+        self.use_hand = False
 
         self.block_size = block_size
 
@@ -172,17 +194,20 @@ class CrossCondTransBase(nn.Module):
             module.bias.data.zero_()
             module.weight.data.fill_(1.0)
     
-    def forward(self, idx, clip_feature):
+    def forward(self, idx, clip_feature, hand: Optional[torch.Tensor] = None):
         clip_feature = (clip_feature - self.text_mean) / self.text_std
+        cond = self.cond_emb(clip_feature)
+        if self.use_hand and hand is not None:
+            cond = cond + self.hand_emb(hand)
         if len(idx) == 0:
-            token_embeddings = self.cond_emb(clip_feature).unsqueeze(1)
+            token_embeddings = cond.unsqueeze(1)
         else:
             # b, t, _ = idx.size()
             t = idx.shape[1]
             assert t <= self.block_size, "Cannot forward, model block size is exhausted."
             # forward the Trans model
             token_embeddings = self.tok_emb(idx)
-            token_embeddings = torch.cat([self.cond_emb(clip_feature).unsqueeze(1), token_embeddings], dim=1)
+            token_embeddings = torch.cat([cond.unsqueeze(1), token_embeddings], dim=1)
             
         x = self.pos_embed(token_embeddings)
         x = self.blocks(x)
@@ -232,7 +257,20 @@ def load_trans_state(model, state):
     """load_state_dict that also restores text-feature statistics saved by set_text_norm()."""
     if 'trans_base.text_mean' in state:
         model.set_text_norm(state['trans_base.text_mean'], state['trans_base.text_std'])
+    if state.get('trans_base.use_hand_flag', torch.tensor(0)).item():
+        model.set_hand_token()
+    state = dict(state)
+    state.pop('trans_base.use_hand_flag', None)
+    if 'trans_base.hand_emb.weight' not in state:  # checkpoints from before the hand token
+        state['trans_base.hand_emb.weight'] = model.trans_base.hand_emb.weight.detach().clone()
     model.load_state_dict(state, strict=True)
+
+
+def save_state(model):
+    """state_dict plus a flag recording whether the hand token is in use."""
+    state = model.state_dict()
+    state['trans_base.use_hand_flag'] = torch.tensor(int(model.trans_base.use_hand))
+    return state
 
 
 def chunk_from_state(state, num_actions=21):

@@ -49,6 +49,8 @@ trans_encoder = trans.ALMITransformer(num_obs=args.num_obs,
                                 fc_rate=args.ff_rate,
                                 pred_action=args.pred_action,
                                 chunk=args.chunk)
+if args.hand_token:
+    trans_encoder.set_hand_token()
 assert args.chunk == 1 or args.pred_action, "action chunking predicts actions only (--pred-action)"
 if args.pred_action:
     print("pred only action")
@@ -101,7 +103,7 @@ nb_sample_train = 0
 
 while nb_epoch <= args.total_epoch:
     if nb_epoch == 0:
-        torch.save({'trans' : trans_encoder.state_dict()}, os.path.join(args.out_dir, f'almi_trans_cl_20sl_{nb_epoch}.pth'))
+        torch.save({'trans' : trans.save_state(trans_encoder)}, os.path.join(args.out_dir, f'almi_trans_cl_20sl_{nb_epoch}.pth'))
         logger.info(f'model saved in epoch {nb_epoch}')
     train_loader_iter = iter(train_loader)
     nb_epoch += 1
@@ -128,8 +130,18 @@ while nb_epoch <= args.total_epoch:
         
         text = clip.tokenize(clip_text, truncate=True).to(args.device)
         feat_clip_text = clip_model.encode_text(text).float()
+        hand = None
+        if args.hand_token:
+            hand = torch.tensor([trans.hand_index(c) for c in clip_text], device=args.device)
+            # condition dropout: hide the hand token, so the model also learns the hand-free prediction
+            # that classifier-free guidance contrasts with at run time
+            hand[torch.rand(len(hand), device=args.device) < args.hand_drop] = trans.HAND_NONE
+        if args.text_drop > 0:
+            # hide the caption (its standardised feature becomes 0); the hand token, if any, remains
+            drop = torch.rand(len(feat_clip_text), device=args.device) < args.text_drop
+            feat_clip_text[drop] = trans_encoder.trans_base.text_mean.to(args.device)
 
-        pred_obs_action = trans_encoder(history, feat_clip_text)
+        pred_obs_action = trans_encoder(history, feat_clip_text, hand)
         
         if args.chunk > 1:
             loss = loss_mse(pred_obs_action[:, 1:, :], target)
@@ -157,7 +169,7 @@ while nb_epoch <= args.total_epoch:
             avg_loss = 0.
 
     # save model
-    torch.save({'trans' : trans_encoder.state_dict()}, os.path.join(args.out_dir, 'almi_trans_cl_20sl_last.pth'))
+    torch.save({'trans' : trans.save_state(trans_encoder)}, os.path.join(args.out_dir, 'almi_trans_cl_20sl_last.pth'))
     logger.info(f'model last saved {nb_epoch}')
     if args.max_iter and nb_iter >= args.max_iter:
         logger.info(f'reached --max-iter {args.max_iter}')

@@ -34,6 +34,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 A_POLICY = "output/export/policy_trans_cl20sl_tn_20261001_f313925wip.pt"
 GUIDE = ["--hand_guidance", "12", "--guidance_mode", "per_arm"]
+H_POLICY = "output/export/policy_trans_cl20sl_tn_hand_20261014_629b6d1wip.pt"
 MODELS = {
     "CL-20sl": dict(player="trans", args=["--policy", "output/export/policy_trans_cl20sl.pt"]),
     "CL-400sl": dict(player="trans", args=["--policy", "output/export/policy_trans_cl400sl.pt", "--seq_len", "400"]),
@@ -44,6 +45,10 @@ MODELS = {
     "A+guidance": dict(player="trans", args=["--policy", A_POLICY], single_hand=GUIDE),
     "C+guidance": dict(player="trans", args=["--policy", "output/export/policy_trans_cl20sl_tn_mir_20261010_e6ce4c9wip.pt",
                                              "--hand_guidance", "4"]),
+    # H: explicit hand token, trained with hand-token and caption dropout
+    "H": dict(player="trans", args=["--policy", H_POLICY]),
+    "H+per-arm": dict(player="trans", args=["--policy", H_POLICY], single_hand=GUIDE),
+    "H+cfg": dict(player="trans", args=["--policy", H_POLICY, "--hand_guidance", "2", "--guidance_mode", "cfg"]),
 }
 GRID12 = [f"Robot go {l} and wave {h}." for l in ("forward slowly", "backward moderately", "right fast", "left fast")
           for h in ("left", "right", "both")]
@@ -172,7 +177,7 @@ def summarise(rows, models):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--models", nargs="+", default=list(MODELS))
+    p.add_argument("--models", nargs="+", default=["CL-20sl", "CL-400sl", "OL", "A", "A+guidance", "C+guidance"])
     p.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2])
     p.add_argument("--grid12", action="store_true", help="the 12-command grid instead of all 123 commands")
     p.add_argument("--jobs", type=int, default=64)

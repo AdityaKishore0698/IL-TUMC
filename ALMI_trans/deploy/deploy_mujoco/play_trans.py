@@ -26,6 +26,15 @@ import numpy as np
 import torch
 import yaml
 
+HANDS = ("left", "right", "both")
+HAND_NONE = 3
+
+
+def hand_index(text):
+    import re
+    m = re.search(r"wave (left|right|both)", text)
+    return HANDS.index(m.group(1)) if m else HAND_NONE
+
 
 def gravity_orientation(q):
     qw, qx, qy, qz = q
@@ -61,10 +70,11 @@ def main():
     p.add_argument("--init_noise", type=float, default=0.05, help="uniform initial joint noise (rad) when --seed >= 0")
     p.add_argument("--hand_guidance", type=float, default=0.0,
                    help="contrastive guidance s: out = out(text) + s * (out(text) - out(contrast)); 0 = off")
-    p.add_argument("--guidance_mode", choices=["mean", "per_arm"], default="mean",
+    p.add_argument("--guidance_mode", choices=["mean", "per_arm", "cfg"], default="mean",
                    help="mean: contrast with the mean of the two other hand words (whole body); per_arm: each arm is "
                         "contrasted with the hand word that flips only that arm's role (waving arm vs the word where "
-                        "it rests, resting arm vs 'both'); legs and waist are not guided")
+                        "it rests, resting arm vs 'both'); cfg (hand-token models): contrast with the hand token "
+                        "hidden, arms only; legs and waist are not guided in per_arm and cfg")
     p.add_argument("--then_text", default="", help="switch to this command at --switch_at seconds")
     p.add_argument("--switch_at", type=float, default=0.0)
     a = p.parse_args()
@@ -80,8 +90,11 @@ def main():
     clip_model.eval()
     def encode(text):
       texts = [text]
+      hands = [hand_index(text)]
       arm_neg = None
-      if a.hand_guidance:  # the same command with the two other hand words, as the directions to move away from
+      if a.hand_guidance and a.guidance_mode == "cfg":  # same caption, hand token hidden
+        texts, hands, arm_neg = [text, text], [hands[0], HAND_NONE], [1, 1]
+      elif a.hand_guidance:  # the same command with the two other hand words, as the directions to move away from
         import re
         hand = re.search(r"wave (left|right|both)", text).group(1)
         others = [h for h in ("left", "right", "both") if h != hand]
@@ -89,11 +102,13 @@ def main():
         # per_arm contrast word for (left arm, right arm), by commanded hand
         contrast = {"left": ("right", "both"), "right": ("both", "left"), "both": ("right", "left")}[hand]
         arm_neg = [1 + others.index(c) for c in contrast]
+        hands = [hand_index(t) for t in texts]
       with torch.no_grad():
         feat = clip_model.encode_text(clip.tokenize(texts, truncate=True)).float()
-      return texts, feat, arm_neg
-    texts, text_feat, arm_neg = encode(a.text)
+      return texts, feat, arm_neg, torch.tensor(hands)
+    texts, text_feat, arm_neg, hand_ids = encode(a.text)
     policy = torch.jit.load(a.policy)
+    uses_hand = bool(getattr(policy.trans_base, "use_hand", False))  # explicit hand-token models
     policy.eval()
 
     m = mujoco.MjModel.from_xml_path(cfg["xml_path"])
@@ -158,9 +173,10 @@ def main():
             else:
                 history = torch.cat((history[:, 1:], o.unsqueeze(1)), dim=1)
             if a.then_text and abs(frame * dt * decimation - a.switch_at) < 1e-9:
-                texts, text_feat, arm_neg = encode(a.then_text)
-            out = policy(history.expand(len(texts), -1, -1), text_feat).numpy()
-            if a.hand_guidance and a.guidance_mode == "per_arm":
+                texts, text_feat, arm_neg, hand_ids = encode(a.then_text)
+            h = history.expand(len(texts), -1, -1)
+            out = (policy(h, text_feat, hand_ids) if uses_hand else policy(h, text_feat)).numpy()
+            if a.hand_guidance and a.guidance_mode in ("per_arm", "cfg"):
                 g = out.reshape(out.shape[0], out.shape[1], -1, n_act)  # (texts, positions, chunk, 21)
                 guided = g[0].copy()
                 for arm, neg in zip((slice(13, 17), slice(17, 21)), arm_neg):

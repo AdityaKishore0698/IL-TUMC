@@ -1,3 +1,5 @@
+from typing import Optional
+
 import torch
 import argparse
 import models.almi_trans as trans
@@ -10,8 +12,8 @@ class PolicyExporterTrans(torch.nn.Module):
         self.trans_base = copy.deepcopy(trans_model.trans_base)
         self.trans_head = copy.deepcopy(trans_model.trans_head)
 
-    def forward(self, idxs, clip_feature):
-        feat = self.trans_base(idxs, clip_feature)
+    def forward(self, idxs, clip_feature, hand: Optional[torch.Tensor] = None):
+        feat = self.trans_base(idxs, clip_feature, hand)
         out = self.trans_head(feat)
         return out
 
@@ -40,7 +42,8 @@ def main(args):
                             pred_action=True,
                             chunk=chunk)
     trans.load_trans_state(trans_model, ckpt['trans'])
-    print(f"action chunk {chunk}, text normalisation {'on' if 'trans_base.text_mean' in ckpt['trans'] else 'off'}")
+    print(f"action chunk {chunk}, text normalisation {'on' if 'trans_base.text_mean' in ckpt['trans'] else 'off'}, "
+          f"hand token {'on' if trans_model.trans_base.use_hand else 'off'}")
     # trans_model.to("cuda:0")
     total_params = sum(p.numel() for p in trans_model.parameters())
     print(f"successfully load trans model, total params {total_params}")

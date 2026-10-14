@@ -27,6 +27,12 @@ SWAP = {"left": "right", "right": "left", "both": "left"}
 ARM = slice(13, 21)   # action dims: 12 legs, waist, 4 left arm, 4 right arm
 LARM, RARM = slice(13, 17), slice(17, 21)
 
+def fwd(h, texts):
+    """Model call; hand-token models also get the hand of each caption."""
+    hand = torch.tensor([trans.hand_index(t) for t in texts], device=dev) if model.trans_base.use_hand else None
+    return model(h, enc(texts), hand)
+
+
 def enc(texts):
     with torch.no_grad():
         return clip_model.encode_text(clip.tokenize(texts, truncate=True).to(dev)).float()
@@ -50,7 +56,7 @@ def err(texts):
     out = []
     with torch.no_grad():
         for i in range(0, len(texts), 256):
-            p = model(hist[i:i+256], enc(texts[i:i+256]))[:, 1:, :21]
+            p = fwd(hist[i:i+256], texts[i:i+256])[:, 1:, :21]
             out.append(((p - tgt[i:i+256]) ** 2))
     return torch.cat(out)  # (N, 20, 21)
 
@@ -62,8 +68,8 @@ for name, sl in (("arms", ARM), ("left arm", LARM), ("right arm", RARM), ("legs"
               f"   ratio swap/true {e_swap[:, pos, sl].mean() / e_true[:, pos, sl].mean():.2f}")
 # how much the predicted arm action moves when only the hand word changes, vs how much it moves per step
 with torch.no_grad():
-    pa = torch.cat([model(hist[i:i+256], enc(true_t[i:i+256]))[:, 1:, :21] for i in range(0, len(true_t), 256)])
-    pb = torch.cat([model(hist[i:i+256], enc(swap_t[i:i+256]))[:, 1:, :21] for i in range(0, len(swap_t), 256)])
+    pa = torch.cat([fwd(hist[i:i+256], true_t[i:i+256])[:, 1:, :21] for i in range(0, len(true_t), 256)])
+    pb = torch.cat([fwd(hist[i:i+256], swap_t[i:i+256])[:, 1:, :21] for i in range(0, len(swap_t), 256)])
 step = (tgt[:, 1:, ARM] - tgt[:, :-1, ARM]).abs().mean()
 print(f"mean |arm action change| from swapping the hand word: {(pa - pb)[:, :, ARM].abs().mean():.4f} "
       f"(position 1: {(pa - pb)[:, 0, ARM].abs().mean():.4f}, position 20: {(pa - pb)[:, -1, ARM].abs().mean():.4f}); "

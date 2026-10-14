@@ -4,6 +4,8 @@
 #   A. text-feature standardisation (--text-norm), one action per step
 #   B. text-feature standardisation + action chunks of 10 (--chunk 10)
 #   C. text-feature standardisation + left-right mirror augmentation (RUNS=tn_mir, p = 0.5; tn_mir25, p = 0.25)
+#   H. text-feature standardisation + explicit hand token, trained with hand-token and caption dropout for
+#      classifier-free guidance (RUNS=tn_hand)
 # After each run: TorchScript export and the text-sensitivity check (eval_text_sensitivity.py).
 #
 # Usage: bash pipeline_upper_body.sh <tag>      e.g. tag = 20261001_f313925wip
@@ -26,6 +28,7 @@ for variant in $RUNS; do
     k10)    extra="--chunk 10" ;;
     tn_mir) extra="--text-norm --mirror-aug 0.5" ;;
     tn_mir25) extra="--text-norm --mirror-aug 0.25" ;;
+    tn_hand) extra="--text-norm --hand-token --hand-drop 0.15 --text-drop 0.1" ;;
     *)      say "unknown variant $variant"; continue ;;
   esac
   R=cl20sl_${variant}_${TAG}
