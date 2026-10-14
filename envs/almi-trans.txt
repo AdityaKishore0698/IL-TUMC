@@ -7,3 +7,7 @@ ftfy==6.3.1
 regex==2024.11.6
 pillow==11.2.1
 PyYAML==6.0.2
+# MuJoCo evaluation on cir (eval_protocol.py; offscreen video needs MUJOCO_GL=osmesa)
+mujoco==3.2.3
+imageio==2.38.0
+imageio-ffmpeg==0.6.0

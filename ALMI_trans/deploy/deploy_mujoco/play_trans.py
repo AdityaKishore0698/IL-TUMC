@@ -216,7 +216,7 @@ def main():
         print(f"video: {a.record}")
     if a.log:
         os.makedirs(os.path.dirname(os.path.abspath(a.log)), exist_ok=True)
-        np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), dt=dt * decimation,
+        np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), vel=np.array(vel_log), dt=dt * decimation,
                  fell_at=-1.0 if fell_at is None else fell_at, chunk=chunk, ensemble_m=a.ensemble_m,
                  exec_horizon=a.exec_horizon, hand_guidance=a.hand_guidance,
                  guidance_mode=a.guidance_mode)

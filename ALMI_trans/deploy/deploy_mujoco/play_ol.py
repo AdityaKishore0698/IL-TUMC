@@ -69,6 +69,8 @@ def main():
     p.add_argument("--record", default="")
     p.add_argument("--no_viewer", action="store_true")
     p.add_argument("--log", default="", help="save joint positions and actions per control step to this .npz")
+    p.add_argument("--seed", type=int, default=-1, help=">= 0 perturbs the initial joint positions (as play_trans.py)")
+    p.add_argument("--init_noise", type=float, default=0.05)
     a = p.parse_args()
 
     n_tokens, actions = generate_actions(a.trans, a.vq, a.text)
@@ -82,6 +84,8 @@ def main():
     m = mujoco.MjModel.from_xml_path(cfg["xml_path"])
     d = mujoco.MjData(m)
     m.opt.timestep = dt
+    if a.seed >= 0:
+        d.qpos[7:] += np.random.default_rng(a.seed).uniform(-a.init_noise, a.init_noise, size=len(default))
 
     renderer = writer = cam = None
     if a.record:
@@ -140,7 +144,7 @@ def main():
         print(f"video: {a.record}")
     if a.log:
         os.makedirs(os.path.dirname(os.path.abspath(a.log)), exist_ok=True)
-        np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), dt=dt * decimation,
+        np.savez(a.log, text=a.text, qpos=np.array(qpos_log), action=np.array(act_log), vel=np.array(vel_log), dt=dt * decimation,
                  fell_at=-1.0 if fell_at is None else fell_at, n_tokens=n_tokens)
 
 
