@@ -54,6 +54,18 @@ GRID12 = [f"Robot go {l} and wave {h}." for l in ("forward slowly", "backward mo
           for h in ("left", "right", "both")]
 
 
+def spec_of(name):
+    """MODELS entry, or a guidance sweep: 'H+cfg<s>' (classifier-free, arms) / 'H+per-arm<s>' (single-hand only)."""
+    m = re.fullmatch(r"H\+cfg([\d.]+)", name)
+    if m:
+        return dict(player="trans", args=["--policy", H_POLICY, "--hand_guidance", m.group(1), "--guidance_mode", "cfg"])
+    m = re.fullmatch(r"H\+per-arm([\d.]+)", name)
+    if m:
+        return dict(player="trans", args=["--policy", H_POLICY],
+                    single_hand=["--hand_guidance", m.group(1), "--guidance_mode", "per_arm"])
+    return MODELS[name]
+
+
 def all_commands():
     z = np.load(os.path.join(HERE, "output/arm_refs.npz"), allow_pickle=True)
     return sorted(set(z["texts"].tolist()))
@@ -67,7 +79,7 @@ def run_one(job):
     model, text, seed, path = job
     if os.path.exists(path):
         return path
-    spec = MODELS[model]
+    spec = spec_of(model)
     script = "deploy/deploy_mujoco/play_trans.py" if spec["player"] == "trans" else "deploy/deploy_mujoco/play_ol.py"
     args = list(spec["args"])
     if "single_hand" in spec and "wave both" not in text:
