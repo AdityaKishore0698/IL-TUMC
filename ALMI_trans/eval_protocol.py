@@ -35,6 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 A_POLICY = "output/export/policy_trans_cl20sl_tn_20261001_f313925wip.pt"
 GUIDE = ["--hand_guidance", "12", "--guidance_mode", "per_arm"]
 H_POLICY = "output/export/policy_trans_cl20sl_tn_hand_20261014_629b6d1wip.pt"
+H0_POLICY = "output/export/policy_trans_cl20sl_tn_hand0_20261015_3dfe209wip.pt"
 MODELS = {
     "CL-20sl": dict(player="trans", args=["--policy", "output/export/policy_trans_cl20sl.pt"]),
     "CL-400sl": dict(player="trans", args=["--policy", "output/export/policy_trans_cl400sl.pt", "--seq_len", "400"]),
@@ -49,6 +50,9 @@ MODELS = {
     "H": dict(player="trans", args=["--policy", H_POLICY]),
     "H+per-arm": dict(player="trans", args=["--policy", H_POLICY], single_hand=GUIDE),
     "H+cfg": dict(player="trans", args=["--policy", H_POLICY, "--hand_guidance", "2", "--guidance_mode", "cfg"]),
+    # H0: the hand token without dropout
+    "H0": dict(player="trans", args=["--policy", H0_POLICY]),
+    "H0+per-arm": dict(player="trans", args=["--policy", H0_POLICY], single_hand=GUIDE),
 }
 GRID12 = [f"Robot go {l} and wave {h}." for l in ("forward slowly", "backward moderately", "right fast", "left fast")
           for h in ("left", "right", "both")]
