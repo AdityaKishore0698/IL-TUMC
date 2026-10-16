@@ -21,3 +21,28 @@ also learns to predict arm actions without knowing which arm waves, and the aver
 waves is an arm that hardly moves; in closed loop that low-amplitude behaviour takes over. The contrast with
 the hidden hand then mostly says *which* arm, not *whether* to wave. Separating the two needs H0: the hand
 token without dropout.
+
+## H0: the hand token without dropout
+
+Run `cl20sl_tn_hand0_20261015_3dfe209wip` (cir, 11:52–20:33, 126k steps, final loss 0.00064). Hand-swap test,
+arm error swapped ÷ true at 20 steps: **1.91–2.10**, the strongest hand sensitivity of any one-action model
+(A 1.57, H 1.40–1.50).
+
+Same 12-command grid × 3 starts, run together with A on cir (`h0grid_runs.csv`):
+
+| Model | Correct wave (95 % CI) | left / right / both | Upright 8 s |
+|---|---|---|---|
+| A | 33 % (20–50 %) | 0 / 0 / 100 % | 100 % |
+| H0 | 22 % (12–38 %) | 17 / 8 / 42 % | 100 % |
+| **A + per-arm guidance** | **86 % (71–94 %)** | 92 / 67 / 100 % | 92 % |
+| H0 + per-arm guidance | 44 % (30–60 %) | 92 / 0 / 42 % | 92 % |
+
+* The hand token removes the dropout problem (H0 waves; H did not) and is the only change that gives some
+  single-hand waves without guidance (left 17 %, right 8 %, against 0 % for A).
+* But it loses "wave both" (42 % against 100 %), and with guidance it is far behind A (44 % against 86 %);
+  its right hand under guidance is 0 %.
+* Offline hand sensitivity (2.0) does not translate into closed-loop waving.
+
+Conclusion for step 2: an explicit hand token does not improve on text standardisation plus per-arm guidance.
+Fixing the CLIP features was sufficient for the model to receive the hand; the remaining gains come from how
+the hand is used at run time (guidance). Not taken to the full protocol.
