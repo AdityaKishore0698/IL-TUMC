@@ -1,8 +1,8 @@
 # C: text standardisation + left-right mirror augmentation
 
 Run `cl20sl_tn_mir_20261010_e6ce4c9wip` (cir, 20:15–01:47, 126k steps, final loss 0.00092 against 0.00063
-for A; the mirrored windows make the data harder to fit). Hand-swap test, arm error swapped ÷ true: 1.28 at
-20 steps (A 1.57).
+for A; the mirrored windows make the data harder to fit). Hand-swap test, arm error swapped ÷ true: 1.28 with
+1 step and 1.22 with 20 steps of history (A 1.73 and 1.57).
 
 MuJoCo, 12 commands × 6 starts, oscillation detector (78 % agreement with human labels):
 
