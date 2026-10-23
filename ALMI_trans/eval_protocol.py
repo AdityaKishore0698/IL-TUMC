@@ -59,7 +59,13 @@ GRID12 = [f"Robot go {l} and wave {h}." for l in ("forward slowly", "backward mo
 
 
 def spec_of(name):
-    """MODELS entry, or a guidance sweep: 'H+cfg<s>' (classifier-free, arms) / 'H+per-arm<s>' (single-hand only)."""
+    """MODELS entry, or a guidance sweep: 'H+cfg<s>' (classifier-free, arms) / 'H+per-arm<s>' (single-hand only).
+    '<model>@<variant>' runs <model> on the robot model of configs/h1_2_21dof_trans_<variant>.yaml."""
+    if "@" in name:
+        base, variant = name.split("@", 1)
+        spec = dict(spec_of(base))
+        spec["args"] = list(spec["args"]) + ["--config", f"deploy/deploy_mujoco/configs/h1_2_21dof_trans_{variant}.yaml"]
+        return spec
     m = re.fullmatch(r"H\+cfg([\d.]+)", name)
     if m:
         return dict(player="trans", args=["--policy", H_POLICY, "--hand_guidance", m.group(1), "--guidance_mode", "cfg"])
@@ -203,7 +209,7 @@ def main():
     commands = GRID12 if a.grid12 else all_commands()
     jobs = []
     for m in a.models:
-        os.makedirs(os.path.join(HERE, a.out, m), exist_ok=True)
+        os.makedirs(os.path.join(HERE, a.out, m), exist_ok=True)  # '@' is fine in directory names
         for text in commands:
             for s in a.seeds:
                 jobs.append((m, text, s, os.path.join(HERE, a.out, m, f"{slug(text)}_s{s}.npz")))

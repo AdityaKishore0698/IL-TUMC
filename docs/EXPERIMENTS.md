@@ -81,3 +81,50 @@ closed-loop robot further from the training states, so guidance on the right arm
 
 **Files.** `results/20261023/wave_data.csv` (one row per trajectory), `results/20261023/wave_data.md`,
 `ALMI_trans/analyse_wave_data.py`.
+
+## E16. Is the MuJoCo robot model left-right symmetric, and does it matter? (2026-10-23)
+
+**Question / hypothesis.** E15 ruled out the data. Hypothesis: the MuJoCo H1-2 model used for evaluation is not
+left-right symmetric, so right-arm waves disturb balance more than left-arm waves, which would explain the weak
+right hand (61 %) and why most falls are right-hand commands.
+
+**Setup.** Commit 154c9bd + `ALMI_trans/symmetry_test.py`, the symmetric model variants and the `<model>@<variant>`
+option of `eval_protocol.py`; cir.
+1. Static check (`python symmetry_test.py --out ../results/20261023/symmetry`, 49 s): every left body, joint,
+   actuator and collision geom against its right counterpart.
+2. Dynamic check without a policy (same script): robot standing on PD at the default pose while one arm replays an
+   ALMI-X wave, own arm vs mirrored onto the other arm (40 waves).
+3. Causal check: two corrected models, `scene_21dof_shin_none.xml` (no shin collision cylinder) and
+   `scene_21dof_shin_both.xml` (on both shins), and the final method (A + per-arm guidance) on the released and
+   both corrected models: `eval_protocol.py --models A+guidance A+guidance@shin_none A+guidance@shin_both --seeds 0 1 2 --jobs 16`
+   (1,107 runs, about 35 min).
+
+**Results.**
+1. Masses, inertias, joint ranges, damping, armature, friction, actuator limits and PD gains are identical on both
+   sides (largest differences: finger positions, ≤ 2 cm). **One real asymmetry:** the right shin (`right_knee_link`)
+   has a collision cylinder (radius 0.02 m, half-length 0.1 m); the same cylinder on the left shin is commented out
+   in the released `h1_2_21dof_no_left_leg.xml`.
+2. Invalid: the robot falls in every run already on PD alone (the ankle gains cannot balance it without a policy),
+   so this check says nothing about left vs right.
+3. All three models give exactly the same scores:
+
+| Robot model | Correct wave | Left / right / both | Upright 8 s |
+|---|---|---|---|
+| Released (right shin cylinder only) | 82 % (78–86 %) | 109 / **75** / 120 of 123 | 94 % |
+| No shin cylinder | 82 % | 109 / **75** / 120 | 94 % |
+| Shin cylinders on both legs | 82 % | 109 / **75** / 120 | 94 % |
+
+   Of the 369 runs, 21 (no cylinder) and 20 (both) have different trajectories from the released model; these are
+   runs in which the robot falls (22 falls in total), where the shins touch the ground after the fall. No upright
+   run changes, and no success or survival outcome changes.
+
+**Conclusion.** The released MuJoCo model does have a left-right asymmetry (only the right shin can collide), but it
+only matters once the robot is already on the ground. It does not cause the right-hand weakness or the falls. Together
+with E15 (data balanced and of equal quality), the right-hand weakness is in the learned policy's closed-loop
+behaviour: in right-hand runs the robot falls 20 times out of 123 (left 2, both 0), so strong guidance on the right
+arm destabilises it. Next: look at how the right-arm guidance changes the leg actions and the body's lateral balance
+(for example guidance strength that is lowered when the torso tilts), or a smaller guidance strength for the right arm only.
+
+**Files.** `results/20261023/symmetry.md`, `results/20261023/symmetry.json`, `results/20261023/symmetry_protocol_runs.csv`,
+`ALMI_trans/symmetry_test.py`, `ALMI_trans/deploy/robots/h1_2/{h1_2_21dof,scene_21dof}_shin_{none,both}.xml`,
+`ALMI_trans/deploy/deploy_mujoco/configs/h1_2_21dof_trans_shin_{none,both}.yaml`.
