@@ -59,7 +59,8 @@ else:
 ##### ---- Optimization goals ---- #####
 loss_mse = torch.nn.MSELoss()
 
-train_dataset = dataset_CL_20sl.ALMI_CL_20slDataset(args.dataname)
+train_dataset = dataset_CL_20sl.ALMI_CL_20slDataset(args.dataname, gestures=args.gestures.split(","))
+logger.info(f"training gestures {args.gestures}: {len(train_dataset.data_dict)} trajectories")
 if args.text_norm:
     # mean and std of the CLIP features of every distinct training caption
     captions = sorted({d['text'][0]['caption'] for d in train_dataset.data_dict.values()})

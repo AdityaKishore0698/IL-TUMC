@@ -68,8 +68,10 @@ class BatchSampler(torch.utils.data.Sampler):
                     ValueError
 
 class ALMI_CL_20slDataset(data.Dataset):
-    def __init__(self, dataset_name):     
+    def __init__(self, dataset_name, gestures=("wave",)):
+        # gestures: caption keywords kept for training (the paper trains on the waving subset only)
         self.dataset_name = dataset_name
+        self.gestures = tuple(gestures)
 
         if dataset_name == 'almi':
             self.data_root = './dataset/ALMI'
@@ -107,7 +109,7 @@ class ALMI_CL_20slDataset(data.Dataset):
                             to_tag = float(line_split[3])
                             f_tag = 0.0 if np.isnan(f_tag) else f_tag
                             to_tag = 0.0 if np.isnan(to_tag) else to_tag
-                            if 'wave' not in caption:
+                            if not any(g in caption for g in self.gestures):
                                 continue
                             text_dict['caption'] = caption
                             text_dict['tokens'] = t_tokens

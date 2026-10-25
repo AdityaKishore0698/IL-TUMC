@@ -1,0 +1,13 @@
+model,gesture,text,seed,expected,performed,success,performed_while_up,success_while_up,lower_ok,full,fell,survival,runtime_s
+A,salute,Robot go backward and salute.,0,right,none,0,none,0,1,1,0,8.0,18.25
+A,salute,Robot go backward to the right moderately and salute.,0,right,none,0,none,0,1,1,0,8.0,18.09
+A,salute,Robot go forward to the right and salute.,0,right,none,0,none,0,1,1,0,8.0,17.74
+A,salute,Robot go right moderately and salute.,0,right,none,0,none,0,1,1,0,8.0,17.6
+A,punch,Robot go backward and keep punching forward.,0,both,right,0,right,0,0,0,1,6.12,17.05
+A,punch,Robot go backward to the right moderately and punch alternately with right and left hand.,0,both,both,1,both,1,1,1,0,8.0,16.84
+A,punch,Robot go forward to the right and punch left.,0,left,both,0,both,0,0,1,0,8.0,17.9
+A,punch,Robot go right moderately and punch right.,0,right,both,0,both,0,1,1,0,8.0,17.86
+A,shake,Robot go backward and shake both hands.,0,both,none,0,none,0,1,1,0,8.0,17.82
+A,shake,Robot go backward to the right moderately and shake both hands.,0,both,none,0,none,0,1,1,0,8.0,18.09
+A,shake,Robot go forward to the right and shake both hands.,0,both,none,0,none,0,1,1,0,8.0,18.16
+A,shake,Robot go right moderately and shake both hands.,0,both,none,0,none,0,1,1,0,8.0,17.91

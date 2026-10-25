@@ -70,7 +70,9 @@ def main():
     p.add_argument("--init_noise", type=float, default=0.05, help="uniform initial joint noise (rad) when --seed >= 0")
     p.add_argument("--hand_guidance", type=float, default=0.0,
                    help="contrastive guidance s: out = out(text) + s * (out(text) - out(contrast)); 0 = off")
-    p.add_argument("--guidance_mode", choices=["mean", "per_arm", "cfg"], default="mean",
+    p.add_argument("--contrast_fallback", choices=["none", "loco"], default="none",
+                   help="gesture mode: contrast arms without a contrast caption with the locomotion-only caption")
+    p.add_argument("--guidance_mode", choices=["mean", "per_arm", "cfg", "gesture"], default="mean",
                    help="mean: contrast with the mean of the two other hand words (whole body); per_arm: each arm is "
                         "contrasted with the hand word that flips only that arm's role (waving arm vs the word where "
                         "it rests, resting arm vs 'both'); cfg (hand-token models): contrast with the hand token "
@@ -92,7 +94,13 @@ def main():
       texts = [text]
       hands = [hand_index(text)]
       arm_neg = None
-      if a.hand_guidance and a.guidance_mode == "cfg":  # same caption, hand token hidden
+      if a.hand_guidance and a.guidance_mode == "gesture":  # per-arm contrasts for any gesture (gesture_guidance.py)
+        import sys
+        sys.path.insert(0, os.getcwd())  # run from ALMI_trans/
+        from gesture_guidance import plan
+        texts, arm_neg = plan(text, a.contrast_fallback)
+        hands = [hand_index(t) for t in texts]
+      elif a.hand_guidance and a.guidance_mode == "cfg":  # same caption, hand token hidden
         texts, hands, arm_neg = [text, text], [hands[0], HAND_NONE], [1, 1]
       elif a.hand_guidance:  # the same command with the two other hand words, as the directions to move away from
         import re
@@ -176,13 +184,15 @@ def main():
                 texts, text_feat, arm_neg, hand_ids = encode(a.then_text)
             h = history.expand(len(texts), -1, -1)
             out = (policy(h, text_feat, hand_ids) if uses_hand else policy(h, text_feat)).numpy()
-            if a.hand_guidance and a.guidance_mode in ("per_arm", "cfg"):
+            if a.hand_guidance and a.guidance_mode in ("per_arm", "cfg", "gesture") and len(texts) > 1:
                 g = out.reshape(out.shape[0], out.shape[1], -1, n_act)  # (texts, positions, chunk, 21)
                 guided = g[0].copy()
                 for arm, neg in zip((slice(13, 17), slice(17, 21)), arm_neg):
+                    if neg is None:
+                        continue
                     guided[..., arm] += a.hand_guidance * (g[0][..., arm] - g[neg][..., arm])
                 out = guided.reshape(out.shape[1], -1)
-            elif a.hand_guidance:
+            elif a.hand_guidance and a.guidance_mode == "mean":
                 out = out[0] + a.hand_guidance * (out[0] - out[1:].mean(0))
             else:
                 out = out[0]

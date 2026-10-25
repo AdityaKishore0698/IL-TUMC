@@ -1,0 +1,41 @@
+{
+ "salute_target": [
+  0.1926183785855925,
+  0.04443161221853804,
+  0.13330716038129425
+ ],
+ "shake_target": [
+  0.4273029321914369,
+  -0.1722368454589773,
+  -0.5590075253490923
+ ],
+ "punch_x": 0.46399999999999997,
+ "radius": 0.15,
+ "punch_z": -0.3,
+ "n_per_gesture": 300,
+ "shake_x": 0.3,
+ "shake_z": [
+  -0.65,
+  -0.2
+ ],
+ "reference_check": {
+  "salute": {
+   "active_arms_pass": 1.0,
+   "resting_arms_pass": 0.0,
+   "exact": 1.0,
+   "trajectories": 300
+  },
+  "shake": {
+   "active_arms_pass": 0.9209039548022598,
+   "resting_arms_pass": 0.0,
+   "exact": 0.9066666666666666,
+   "trajectories": 300
+  },
+  "punch": {
+   "active_arms_pass": 1.0,
+   "resting_arms_pass": 0.06870229007633588,
+   "exact": 0.94,
+   "trajectories": 300
+  }
+ }
+}

@@ -128,3 +128,80 @@ arm destabilises it. Next: look at how the right-arm guidance changes the leg ac
 **Files.** `results/20261023/symmetry.md`, `results/20261023/symmetry.json`, `results/20261023/symmetry_protocol_runs.csv`,
 `ALMI_trans/symmetry_test.py`, `ALMI_trans/deploy/robots/h1_2/{h1_2_21dof,scene_21dof}_shin_{none,both}.xml`,
 `ALMI_trans/deploy/deploy_mujoco/configs/h1_2_21dof_trans_shin_{none,both}.yaml`.
+
+## E17. Does training-free per-arm guidance generalise beyond waving? (2026-10-23, in progress)
+
+**Question / hypothesis.** Per-arm contrastive guidance raised correct waves from 5 % to 82 % (E12). Does the same
+kind of guidance improve salute, punch and shake hand, or is it specific to waving? No transfer is assumed.
+
+**Step 1: inspection (done).**
+* **Blocker: every model so far was trained on waving only.** `dataset/dataset_CL_20sl.py` keeps only captions that
+  contain "wave" (the paper trains on the waving subset), so CL-20sl, A, B, C, H and H0 never saw salute, punch or
+  shake hand. A valid test needs a model trained on these gestures; guidance alone cannot produce a gesture the model
+  was never trained on. Pilot with the waving model A on 12 gesture captions: salute 0/4, shake 0/4, punch 1/4
+  (`results/20261023/gestures_pilot_A_runs.csv`); it waves instead.
+* **ALMI-X data for the three gestures:**
+
+| Gesture | Trajectories | Source clips | Caption phrases (× 41 locomotion commands) | Arms used |
+|---|---|---|---|---|
+| Salute | 1,640 | 2 | "salute" | right arm in every demonstration |
+| Punch | 3,280 | 16 | "punch left" 1,435, "punch right" 1,435, "punch alternately with right and left hand" 205, "keep punching forward" 205 | named arm; both for the last two |
+| Shake hand | 2,706 | 11 | "shake right hand" 2,214, "shake both hands" 492 (no "shake left hand") | named arm(s) |
+
+* **Is the per-arm contrast meaningful for each gesture?** Each arm is contrasted with a caption in which only that
+  arm's role changes (`ALMI_trans/gesture_guidance.py`):
+  * punch left / right: like waving (left arm vs "punch right", right arm vs "punch alternately …" for "punch
+    left"; mirrored for "punch right");
+  * shake right hand: left arm vs "shake both hands"; the right arm has no contrast, because "shake left hand" does
+    not exist;
+  * salute: no contrast caption exists (one salute caption per locomotion command) → guidance is a no-op unless the
+    exploratory fallback is used;
+  * both-arm captions (punch alternately, keep punching forward, shake both hands, wave both): not guided, as for
+    "wave both".
+  The exploratory variant `--contrast_fallback loco` contrasts arms without a contrast caption with the
+  locomotion-only caption ("Robot go backward slowly."), which never occurs in training.
+
+**Step 2: model.** Model **G** = text standardisation (as A) trained on wave + salute + punch + shake (11,357
+trajectories, 410 distinct captions), the paper's CL-20sl hyper-parameters, 126,000 steps as all earlier models.
+`RUNS=tn_gest4 bash scripts/pipeline_upper_body.sh 20261023_9fed470wip` (new `--gestures` option), run
+`cl20sl_tn_gest4_20261023_9fed470wip`, started 16:49 on cir.
+
+**Step 3: success criteria (`ALMI_trans/gesture_criteria.py`), fixed from the demonstrations before any model is
+evaluated** (`python gesture_criteria.py calibrate --n 300`, saved in `gesture_criteria.json`). Torso frame, relative
+to each arm's shoulder joint, hand = middle-finger knuckle, 2 s windows, 8 s test, time after a fall counts as not
+performing. A run succeeds when exactly the arms the caption asks for perform the gesture.
+* Salute: hand within 0.15 m of the reference salute hand position (0.19 m forward, 0.04 m toward the midline,
+  0.13 m above the shoulder) in more than half of the windows.
+* Shake hand: hand held out in front (≥ 0.30 m forward) at waist-to-chest height (0.20–0.65 m below the shoulder)
+  in more than half of the windows.
+* Punch: at least one forward extension at shoulder height (hand ≥ 0.464 m forward while no more than 0.30 m below
+  the shoulder; threshold that best separates punching from resting arms in the references).
+* A first version (shake: within 0.15 m of the mean shake position; punch: two extensions) passed only 32 % and
+  23 % of the demonstrated active arms and was replaced before evaluation.
+
+Check on 300 demonstrations per gesture (active arms that pass / resting arms that pass / exact arm set):
+
+| Criterion | Active arms | Resting arms | Exact |
+|---|---|---|---|
+| Salute | 100 % | 0 % | 100 % |
+| Shake hand | 92 % | 0 % | 91 % |
+| Punch | 100 % | 7 % | 94 % |
+
+Specificity across gestures (share of arms on which a criterion fires, 150 demonstrations of each gesture): the punch
+criterion also fires on 23 % of arms in wave demonstrations and 26 % in salute demonstrations (a raised arm reaches
+forward at shoulder height). Punch success is therefore the least specific measure; human review of a sample of
+punch runs is needed before claiming reliable punch success. Salute and shake criteria fire on ≤ 2 % of other
+gestures.
+
+**Planned evaluation (fixed before seeing results).** `ALMI_trans/eval_gestures.py`, chained to start when G is
+exported (`~/ALMI/bin/chain_gestures.sh` on cir):
+1. Main: every caption of salute (41), punch (164), shake (82) and wave (123) × starts 0, 1, 2, for G, G + gesture
+   guidance (s = 12) and G + gesture guidance + locomotion fallback: 3 × 410 × 3 = 3,690 runs.
+2. Held-out starts 5, 6 for salute, punch, shake, G and G + gesture: 2 × 287 × 2 = 1,148 runs.
+Reported per gesture: success with 95 % Wilson intervals, success by expected arm(s), success while upright,
+not-performed-while-upright, falls, walking direction, 8 s survival, run time per 8 s run (guidance overhead).
+
+**Results.** Pending (training finishes about 23:00, evaluation about 1.5 h later).
+
+**Files.** `ALMI_trans/{gesture_features,gesture_criteria,gesture_guidance,eval_gestures}.py`,
+`ALMI_trans/gesture_criteria.json`, `results/20261023/gesture_data.csv`, `results/20261023/gestures_pilot_A_runs.csv`.

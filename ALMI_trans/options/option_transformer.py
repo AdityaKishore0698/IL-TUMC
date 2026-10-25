@@ -69,6 +69,7 @@ def get_args_parser():
     parser.add_argument("--max-iter", type=int, default=0, help="stop after this many optimizer steps (0 = no limit)")
     parser.add_argument("--mirror-aug", type=float, default=0.0,
                         help="probability of reflecting a training window left-right (utils/mirror.py)")
+    parser.add_argument("--gestures", default="wave", help="comma-separated caption keywords to train on, e.g. wave,salute,punch,shake")
     parser.add_argument("--hand-token", action='store_true', help="condition on an explicit hand token (left/right/both)")
     parser.add_argument("--hand-drop", type=float, default=0.0, help="probability of hiding the hand token in training")
     parser.add_argument("--text-drop", type=float, default=0.0, help="probability of hiding the caption feature in training")

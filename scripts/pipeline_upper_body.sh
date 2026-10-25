@@ -6,6 +6,7 @@
 #   C. text-feature standardisation + left-right mirror augmentation (RUNS=tn_mir, p = 0.5; tn_mir25, p = 0.25)
 #   H. text-feature standardisation + explicit hand token, trained with hand-token and caption dropout for
 #      classifier-free guidance (RUNS=tn_hand); H0: the hand token without dropout (RUNS=tn_hand0)
+#   G. text-feature standardisation trained on four gestures: wave, salute, punch, shake (RUNS=tn_gest4)
 # After each run: TorchScript export and the text-sensitivity check (eval_text_sensitivity.py).
 #
 # Usage: bash pipeline_upper_body.sh <tag>      e.g. tag = 20261001_f313925wip
@@ -30,6 +31,7 @@ for variant in $RUNS; do
     tn_mir25) extra="--text-norm --mirror-aug 0.25" ;;
     tn_hand) extra="--text-norm --hand-token --hand-drop 0.15 --text-drop 0.1" ;;
     tn_hand0) extra="--text-norm --hand-token" ;;
+    tn_gest4) extra="--text-norm --gestures wave,salute,punch,shake" ;;
     *)      say "unknown variant $variant"; continue ;;
   esac
   R=cl20sl_${variant}_${TAG}
