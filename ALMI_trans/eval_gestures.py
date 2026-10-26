@@ -13,6 +13,7 @@ Models (policy G = text standardisation trained on wave, salute, punch and shake
   G               : no guidance
   G+gesture       : per-arm contrastive guidance, s = 12, contrasts from gesture_guidance.py
   G+gesture+loco  : as G+gesture, arms without a contrast caption use the locomotion-only caption (exploratory)
+  G+gesture<s>    : G+gesture at guidance strength s (e.g. G+gesture4); G+gesture is s = 12
 
 Usage (from ALMI_trans/):
   python eval_gestures.py --gestures salute punch shake --models G G+gesture --seeds 0 1 2 --jobs 16 \
@@ -43,6 +44,14 @@ MODELS = {
 }
 
 
+def model_args(name):
+    """MODELS entry, or 'G+gesture<s>': G with per-arm gesture guidance at strength s (E18 strength sweep)."""
+    m = re.fullmatch(r"G\+gesture(\d+(?:\.\d+)?)", name)
+    if m:
+        return ["--policy", G_POLICY, "--hand_guidance", m.group(1), "--guidance_mode", "gesture"]
+    return MODELS[name]
+
+
 def commands(gesture):
     root = os.path.join(HERE, "dataset/ALMI")
     caps = set()
@@ -60,7 +69,7 @@ def run(job):
     model, text, seed, path = job
     if os.path.exists(path):
         return path
-    cmd = [sys.executable, "deploy/deploy_mujoco/play_trans.py", *MODELS[model], "--text", text, "--duration", "8",
+    cmd = [sys.executable, "deploy/deploy_mujoco/play_trans.py", *model_args(model), "--text", text, "--duration", "8",
            "--no_viewer", "--seed", str(seed), "--log", path]
     env = dict(os.environ, OMP_NUM_THREADS="1", MKL_NUM_THREADS="1", CUDA_VISIBLE_DEVICES="")
     t0 = time.time()

@@ -269,3 +269,87 @@ salute demonstrations) and has not been reviewed by eye; no gesture criterion in
 
 **Files.** `ALMI_trans/{gesture_features,gesture_criteria,gesture_guidance,eval_gestures}.py`,
 `ALMI_trans/gesture_criteria.json`, `results/20261023/gesture_data.csv`, `results/20261023/gestures_pilot_A_runs.csv`.
+
+## E18. Weaker punch guidance: can it keep the gain without the falls? (continuation of E17, 2026-10-26, finished 19:19)
+
+**Question / hypothesis.** In E17, per-arm guidance at s = 12 raised punch success with model G (51 → 59 %) but the
+robot fell in 194 of 492 runs, so successful punches with the robot still upright at 8 s dropped (251 → 205). For
+waving, whole-body guidance fell above s = 4 while per-arm guidance tolerated s = 12. Hypothesis: a weaker strength
+(s = 2, 4 or 8) keeps part of the punch gain while preserving balance.
+
+**Verification of E17 (from `results/20261023/gestures/{main,heldout}_runs.csv`).** All recorded punch numbers agree
+with the raw results: main G 251/492 successes, 0 falls; G + guidance (s = 12) 292/492, 194 falls, 298 upright at
+8 s, 205 successes with the robot upright at 8 s (87 successful punches were followed by a fall); held out G 165/328,
+0 falls; s = 12 206/328, 134 falls, 140 successes and upright. Scoring: a punch counts if the hand reaches 0.464 m
+forward at shoulder height at least once before any fall; a run succeeds when exactly the requested arm(s) punch.
+Guidance strength is the `--hand_guidance` value passed by `eval_gestures.py` (s = 12 for `G+gesture`).
+
+**Setup.** Commit 34ab41f + `eval_gestures.py` model names `G+gesture<s>` (only change). Model G
+(`policy_trans_cl20sl_tn_gest4_20261023_9fed470wip.pt`), not retrained. All 164 punch captions (41 locomotion
+commands × "punch left", "punch right", "punch alternately with right and left hand", "keep punching forward"),
+starts 0–2 (main) and 5–6 (held out), success criteria unchanged (`gesture_criteria.json`). The G and s = 12 runs of
+E17 are reused (same checkpoint, code verified identical on cir by checksum, same captions and starts), copied into
+new folders; s = 2, 4, 8 are new. Guidance applies only to "punch left" and "punch right"; the two both-arm captions
+are not guided at any strength. Pilot (4 captions, start 0, s = 2) ran and scored correctly. cir was shared with
+other users' jobs (load about 35), so run times are not comparable with E17's.
+
+```
+bash ~/ALMI/bin/run_e18.sh     # on cir: eval_gestures.py --gestures punch --models G G+gesture2 G+gesture4 \
+                               #   G+gesture8 G+gesture --seeds 0 1 2 (then 5 6) --jobs 12 --out output/gestures_e18[_heldout]
+```
+
+Trials: 492 runs per strength (main) + 328 (held out); 1,476 + 984 new runs. All new runs completed (0 failed);
+main 17:09–18:30, held out 18:30–19:19. Raw results: `results/20261026/e18_{main,heldout}_{runs.csv,summary.md}`.
+
+**Results.** "Success and upright" = the requested arm(s) punched and the robot was still standing at 8 s (the main
+outcome). Paired: same caption and start as no guidance; gains / losses of "success and upright" and sign test.
+
+Main (starts 0–2, 492 runs each):
+
+| Guidance | Punch success | **Success and upright** (95 % CI) | Single-arm captions: success and upright | Falls | Upright 8 s | Walks as commanded | Paired vs none: gains / losses (p) |
+|---|---|---|---|---|---|---|---|
+| none (G) | 251 = 51 % | **251 = 51 % (47–55 %)** | 92/246 | 0 | 492 | 427 | – |
+| s = 2 | 210 = 43 % | 210 = 43 % (38–47 %) | 51/246 | 5 | 487 | 420 | 32 / 73 (p < 0.001) |
+| s = 4 | 178 = 36 % | 174 = 35 % (31–40 %) | 15/246 | 46 | 446 | 394 | 9 / 86 (p < 0.001) |
+| s = 8 | 261 = 53 % | 232 = 47 % (43–52 %) | 73/246 | 125 | 367 | 361 | 28 / 47 (p = 0.04) |
+| s = 12 (E17) | 292 = 59 % | 205 = 42 % (37–46 %) | 46/246 | 194 | 298 | 353 | 24 / 70 (p < 0.001) |
+
+Held out (starts 5–6, 328 runs each):
+
+| Guidance | Punch success | **Success and upright** (95 % CI) | Single-arm: success and upright | Falls | Upright 8 s | Walks as commanded | Paired vs none |
+|---|---|---|---|---|---|---|---|
+| none (G) | 165 = 50 % | **165 = 50 % (45–56 %)** | 53/164 | 0 | 328 | 286 | – |
+| s = 2 | 153 = 47 % | 153 = 47 % (41–52 %) | 41/164 | 1 | 327 | 283 | 21 / 33 (p = 0.13) |
+| s = 4 | 134 = 41 % | 134 = 41 % (36–46 %) | 22/164 | 20 | 308 | 271 | 15 / 46 (p < 0.001) |
+| s = 8 | 182 = 55 % | 166 = 51 % (45–56 %) | 54/164 | 81 | 247 | 241 | 26 / 25 (p = 1.0) |
+| s = 12 | 206 = 63 % | 140 = 43 % (37–48 %) | 28/164 | 134 | 194 | 237 | 16 / 41 (p = 0.001) |
+
+The two both-arm captions are never guided and score the same at every strength (159/246 main, 112/164 held out).
+
+**What the requested arm did** (main, "punch left" / "punch right", 123 each; arms that punched):
+
+| Guidance | "punch left" → left / both / other | "punch right" → right / both / left / none |
+|---|---|---|
+| none | 71 / 48 / 4 | 21 / 32 / 52 / 18 |
+| s = 2 | 10 / 113 / 0 | 41 / 48 / 21 / 13 |
+| s = 4 | 2 / 121 / 0 | 17 / 46 / 12 / 48 |
+| s = 8 | 76 / 46 / 1 | 26 / 65 / 14 / 18 |
+| s = 12 | 97 / 26 / 0 | 36 / 80 / 3 / 4 |
+
+**Run time.** Not comparable between strengths: cir was shared with other users' jobs at load 30–40, and the median
+time per 8 s run varied from 21.8 to 64.8 s without a pattern in the strength. The unloaded E17 measurement remains
+the reference: 16.4 s without guidance, 18.7 s with guidance (two extra forward passes per control step).
+
+**Conclusion.** The hypothesis is not supported. No guidance strength improves successful punches with the robot
+still upright over no guidance. Weak guidance is worse than none: at s = 2 and 4, "punch left" turns into punching
+with both arms (113 and 121 of 123), so success drops while the robot stays mostly upright. Stronger guidance (s = 8,
+12) recovers and exceeds the raw punch success but the robot falls in 25–39 % of runs. s = 8 is the best guided
+setting (main 47 %, held out 51 % success and upright) and is not better than no guidance (51 % and 50 %; held-out
+paired gains 26, losses 25). Falls grow steadily with strength (5, 46, 125, 194 of 492). The non-monotonic effect
+on "punch left" suggests the right-arm contrast caption ("punch alternately with right and left hand") is a poor
+contrast: its right-arm prediction depends on where the robot is in the alternation, so the push it produces on the
+right arm can drive it into punching. This is a hypothesis, not tested here.
+
+**Limitations.** The punch criterion is the least specific gesture criterion (E17) and has no human validation;
+"success" counts one forward extension at shoulder height. One model checkpoint; guidance applies only to the
+single-arm captions (246 of 492 runs); run times were measured on a shared machine.
