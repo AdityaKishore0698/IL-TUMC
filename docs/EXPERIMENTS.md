@@ -129,7 +129,7 @@ arm destabilises it. Next: look at how the right-arm guidance changes the leg ac
 `ALMI_trans/symmetry_test.py`, `ALMI_trans/deploy/robots/h1_2/{h1_2_21dof,scene_21dof}_shin_{none,both}.xml`,
 `ALMI_trans/deploy/deploy_mujoco/configs/h1_2_21dof_trans_shin_{none,both}.yaml`.
 
-## E17. Does training-free per-arm guidance generalise beyond waving? (2026-10-23, in progress)
+## E17. Does training-free per-arm guidance generalise beyond waving? (2026-10-23, finished 2026-10-24)
 
 **Question / hypothesis.** Per-arm contrastive guidance raised correct waves from 5 % to 82 % (E12). Does the same
 kind of guidance improve salute, punch and shake hand, or is it specific to waving? No transfer is assumed.
@@ -201,7 +201,71 @@ exported (`~/ALMI/bin/chain_gestures.sh` on cir):
 Reported per gesture: success with 95 % Wilson intervals, success by expected arm(s), success while upright,
 not-performed-while-upright, falls, walking direction, 8 s survival, run time per 8 s run (guidance overhead).
 
-**Results.** Pending (training finishes about 23:00, evaluation about 1.5 h later).
+**Runs completed.** G trained 16:49–22:43 (final loss 0.00062), exported 22:45. Main evaluation 3,690 runs
+(22:45–23:54), held-out starts 1,148 runs (23:54–00:15), no failed runs. Raw results:
+`results/20261023/gestures/{main,heldout}_{runs.csv,summary.md}`.
+
+**Results** (G = four-gesture model; guidance = per-arm contrastive guidance, s = 12; successes / runs, 95 % Wilson
+interval; "success and upright" = gesture performed and the robot still upright at 8 s):
+
+| Gesture | Starts | Condition | Gesture success | Success and upright 8 s | By expected arm(s) | Falls | Walks as commanded | Paired G → guided: gains / losses (sign test) |
+|---|---|---|---|---|---|---|---|---|
+| Salute | 0–2 | G | 113/123 = 92 % (86–96 %) | 92 % | right 113/123 | 0 | 116/123 | |
+| | | G + guidance | 113/123 = 92 % | 92 % | identical (no contrast caption exists) | 0 | 116/123 | 0 / 0 |
+| | 5–6 | G / G + guidance | 76/82 = 93 % / 93 % | 93 % / 93 % | | 0 / 0 | 80/82 | 0 / 0 |
+| Punch | 0–2 | G | 251/492 = 51 % (47–55 %) | 251/492 = 51 % | left 71/123, right 21/123, both 159/246 | 0 | 427/492 | |
+| | | G + guidance | 292/492 = 59 % (55–64 %) | **205/492 = 42 % (37–46 %)** | left 97/123, right 36/123, both 159/246 | **194** | 353/492 | 64 / 23 (p < 0.001) |
+| | 5–6 | G | 165/328 = 50 % (45–56 %) | 50 % | left 40/82, right 13/82, both 112/164 | 0 | 286/328 | |
+| | | G + guidance | 206/328 = 63 % (57–68 %) | **140/328 = 43 % (37–48 %)** | left 58/82, right 36/82 | **134** | 237/328 | 54 / 13 (p < 0.001) |
+| Shake hand | 0–2 | G | 145/246 = 59 % (53–65 %) | 59 % | right 123/123, both 22/123 | 0 | 237/246 | |
+| | | G + guidance | 137/246 = 56 % (49–62 %) | 56 % | right 115/123, both 22/123 | 0 | 227/246 | 0 / 8 (p = 0.008) |
+| | 5–6 | G / G + guidance | 99/164 = 60 % / 92/164 = 56 % | 60 % / 56 % | right 82/82 → 75/82 | 0 / 0 | 160 / 154 of 164 | 0 / 7 (p = 0.016) |
+| Wave | 0–2 | G | 19/369 = 5 % (3–8 %) | 5 % | left 3, right 15, both 1 of 123 | 0 | 364/369 | |
+| | | G + guidance | 121/369 = 33 % (28–38 %) | 108/369 = 29 % | left 107, right 13, both 1 of 123 | 23 | 337/369 | 116 / 14 |
+| | | *(A + guidance, E12, waving-only model)* | *82 %* | | *109 / 75 / 120 of 123* | | | |
+
+Exploratory locomotion-caption fallback (`G+gesture+loco`): salute 9/123 = 7 % with 115 falls, shake 25/246 = 10 %
+with 115 falls; punch and wave identical to G + guidance (no fallback used). Contrasting with a caption the model
+never saw drives the arms into states that topple the robot. Run time per 8 s run (wall clock, one CPU core): 16.4 s
+without guidance, 17.1–20.6 s with guidance (one or two extra forward passes per step).
+
+**Failure modes.**
+* Punch, guided: guidance makes the commanded arm punch more often (left 71 → 97, right 21 → 36 of 123) but the
+  robot falls in 39 % of punch runs (194/492, none without guidance), mostly after the punch, so success with the
+  robot still upright drops from 51 % to 42 %. The extra punch success comes with a stability cost that outweighs it.
+  Without guidance, "punch right" is mostly answered with the left arm (52/123) or both (32/123): the same
+  right-side weakness as for waving, although the data have as many right as left punches (1,435 each).
+* Shake hand, guided: only the left arm can be guided ("shake both hands" as contrast); this costs 8 right-hand
+  successes (right arm no longer held out) and gains nothing. "Shake both hands" is mostly performed with the right
+  hand only (79/123), both without and with guidance (not guided).
+* Salute: G already salutes in 92 % of runs; there is no contrast caption, so guidance cannot be applied.
+* Wave: G waves much worse than A (5 % vs 34 % without guidance, 33 % vs 82 % with). The hand-swap test of G gives
+  an arm-action change of 0.0048 when the hand word is swapped (A: 0.0103, the paper's CL-20sl: 0.0038): with the
+  caption statistics taken over 410 captions of four gestures, the gesture words dominate the variance and the
+  standardisation no longer amplifies the hand words. Training on more gestures undid most of the benefit of text
+  standardisation for hand selection.
+
+**Conclusion.** Training-free per-arm contrastive guidance does **not** generalise as a free improvement. It
+needs a contrast caption that flips exactly one arm's role; ALMI-X provides one only for punch (and waving). For
+punch it raises gesture success (51 → 59 %, held out 50 → 63 %; paired p < 0.001) but makes the robot fall in about
+40 % of runs, so success with the robot upright drops (51 → 42 %, held out 50 → 43 %). For shake hand the only
+available contrast slightly hurts (59 → 56 %); for salute no contrast exists, and the exploratory locomotion-only
+contrast makes the robot fall. Separately, the four-gesture model is good at salute (92 %) and right-hand shake
+(100 %) without guidance, but weak at waving and at "punch right", and the text standardisation that made A
+hand-selective is diluted when the caption set grows.
+
+**Limitations.** Punch success uses the least specific criterion (it also fires on 23–26 % of arms in wave and
+salute demonstrations) and has not been reviewed by eye; no gesture criterion in E17 has human validation yet.
+
+**Next experiments justified by these results.**
+1. Human review of a sample of punch and shake runs (G and G + guidance) to validate the two criteria.
+2. Punch guidance strength sweep (s = 2, 4, 8) with "success and upright" as the target, to find whether a weaker
+   push keeps the gain without the falls (as per-arm guidance needed s = 12 for waving but whole-body guidance fell
+   above s = 4).
+3. Text standardisation with statistics per gesture family (or over the hand-variant captions only), to restore
+   hand selectivity in the four-gesture model.
+4. The right-side weakness now appears for two gestures (wave and punch) with balanced data: compare left and right
+   arm action magnitudes and the robot's lateral balance in G's closed-loop runs.
 
 **Files.** `ALMI_trans/{gesture_features,gesture_criteria,gesture_guidance,eval_gestures}.py`,
 `ALMI_trans/gesture_criteria.json`, `results/20261023/gesture_data.csv`, `results/20261023/gestures_pilot_A_runs.csv`.

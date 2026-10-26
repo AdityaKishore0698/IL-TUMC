@@ -1,0 +1,1149 @@
+model,gesture,text,seed,expected,performed,success,performed_while_up,success_while_up,lower_ok,full,fell,survival,runtime_s
+G,salute,Robot go backward and salute.,5,right,right,1,right,1,1,1,0,8.0,16.71
+G,salute,Robot go backward and salute.,6,right,right,1,right,1,1,1,0,8.0,16.7
+G,salute,Robot go backward fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.75
+G,salute,Robot go backward fast and salute.,6,right,right,1,right,1,1,1,0,8.0,17.25
+G,salute,Robot go backward moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,17.21
+G,salute,Robot go backward moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,17.3
+G,salute,Robot go backward slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.59
+G,salute,Robot go backward slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.53
+G,salute,Robot go backward to the left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.61
+G,salute,Robot go backward to the left and salute.,6,right,right,1,right,1,1,1,0,8.0,16.46
+G,salute,Robot go backward to the left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.61
+G,salute,Robot go backward to the left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.96
+G,salute,Robot go backward to the left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.94
+G,salute,Robot go backward to the left moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,17.07
+G,salute,Robot go backward to the left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,17.55
+G,salute,Robot go backward to the left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,17.12
+G,salute,Robot go backward to the right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.23
+G,salute,Robot go backward to the right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.72
+G,salute,Robot go backward to the right fast and salute.,5,right,right,1,right,1,1,1,0,8.0,17.41
+G,salute,Robot go backward to the right fast and salute.,6,right,right,1,right,1,1,1,0,8.0,17.05
+G,salute,Robot go backward to the right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.53
+G,salute,Robot go backward to the right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,17.04
+G,salute,Robot go backward to the right slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,17.33
+G,salute,Robot go backward to the right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.88
+G,salute,Robot go forward and salute.,5,right,right,1,right,1,1,1,0,8.0,16.74
+G,salute,Robot go forward and salute.,6,right,right,1,right,1,1,1,0,8.0,17.06
+G,salute,Robot go forward fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.78
+G,salute,Robot go forward fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.66
+G,salute,Robot go forward moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.24
+G,salute,Robot go forward moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.3
+G,salute,Robot go forward slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.2
+G,salute,Robot go forward slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.71
+G,salute,Robot go forward to the left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.28
+G,salute,Robot go forward to the left and salute.,6,right,right,1,right,1,1,1,0,8.0,16.53
+G,salute,Robot go forward to the left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.75
+G,salute,Robot go forward to the left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.58
+G,salute,Robot go forward to the left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.59
+G,salute,Robot go forward to the left moderately and salute.,6,right,none,0,none,0,1,1,0,8.0,16.6
+G,salute,Robot go forward to the left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,17.47
+G,salute,Robot go forward to the left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.39
+G,salute,Robot go forward to the right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.62
+G,salute,Robot go forward to the right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.88
+G,salute,Robot go forward to the right fast and salute.,5,right,none,0,none,0,1,1,0,8.0,17.33
+G,salute,Robot go forward to the right fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.79
+G,salute,Robot go forward to the right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.84
+G,salute,Robot go forward to the right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.57
+G,salute,Robot go forward to the right slowly and salute.,5,right,none,0,none,0,1,1,0,8.0,16.99
+G,salute,Robot go forward to the right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.09
+G,salute,Robot go left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.52
+G,salute,Robot go left and salute.,6,right,right,1,right,1,1,1,0,8.0,16.67
+G,salute,Robot go left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.88
+G,salute,Robot go left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.67
+G,salute,Robot go left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,17.18
+G,salute,Robot go left moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.04
+G,salute,Robot go left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.69
+G,salute,Robot go left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.29
+G,salute,Robot go right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.12
+G,salute,Robot go right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.03
+G,salute,Robot go right fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.47
+G,salute,Robot go right fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.47
+G,salute,Robot go right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.11
+G,salute,Robot go right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.07
+G,salute,Robot go right slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.01
+G,salute,Robot go right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.08
+G,salute,Robot keep standing and salute.,5,right,none,0,none,0,0,1,0,8.0,16.94
+G,salute,Robot keep standing and salute.,6,right,none,0,none,0,0,1,0,8.0,16.65
+G,salute,Robot turn left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.78
+G,salute,Robot turn left and salute.,6,right,right,1,right,1,1,1,0,8.0,17.06
+G,salute,Robot turn left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.69
+G,salute,Robot turn left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.75
+G,salute,Robot turn left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.5
+G,salute,Robot turn left moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.36
+G,salute,Robot turn left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.32
+G,salute,Robot turn left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.44
+G,salute,Robot turn right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.53
+G,salute,Robot turn right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.23
+G,salute,Robot turn right fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.52
+G,salute,Robot turn right fast and salute.,6,right,none,0,none,0,1,1,0,8.0,16.27
+G,salute,Robot turn right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.35
+G,salute,Robot turn right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.42
+G,salute,Robot turn right slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.6
+G,salute,Robot turn right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,18.36
+G+gesture,salute,Robot go backward and salute.,5,right,right,1,right,1,1,1,0,8.0,16.41
+G+gesture,salute,Robot go backward and salute.,6,right,right,1,right,1,1,1,0,8.0,17.58
+G+gesture,salute,Robot go backward fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.48
+G+gesture,salute,Robot go backward fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.95
+G+gesture,salute,Robot go backward moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.77
+G+gesture,salute,Robot go backward moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.33
+G+gesture,salute,Robot go backward slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.92
+G+gesture,salute,Robot go backward slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,17.0
+G+gesture,salute,Robot go backward to the left and salute.,5,right,right,1,right,1,1,1,0,8.0,17.13
+G+gesture,salute,Robot go backward to the left and salute.,6,right,right,1,right,1,1,1,0,8.0,17.06
+G+gesture,salute,Robot go backward to the left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,17.17
+G+gesture,salute,Robot go backward to the left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.17
+G+gesture,salute,Robot go backward to the left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,17.06
+G+gesture,salute,Robot go backward to the left moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,17.07
+G+gesture,salute,Robot go backward to the left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.44
+G+gesture,salute,Robot go backward to the left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.78
+G+gesture,salute,Robot go backward to the right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.29
+G+gesture,salute,Robot go backward to the right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.42
+G+gesture,salute,Robot go backward to the right fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.78
+G+gesture,salute,Robot go backward to the right fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.48
+G+gesture,salute,Robot go backward to the right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.44
+G+gesture,salute,Robot go backward to the right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.43
+G+gesture,salute,Robot go backward to the right slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.19
+G+gesture,salute,Robot go backward to the right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.31
+G+gesture,salute,Robot go forward and salute.,5,right,right,1,right,1,1,1,0,8.0,16.3
+G+gesture,salute,Robot go forward and salute.,6,right,right,1,right,1,1,1,0,8.0,16.29
+G+gesture,salute,Robot go forward fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.43
+G+gesture,salute,Robot go forward fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.72
+G+gesture,salute,Robot go forward moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.14
+G+gesture,salute,Robot go forward moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,15.89
+G+gesture,salute,Robot go forward slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.24
+G+gesture,salute,Robot go forward slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.79
+G+gesture,salute,Robot go forward to the left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.47
+G+gesture,salute,Robot go forward to the left and salute.,6,right,right,1,right,1,1,1,0,8.0,16.38
+G+gesture,salute,Robot go forward to the left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,17.04
+G+gesture,salute,Robot go forward to the left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.38
+G+gesture,salute,Robot go forward to the left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.47
+G+gesture,salute,Robot go forward to the left moderately and salute.,6,right,none,0,none,0,1,1,0,8.0,16.33
+G+gesture,salute,Robot go forward to the left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.7
+G+gesture,salute,Robot go forward to the left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.58
+G+gesture,salute,Robot go forward to the right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.55
+G+gesture,salute,Robot go forward to the right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.57
+G+gesture,salute,Robot go forward to the right fast and salute.,5,right,none,0,none,0,1,1,0,8.0,16.2
+G+gesture,salute,Robot go forward to the right fast and salute.,6,right,right,1,right,1,1,1,0,8.0,17.53
+G+gesture,salute,Robot go forward to the right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,17.35
+G+gesture,salute,Robot go forward to the right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.5
+G+gesture,salute,Robot go forward to the right slowly and salute.,5,right,none,0,none,0,1,1,0,8.0,16.62
+G+gesture,salute,Robot go forward to the right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.61
+G+gesture,salute,Robot go left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.58
+G+gesture,salute,Robot go left and salute.,6,right,right,1,right,1,1,1,0,8.0,16.76
+G+gesture,salute,Robot go left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.69
+G+gesture,salute,Robot go left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.55
+G+gesture,salute,Robot go left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.58
+G+gesture,salute,Robot go left moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.17
+G+gesture,salute,Robot go left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.11
+G+gesture,salute,Robot go left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.26
+G+gesture,salute,Robot go right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.2
+G+gesture,salute,Robot go right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.09
+G+gesture,salute,Robot go right fast and salute.,5,right,right,1,right,1,1,1,0,8.0,15.95
+G+gesture,salute,Robot go right fast and salute.,6,right,right,1,right,1,1,1,0,8.0,15.99
+G+gesture,salute,Robot go right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,15.98
+G+gesture,salute,Robot go right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,15.94
+G+gesture,salute,Robot go right slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,17.54
+G+gesture,salute,Robot go right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.4
+G+gesture,salute,Robot keep standing and salute.,5,right,none,0,none,0,0,1,0,8.0,16.43
+G+gesture,salute,Robot keep standing and salute.,6,right,none,0,none,0,0,1,0,8.0,16.49
+G+gesture,salute,Robot turn left and salute.,5,right,right,1,right,1,1,1,0,8.0,16.46
+G+gesture,salute,Robot turn left and salute.,6,right,right,1,right,1,1,1,0,8.0,16.32
+G+gesture,salute,Robot turn left fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.95
+G+gesture,salute,Robot turn left fast and salute.,6,right,right,1,right,1,1,1,0,8.0,16.6
+G+gesture,salute,Robot turn left moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,16.47
+G+gesture,salute,Robot turn left moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.5
+G+gesture,salute,Robot turn left slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,16.7
+G+gesture,salute,Robot turn left slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.64
+G+gesture,salute,Robot turn right and salute.,5,right,right,1,right,1,1,1,0,8.0,16.62
+G+gesture,salute,Robot turn right and salute.,6,right,right,1,right,1,1,1,0,8.0,16.49
+G+gesture,salute,Robot turn right fast and salute.,5,right,right,1,right,1,1,1,0,8.0,16.34
+G+gesture,salute,Robot turn right fast and salute.,6,right,none,0,none,0,1,1,0,8.0,17.19
+G+gesture,salute,Robot turn right moderately and salute.,5,right,right,1,right,1,1,1,0,8.0,17.04
+G+gesture,salute,Robot turn right moderately and salute.,6,right,right,1,right,1,1,1,0,8.0,16.76
+G+gesture,salute,Robot turn right slowly and salute.,5,right,right,1,right,1,1,1,0,8.0,17.53
+G+gesture,salute,Robot turn right slowly and salute.,6,right,right,1,right,1,1,1,0,8.0,16.65
+G,punch,Robot go backward and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.8
+G,punch,Robot go backward and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.55
+G,punch,Robot go backward and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.8
+G,punch,Robot go backward and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.81
+G,punch,Robot go backward and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.65
+G,punch,Robot go backward and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.02
+G,punch,Robot go backward and punch right.,5,right,right,1,right,1,1,1,0,8.0,16.54
+G,punch,Robot go backward and punch right.,6,right,none,0,none,0,1,1,0,8.0,16.05
+G,punch,Robot go backward fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.19
+G,punch,Robot go backward fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.11
+G,punch,Robot go backward fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.05
+G,punch,Robot go backward fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.3
+G,punch,Robot go backward fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.87
+G,punch,Robot go backward fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,17.15
+G,punch,Robot go backward fast and punch right.,5,right,right,1,right,1,1,1,0,8.0,17.17
+G,punch,Robot go backward fast and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.39
+G,punch,Robot go backward moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.94
+G,punch,Robot go backward moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.87
+G,punch,Robot go backward moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,17.08
+G,punch,Robot go backward moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,17.96
+G,punch,Robot go backward moderately and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.23
+G,punch,Robot go backward moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.69
+G,punch,Robot go backward moderately and punch right.,5,right,right,1,right,1,1,1,0,8.0,16.24
+G,punch,Robot go backward moderately and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.2
+G,punch,Robot go backward slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.21
+G,punch,Robot go backward slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.39
+G,punch,Robot go backward slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.19
+G,punch,Robot go backward slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.38
+G,punch,Robot go backward slowly and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.33
+G,punch,Robot go backward slowly and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.52
+G,punch,Robot go backward slowly and punch right.,5,right,right,1,right,1,1,1,0,8.0,16.34
+G,punch,Robot go backward slowly and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.92
+G,punch,Robot go backward to the left and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.77
+G,punch,Robot go backward to the left and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.64
+G,punch,Robot go backward to the left and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.19
+G,punch,Robot go backward to the left and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.56
+G,punch,Robot go backward to the left and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.48
+G,punch,Robot go backward to the left and punch left.,6,left,both,0,both,0,1,1,0,8.0,17.59
+G,punch,Robot go backward to the left and punch right.,5,right,none,0,none,0,1,1,0,8.0,16.71
+G,punch,Robot go backward to the left and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.49
+G,punch,Robot go backward to the left fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.46
+G,punch,Robot go backward to the left fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.42
+G,punch,Robot go backward to the left fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.51
+G,punch,Robot go backward to the left fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.17
+G,punch,Robot go backward to the left fast and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.8
+G,punch,Robot go backward to the left fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.23
+G,punch,Robot go backward to the left fast and punch right.,5,right,none,0,none,0,1,1,0,8.0,16.37
+G,punch,Robot go backward to the left fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.93
+G,punch,Robot go backward to the left moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.22
+G,punch,Robot go backward to the left moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.37
+G,punch,Robot go backward to the left moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.78
+G,punch,Robot go backward to the left moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.79
+G,punch,Robot go backward to the left moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.53
+G,punch,Robot go backward to the left moderately and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.62
+G,punch,Robot go backward to the left moderately and punch right.,5,right,none,0,none,0,1,1,0,8.0,16.56
+G,punch,Robot go backward to the left moderately and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.67
+G,punch,Robot go backward to the left slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.79
+G,punch,Robot go backward to the left slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.33
+G,punch,Robot go backward to the left slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,17.13
+G,punch,Robot go backward to the left slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.25
+G,punch,Robot go backward to the left slowly and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.89
+G,punch,Robot go backward to the left slowly and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.63
+G,punch,Robot go backward to the left slowly and punch right.,5,right,none,0,none,0,1,1,0,8.0,16.64
+G,punch,Robot go backward to the left slowly and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.64
+G,punch,Robot go backward to the right and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.52
+G,punch,Robot go backward to the right and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.46
+G,punch,Robot go backward to the right and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,17.62
+G,punch,Robot go backward to the right and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.35
+G,punch,Robot go backward to the right and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.23
+G,punch,Robot go backward to the right and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.06
+G,punch,Robot go backward to the right and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.2
+G,punch,Robot go backward to the right and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.04
+G,punch,Robot go backward to the right fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.07
+G,punch,Robot go backward to the right fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,15.98
+G,punch,Robot go backward to the right fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.52
+G,punch,Robot go backward to the right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.73
+G,punch,Robot go backward to the right fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.3
+G,punch,Robot go backward to the right fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.75
+G,punch,Robot go backward to the right fast and punch right.,5,right,right,1,right,1,1,1,0,8.0,16.69
+G,punch,Robot go backward to the right fast and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.47
+G,punch,Robot go backward to the right moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.75
+G,punch,Robot go backward to the right moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.54
+G,punch,Robot go backward to the right moderately and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.35
+G,punch,Robot go backward to the right moderately and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,17.02
+G,punch,Robot go backward to the right moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.84
+G,punch,Robot go backward to the right moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.28
+G,punch,Robot go backward to the right moderately and punch right.,5,right,both,0,both,0,1,1,0,8.0,16.13
+G,punch,Robot go backward to the right moderately and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.17
+G,punch,Robot go backward to the right slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.2
+G,punch,Robot go backward to the right slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.02
+G,punch,Robot go backward to the right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.91
+G,punch,Robot go backward to the right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.98
+G,punch,Robot go backward to the right slowly and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.67
+G,punch,Robot go backward to the right slowly and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.36
+G,punch,Robot go backward to the right slowly and punch right.,5,right,both,0,both,0,1,1,0,8.0,16.22
+G,punch,Robot go backward to the right slowly and punch right.,6,right,left,0,left,0,1,1,0,8.0,17.38
+G,punch,Robot go forward and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,17.01
+G,punch,Robot go forward and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.86
+G,punch,Robot go forward and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.98
+G,punch,Robot go forward and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.97
+G,punch,Robot go forward and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.82
+G,punch,Robot go forward and punch left.,6,left,left,1,left,1,1,1,0,8.0,17.65
+G,punch,Robot go forward and punch right.,5,right,both,0,both,0,1,1,0,8.0,15.8
+G,punch,Robot go forward and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.09
+G,punch,Robot go forward fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.81
+G,punch,Robot go forward fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,17.04
+G,punch,Robot go forward fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.67
+G,punch,Robot go forward fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.61
+G,punch,Robot go forward fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.09
+G,punch,Robot go forward fast and punch left.,6,left,both,0,both,0,1,1,0,8.0,17.22
+G,punch,Robot go forward fast and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.5
+G,punch,Robot go forward fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.43
+G,punch,Robot go forward moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.31
+G,punch,Robot go forward moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.2
+G,punch,Robot go forward moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.52
+G,punch,Robot go forward moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.45
+G,punch,Robot go forward moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.63
+G,punch,Robot go forward moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.85
+G,punch,Robot go forward moderately and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.31
+G,punch,Robot go forward moderately and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.44
+G,punch,Robot go forward slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.33
+G,punch,Robot go forward slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,17.21
+G,punch,Robot go forward slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.25
+G,punch,Robot go forward slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.63
+G,punch,Robot go forward slowly and punch left.,5,left,left,1,left,1,1,1,0,8.0,17.93
+G,punch,Robot go forward slowly and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.49
+G,punch,Robot go forward slowly and punch right.,5,right,both,0,both,0,1,1,0,8.0,16.59
+G,punch,Robot go forward slowly and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.3
+G,punch,Robot go forward to the left and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.43
+G,punch,Robot go forward to the left and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.4
+G,punch,Robot go forward to the left and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.14
+G,punch,Robot go forward to the left and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.4
+G,punch,Robot go forward to the left and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.57
+G,punch,Robot go forward to the left and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.75
+G,punch,Robot go forward to the left and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.4
+G,punch,Robot go forward to the left and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.1
+G,punch,Robot go forward to the left fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.39
+G,punch,Robot go forward to the left fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.39
+G,punch,Robot go forward to the left fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.25
+G,punch,Robot go forward to the left fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.04
+G,punch,Robot go forward to the left fast and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.9
+G,punch,Robot go forward to the left fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.55
+G,punch,Robot go forward to the left fast and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.67
+G,punch,Robot go forward to the left fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.26
+G,punch,Robot go forward to the left moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.68
+G,punch,Robot go forward to the left moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.47
+G,punch,Robot go forward to the left moderately and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.35
+G,punch,Robot go forward to the left moderately and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.64
+G,punch,Robot go forward to the left moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.4
+G,punch,Robot go forward to the left moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.3
+G,punch,Robot go forward to the left moderately and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.28
+G,punch,Robot go forward to the left moderately and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.47
+G,punch,Robot go forward to the left slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.38
+G,punch,Robot go forward to the left slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.4
+G,punch,Robot go forward to the left slowly and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.13
+G,punch,Robot go forward to the left slowly and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.28
+G,punch,Robot go forward to the left slowly and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.19
+G,punch,Robot go forward to the left slowly and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.1
+G,punch,Robot go forward to the left slowly and punch right.,5,right,left,0,left,0,1,1,0,8.0,17.74
+G,punch,Robot go forward to the left slowly and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.68
+G,punch,Robot go forward to the right and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.71
+G,punch,Robot go forward to the right and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.35
+G,punch,Robot go forward to the right and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.63
+G,punch,Robot go forward to the right and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,17.14
+G,punch,Robot go forward to the right and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.92
+G,punch,Robot go forward to the right and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.95
+G,punch,Robot go forward to the right and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.62
+G,punch,Robot go forward to the right and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.98
+G,punch,Robot go forward to the right fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,17.52
+G,punch,Robot go forward to the right fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,17.1
+G,punch,Robot go forward to the right fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,17.64
+G,punch,Robot go forward to the right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.96
+G,punch,Robot go forward to the right fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.73
+G,punch,Robot go forward to the right fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.27
+G,punch,Robot go forward to the right fast and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.39
+G,punch,Robot go forward to the right fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.84
+G,punch,Robot go forward to the right moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.22
+G,punch,Robot go forward to the right moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.65
+G,punch,Robot go forward to the right moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.58
+G,punch,Robot go forward to the right moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.45
+G,punch,Robot go forward to the right moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.11
+G,punch,Robot go forward to the right moderately and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.25
+G,punch,Robot go forward to the right moderately and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.18
+G,punch,Robot go forward to the right moderately and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.95
+G,punch,Robot go forward to the right slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.41
+G,punch,Robot go forward to the right slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.12
+G,punch,Robot go forward to the right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.32
+G,punch,Robot go forward to the right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.03
+G,punch,Robot go forward to the right slowly and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.87
+G,punch,Robot go forward to the right slowly and punch left.,6,left,left,1,left,1,1,1,0,8.0,17.11
+G,punch,Robot go forward to the right slowly and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.77
+G,punch,Robot go forward to the right slowly and punch right.,6,right,both,0,both,0,1,1,0,8.0,17.09
+G,punch,Robot go left and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.85
+G,punch,Robot go left and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.24
+G,punch,Robot go left and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.82
+G,punch,Robot go left and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.68
+G,punch,Robot go left and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.9
+G,punch,Robot go left and punch left.,6,left,right,0,right,0,1,1,0,8.0,16.15
+G,punch,Robot go left and punch right.,5,right,both,0,both,0,1,1,0,8.0,16.56
+G,punch,Robot go left and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.18
+G,punch,Robot go left fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.42
+G,punch,Robot go left fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.06
+G,punch,Robot go left fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.86
+G,punch,Robot go left fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.34
+G,punch,Robot go left fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,17.0
+G,punch,Robot go left fast and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.9
+G,punch,Robot go left fast and punch right.,5,right,both,0,both,0,1,1,0,8.0,16.52
+G,punch,Robot go left fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.43
+G,punch,Robot go left moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.73
+G,punch,Robot go left moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.28
+G,punch,Robot go left moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.63
+G,punch,Robot go left moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.21
+G,punch,Robot go left moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,16.21
+G,punch,Robot go left moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.26
+G,punch,Robot go left moderately and punch right.,5,right,right,1,right,1,1,1,0,8.0,16.53
+G,punch,Robot go left moderately and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.28
+G,punch,Robot go left slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.42
+G,punch,Robot go left slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.14
+G,punch,Robot go left slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.93
+G,punch,Robot go left slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.93
+G,punch,Robot go left slowly and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.81
+G,punch,Robot go left slowly and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.56
+G,punch,Robot go left slowly and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.37
+G,punch,Robot go left slowly and punch right.,6,right,both,0,both,0,1,1,0,8.0,17.41
+G,punch,Robot go right and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.63
+G,punch,Robot go right and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.03
+G,punch,Robot go right and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.28
+G,punch,Robot go right and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.64
+G,punch,Robot go right and punch left.,5,left,both,0,both,0,1,1,0,8.0,17.3
+G,punch,Robot go right and punch left.,6,left,left,1,left,1,1,1,0,8.0,17.29
+G,punch,Robot go right and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.16
+G,punch,Robot go right and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.49
+G,punch,Robot go right fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.74
+G,punch,Robot go right fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.78
+G,punch,Robot go right fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.68
+G,punch,Robot go right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.15
+G,punch,Robot go right fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,17.02
+G,punch,Robot go right fast and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.39
+G,punch,Robot go right fast and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.75
+G,punch,Robot go right fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.57
+G,punch,Robot go right moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.54
+G,punch,Robot go right moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.58
+G,punch,Robot go right moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.07
+G,punch,Robot go right moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.49
+G,punch,Robot go right moderately and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.12
+G,punch,Robot go right moderately and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.24
+G,punch,Robot go right moderately and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.44
+G,punch,Robot go right moderately and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.93
+G,punch,Robot go right slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.69
+G,punch,Robot go right slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.27
+G,punch,Robot go right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.27
+G,punch,Robot go right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.25
+G,punch,Robot go right slowly and punch left.,5,left,both,0,both,0,1,1,0,8.0,17.54
+G,punch,Robot go right slowly and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.75
+G,punch,Robot go right slowly and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.98
+G,punch,Robot go right slowly and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.48
+G,punch,Robot keep standing and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.61
+G,punch,Robot keep standing and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.28
+G,punch,Robot keep standing and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.44
+G,punch,Robot keep standing and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.7
+G,punch,Robot keep standing and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.29
+G,punch,Robot keep standing and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.61
+G,punch,Robot keep standing and punch right.,5,right,both,0,both,0,1,1,0,8.0,16.37
+G,punch,Robot keep standing and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.53
+G,punch,Robot turn left and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.54
+G,punch,Robot turn left and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,17.52
+G,punch,Robot turn left and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.59
+G,punch,Robot turn left and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.44
+G,punch,Robot turn left and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.89
+G,punch,Robot turn left and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.72
+G,punch,Robot turn left and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.73
+G,punch,Robot turn left and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.74
+G,punch,Robot turn left fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.74
+G,punch,Robot turn left fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.85
+G,punch,Robot turn left fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.29
+G,punch,Robot turn left fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.4
+G,punch,Robot turn left fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.63
+G,punch,Robot turn left fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.19
+G,punch,Robot turn left fast and punch right.,5,right,none,0,none,0,1,1,0,8.0,16.34
+G,punch,Robot turn left fast and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.33
+G,punch,Robot turn left moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,17.48
+G,punch,Robot turn left moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.22
+G,punch,Robot turn left moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.25
+G,punch,Robot turn left moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.64
+G,punch,Robot turn left moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,17.04
+G,punch,Robot turn left moderately and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.48
+G,punch,Robot turn left moderately and punch right.,5,right,none,0,none,0,1,1,0,8.0,17.02
+G,punch,Robot turn left moderately and punch right.,6,right,left,0,left,0,1,1,0,8.0,17.09
+G,punch,Robot turn left slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.62
+G,punch,Robot turn left slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.69
+G,punch,Robot turn left slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.64
+G,punch,Robot turn left slowly and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.64
+G,punch,Robot turn left slowly and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.41
+G,punch,Robot turn left slowly and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.62
+G,punch,Robot turn left slowly and punch right.,5,right,none,0,none,0,1,1,0,8.0,16.47
+G,punch,Robot turn left slowly and punch right.,6,right,right,1,right,1,1,1,0,8.0,16.31
+G,punch,Robot turn right and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.46
+G,punch,Robot turn right and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.33
+G,punch,Robot turn right and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.01
+G,punch,Robot turn right and punch alternately with right and left hand.,6,both,both,1,both,1,0,1,0,8.0,16.13
+G,punch,Robot turn right and punch left.,5,left,left,1,left,1,1,1,0,8.0,17.06
+G,punch,Robot turn right and punch left.,6,left,both,0,both,0,1,1,0,8.0,16.65
+G,punch,Robot turn right and punch right.,5,right,left,0,left,0,1,1,0,8.0,17.14
+G,punch,Robot turn right and punch right.,6,right,left,0,left,0,1,1,0,8.0,16.91
+G,punch,Robot turn right fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.16
+G,punch,Robot turn right fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.99
+G,punch,Robot turn right fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.83
+G,punch,Robot turn right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.14
+G,punch,Robot turn right fast and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.3
+G,punch,Robot turn right fast and punch left.,6,left,both,0,both,0,1,1,0,8.0,17.05
+G,punch,Robot turn right fast and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.24
+G,punch,Robot turn right fast and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.19
+G,punch,Robot turn right moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,17.01
+G,punch,Robot turn right moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,17.8
+G,punch,Robot turn right moderately and punch alternately with right and left hand.,5,both,both,1,both,1,0,1,0,8.0,15.98
+G,punch,Robot turn right moderately and punch alternately with right and left hand.,6,both,both,1,both,1,0,1,0,8.0,16.28
+G,punch,Robot turn right moderately and punch left.,5,left,both,0,both,0,1,1,0,8.0,17.0
+G,punch,Robot turn right moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,16.87
+G,punch,Robot turn right moderately and punch right.,5,right,left,0,left,0,1,1,0,8.0,17.05
+G,punch,Robot turn right moderately and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.79
+G,punch,Robot turn right slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.82
+G,punch,Robot turn right slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.53
+G,punch,Robot turn right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,0,1,0,8.0,16.53
+G,punch,Robot turn right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,0,1,0,8.0,16.4
+G,punch,Robot turn right slowly and punch left.,5,left,both,0,both,0,1,1,0,8.0,16.61
+G,punch,Robot turn right slowly and punch left.,6,left,both,0,both,0,0,1,0,8.0,16.21
+G,punch,Robot turn right slowly and punch right.,5,right,left,0,left,0,1,1,0,8.0,16.35
+G,punch,Robot turn right slowly and punch right.,6,right,both,0,both,0,1,1,0,8.0,16.12
+G+gesture,punch,Robot go backward and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.11
+G+gesture,punch,Robot go backward and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.46
+G+gesture,punch,Robot go backward and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.03
+G+gesture,punch,Robot go backward and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.83
+G+gesture,punch,Robot go backward and punch left.,5,left,left,1,left,1,1,0,1,7.64,21.35
+G+gesture,punch,Robot go backward and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.98
+G+gesture,punch,Robot go backward and punch right.,5,right,right,1,right,1,0,0,1,6.04,21.2
+G+gesture,punch,Robot go backward and punch right.,6,right,both,0,both,0,0,0,1,7.34,21.86
+G+gesture,punch,Robot go backward fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.46
+G+gesture,punch,Robot go backward fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.56
+G+gesture,punch,Robot go backward fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.17
+G+gesture,punch,Robot go backward fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.18
+G+gesture,punch,Robot go backward fast and punch left.,5,left,both,0,both,0,1,0,1,6.14,22.49
+G+gesture,punch,Robot go backward fast and punch left.,6,left,left,1,left,1,1,0,1,5.46,21.06
+G+gesture,punch,Robot go backward fast and punch right.,5,right,both,0,both,0,0,0,1,5.56,21.88
+G+gesture,punch,Robot go backward fast and punch right.,6,right,both,0,both,0,0,0,1,6.78,20.84
+G+gesture,punch,Robot go backward moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.26
+G+gesture,punch,Robot go backward moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.49
+G+gesture,punch,Robot go backward moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.29
+G+gesture,punch,Robot go backward moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.38
+G+gesture,punch,Robot go backward moderately and punch left.,5,left,left,1,left,1,0,0,1,6.78,21.3
+G+gesture,punch,Robot go backward moderately and punch left.,6,left,left,1,left,1,0,1,0,8.0,21.14
+G+gesture,punch,Robot go backward moderately and punch right.,5,right,right,1,right,1,0,0,1,6.16,20.73
+G+gesture,punch,Robot go backward moderately and punch right.,6,right,both,0,both,0,0,0,1,5.66,20.7
+G+gesture,punch,Robot go backward slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.13
+G+gesture,punch,Robot go backward slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.39
+G+gesture,punch,Robot go backward slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.73
+G+gesture,punch,Robot go backward slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.77
+G+gesture,punch,Robot go backward slowly and punch left.,5,left,left,1,left,1,1,1,0,8.0,21.18
+G+gesture,punch,Robot go backward slowly and punch left.,6,left,left,1,left,1,1,0,1,6.9,20.69
+G+gesture,punch,Robot go backward slowly and punch right.,5,right,both,0,both,0,0,0,1,4.4,21.02
+G+gesture,punch,Robot go backward slowly and punch right.,6,right,both,0,both,0,0,0,1,5.22,20.68
+G+gesture,punch,Robot go backward to the left and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,15.68
+G+gesture,punch,Robot go backward to the left and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,15.59
+G+gesture,punch,Robot go backward to the left and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.77
+G+gesture,punch,Robot go backward to the left and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.63
+G+gesture,punch,Robot go backward to the left and punch left.,5,left,left,1,left,1,1,0,1,7.0,20.69
+G+gesture,punch,Robot go backward to the left and punch left.,6,left,left,1,left,1,1,0,1,5.02,20.97
+G+gesture,punch,Robot go backward to the left and punch right.,5,right,right,1,right,1,1,1,0,8.0,20.76
+G+gesture,punch,Robot go backward to the left and punch right.,6,right,right,1,right,1,1,0,1,3.7,21.84
+G+gesture,punch,Robot go backward to the left fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,15.93
+G+gesture,punch,Robot go backward to the left fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.06
+G+gesture,punch,Robot go backward to the left fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.16
+G+gesture,punch,Robot go backward to the left fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.99
+G+gesture,punch,Robot go backward to the left fast and punch left.,5,left,left,1,left,1,1,1,0,8.0,20.72
+G+gesture,punch,Robot go backward to the left fast and punch left.,6,left,left,1,left,1,1,0,1,6.98,20.67
+G+gesture,punch,Robot go backward to the left fast and punch right.,5,right,right,1,right,1,1,1,0,8.0,20.8
+G+gesture,punch,Robot go backward to the left fast and punch right.,6,right,right,1,right,1,1,1,0,8.0,20.63
+G+gesture,punch,Robot go backward to the left moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.14
+G+gesture,punch,Robot go backward to the left moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.07
+G+gesture,punch,Robot go backward to the left moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.8
+G+gesture,punch,Robot go backward to the left moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.98
+G+gesture,punch,Robot go backward to the left moderately and punch left.,5,left,left,1,left,1,1,0,1,7.06,20.64
+G+gesture,punch,Robot go backward to the left moderately and punch left.,6,left,left,1,left,1,1,0,1,5.86,20.66
+G+gesture,punch,Robot go backward to the left moderately and punch right.,5,right,right,1,right,1,1,0,1,6.88,21.23
+G+gesture,punch,Robot go backward to the left moderately and punch right.,6,right,right,1,right,1,1,0,1,7.26,21.67
+G+gesture,punch,Robot go backward to the left slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.66
+G+gesture,punch,Robot go backward to the left slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,17.28
+G+gesture,punch,Robot go backward to the left slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.01
+G+gesture,punch,Robot go backward to the left slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.71
+G+gesture,punch,Robot go backward to the left slowly and punch left.,5,left,both,0,both,0,0,0,1,5.9,21.93
+G+gesture,punch,Robot go backward to the left slowly and punch left.,6,left,left,1,left,1,1,0,1,3.86,20.75
+G+gesture,punch,Robot go backward to the left slowly and punch right.,5,right,right,1,right,1,1,1,0,8.0,21.3
+G+gesture,punch,Robot go backward to the left slowly and punch right.,6,right,right,1,right,1,0,0,1,4.56,21.12
+G+gesture,punch,Robot go backward to the right and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.38
+G+gesture,punch,Robot go backward to the right and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.57
+G+gesture,punch,Robot go backward to the right and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.99
+G+gesture,punch,Robot go backward to the right and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.71
+G+gesture,punch,Robot go backward to the right and punch left.,5,left,left,1,left,1,0,0,1,5.92,20.81
+G+gesture,punch,Robot go backward to the right and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.92
+G+gesture,punch,Robot go backward to the right and punch right.,5,right,both,0,both,0,0,0,1,6.56,20.48
+G+gesture,punch,Robot go backward to the right and punch right.,6,right,right,1,right,1,0,0,1,6.14,21.21
+G+gesture,punch,Robot go backward to the right fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,15.73
+G+gesture,punch,Robot go backward to the right fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.13
+G+gesture,punch,Robot go backward to the right fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.78
+G+gesture,punch,Robot go backward to the right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.06
+G+gesture,punch,Robot go backward to the right fast and punch left.,5,left,left,1,left,1,1,1,0,8.0,20.26
+G+gesture,punch,Robot go backward to the right fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,21.04
+G+gesture,punch,Robot go backward to the right fast and punch right.,5,right,right,1,right,1,1,1,0,8.0,21.03
+G+gesture,punch,Robot go backward to the right fast and punch right.,6,right,right,1,right,1,0,1,0,8.0,21.01
+G+gesture,punch,Robot go backward to the right moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.08
+G+gesture,punch,Robot go backward to the right moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,15.86
+G+gesture,punch,Robot go backward to the right moderately and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.03
+G+gesture,punch,Robot go backward to the right moderately and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.66
+G+gesture,punch,Robot go backward to the right moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,21.03
+G+gesture,punch,Robot go backward to the right moderately and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.76
+G+gesture,punch,Robot go backward to the right moderately and punch right.,5,right,both,0,both,0,0,0,1,5.72,21.51
+G+gesture,punch,Robot go backward to the right moderately and punch right.,6,right,right,1,right,1,0,0,1,5.62,20.8
+G+gesture,punch,Robot go backward to the right slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,15.85
+G+gesture,punch,Robot go backward to the right slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,15.95
+G+gesture,punch,Robot go backward to the right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.28
+G+gesture,punch,Robot go backward to the right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.85
+G+gesture,punch,Robot go backward to the right slowly and punch left.,5,left,left,1,left,1,0,0,1,6.36,20.84
+G+gesture,punch,Robot go backward to the right slowly and punch left.,6,left,left,1,left,1,0,0,1,5.5,21.02
+G+gesture,punch,Robot go backward to the right slowly and punch right.,5,right,both,0,both,0,0,0,1,4.36,20.89
+G+gesture,punch,Robot go backward to the right slowly and punch right.,6,right,right,1,right,1,0,0,1,5.86,20.58
+G+gesture,punch,Robot go forward and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.0
+G+gesture,punch,Robot go forward and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.71
+G+gesture,punch,Robot go forward and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.94
+G+gesture,punch,Robot go forward and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.62
+G+gesture,punch,Robot go forward and punch left.,5,left,left,1,left,1,1,0,1,4.14,20.81
+G+gesture,punch,Robot go forward and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.77
+G+gesture,punch,Robot go forward and punch right.,5,right,right,1,right,1,1,0,1,5.18,20.57
+G+gesture,punch,Robot go forward and punch right.,6,right,both,0,both,0,1,0,1,5.94,20.84
+G+gesture,punch,Robot go forward fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.42
+G+gesture,punch,Robot go forward fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.39
+G+gesture,punch,Robot go forward fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.38
+G+gesture,punch,Robot go forward fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.2
+G+gesture,punch,Robot go forward fast and punch left.,5,left,left,1,left,1,1,0,1,4.36,20.93
+G+gesture,punch,Robot go forward fast and punch left.,6,left,both,0,both,0,0,0,1,4.26,20.67
+G+gesture,punch,Robot go forward fast and punch right.,5,right,both,0,both,0,1,0,1,4.86,20.69
+G+gesture,punch,Robot go forward fast and punch right.,6,right,both,0,both,0,1,0,1,4.3,20.81
+G+gesture,punch,Robot go forward moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.2
+G+gesture,punch,Robot go forward moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.46
+G+gesture,punch,Robot go forward moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.79
+G+gesture,punch,Robot go forward moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.75
+G+gesture,punch,Robot go forward moderately and punch left.,5,left,both,0,both,0,1,0,1,4.56,21.76
+G+gesture,punch,Robot go forward moderately and punch left.,6,left,left,1,left,1,0,0,1,4.94,20.87
+G+gesture,punch,Robot go forward moderately and punch right.,5,right,both,0,both,0,1,0,1,4.3,20.73
+G+gesture,punch,Robot go forward moderately and punch right.,6,right,both,0,both,0,1,0,1,4.52,20.77
+G+gesture,punch,Robot go forward slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.0
+G+gesture,punch,Robot go forward slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.26
+G+gesture,punch,Robot go forward slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.94
+G+gesture,punch,Robot go forward slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.27
+G+gesture,punch,Robot go forward slowly and punch left.,5,left,both,0,both,0,1,0,1,4.84,20.58
+G+gesture,punch,Robot go forward slowly and punch left.,6,left,left,1,left,1,0,0,1,4.06,21.28
+G+gesture,punch,Robot go forward slowly and punch right.,5,right,right,1,right,1,1,0,1,5.58,21.24
+G+gesture,punch,Robot go forward slowly and punch right.,6,right,right,1,right,1,1,0,1,6.38,21.9
+G+gesture,punch,Robot go forward to the left and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.02
+G+gesture,punch,Robot go forward to the left and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.81
+G+gesture,punch,Robot go forward to the left and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,15.96
+G+gesture,punch,Robot go forward to the left and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.82
+G+gesture,punch,Robot go forward to the left and punch left.,5,left,both,0,both,0,1,0,1,3.92,20.57
+G+gesture,punch,Robot go forward to the left and punch left.,6,left,left,1,left,1,0,0,1,4.46,20.76
+G+gesture,punch,Robot go forward to the left and punch right.,5,right,both,0,both,0,1,0,1,4.22,20.6
+G+gesture,punch,Robot go forward to the left and punch right.,6,right,both,0,both,0,1,0,1,4.26,20.19
+G+gesture,punch,Robot go forward to the left fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.07
+G+gesture,punch,Robot go forward to the left fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.65
+G+gesture,punch,Robot go forward to the left fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,15.91
+G+gesture,punch,Robot go forward to the left fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.3
+G+gesture,punch,Robot go forward to the left fast and punch left.,5,left,left,1,left,1,1,0,1,3.52,21.22
+G+gesture,punch,Robot go forward to the left fast and punch left.,6,left,left,1,left,1,0,0,1,4.58,21.1
+G+gesture,punch,Robot go forward to the left fast and punch right.,5,right,both,0,both,0,1,0,1,5.2,21.05
+G+gesture,punch,Robot go forward to the left fast and punch right.,6,right,both,0,both,0,1,0,1,5.36,21.17
+G+gesture,punch,Robot go forward to the left moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.85
+G+gesture,punch,Robot go forward to the left moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.14
+G+gesture,punch,Robot go forward to the left moderately and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,15.83
+G+gesture,punch,Robot go forward to the left moderately and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.65
+G+gesture,punch,Robot go forward to the left moderately and punch left.,5,left,both,0,both,0,1,0,1,3.84,21.33
+G+gesture,punch,Robot go forward to the left moderately and punch left.,6,left,both,0,both,0,0,0,1,4.4,20.99
+G+gesture,punch,Robot go forward to the left moderately and punch right.,5,right,both,0,both,0,1,0,1,4.44,21.29
+G+gesture,punch,Robot go forward to the left moderately and punch right.,6,right,both,0,both,0,1,0,1,4.4,20.95
+G+gesture,punch,Robot go forward to the left slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.59
+G+gesture,punch,Robot go forward to the left slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.22
+G+gesture,punch,Robot go forward to the left slowly and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.25
+G+gesture,punch,Robot go forward to the left slowly and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.01
+G+gesture,punch,Robot go forward to the left slowly and punch left.,5,left,both,0,both,0,1,0,1,3.5,20.65
+G+gesture,punch,Robot go forward to the left slowly and punch left.,6,left,left,1,left,1,0,0,1,4.56,21.24
+G+gesture,punch,Robot go forward to the left slowly and punch right.,5,right,both,0,both,0,1,0,1,4.2,20.72
+G+gesture,punch,Robot go forward to the left slowly and punch right.,6,right,both,0,both,0,1,0,1,5.16,21.76
+G+gesture,punch,Robot go forward to the right and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.08
+G+gesture,punch,Robot go forward to the right and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.17
+G+gesture,punch,Robot go forward to the right and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.9
+G+gesture,punch,Robot go forward to the right and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.98
+G+gesture,punch,Robot go forward to the right and punch left.,5,left,left,1,left,1,1,0,1,6.52,20.61
+G+gesture,punch,Robot go forward to the right and punch left.,6,left,left,1,left,1,1,0,1,7.58,20.66
+G+gesture,punch,Robot go forward to the right and punch right.,5,right,both,0,both,0,0,0,1,4.42,20.92
+G+gesture,punch,Robot go forward to the right and punch right.,6,right,both,0,both,0,1,0,1,4.66,20.38
+G+gesture,punch,Robot go forward to the right fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.78
+G+gesture,punch,Robot go forward to the right fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.11
+G+gesture,punch,Robot go forward to the right fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,17.48
+G+gesture,punch,Robot go forward to the right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.33
+G+gesture,punch,Robot go forward to the right fast and punch left.,5,left,left,1,left,1,1,0,1,5.28,21.05
+G+gesture,punch,Robot go forward to the right fast and punch left.,6,left,left,1,left,1,1,0,1,6.46,20.35
+G+gesture,punch,Robot go forward to the right fast and punch right.,5,right,both,0,both,0,1,0,1,4.52,20.93
+G+gesture,punch,Robot go forward to the right fast and punch right.,6,right,both,0,both,0,1,0,1,4.38,20.56
+G+gesture,punch,Robot go forward to the right moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.74
+G+gesture,punch,Robot go forward to the right moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.92
+G+gesture,punch,Robot go forward to the right moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.23
+G+gesture,punch,Robot go forward to the right moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.78
+G+gesture,punch,Robot go forward to the right moderately and punch left.,5,left,left,1,left,1,1,1,0,8.0,21.12
+G+gesture,punch,Robot go forward to the right moderately and punch left.,6,left,both,0,both,0,1,0,1,5.14,20.99
+G+gesture,punch,Robot go forward to the right moderately and punch right.,5,right,both,0,both,0,1,0,1,4.8,21.35
+G+gesture,punch,Robot go forward to the right moderately and punch right.,6,right,right,1,right,1,1,0,1,4.48,21.03
+G+gesture,punch,Robot go forward to the right slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.22
+G+gesture,punch,Robot go forward to the right slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.15
+G+gesture,punch,Robot go forward to the right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.23
+G+gesture,punch,Robot go forward to the right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.03
+G+gesture,punch,Robot go forward to the right slowly and punch left.,5,left,left,1,left,1,0,0,1,5.94,21.17
+G+gesture,punch,Robot go forward to the right slowly and punch left.,6,left,left,1,left,1,1,0,1,5.12,21.54
+G+gesture,punch,Robot go forward to the right slowly and punch right.,5,right,both,0,both,0,0,0,1,4.56,22.03
+G+gesture,punch,Robot go forward to the right slowly and punch right.,6,right,right,1,right,1,1,0,1,4.8,20.94
+G+gesture,punch,Robot go left and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.0
+G+gesture,punch,Robot go left and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.27
+G+gesture,punch,Robot go left and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.59
+G+gesture,punch,Robot go left and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.21
+G+gesture,punch,Robot go left and punch left.,5,left,both,0,both,0,1,0,1,6.76,21.59
+G+gesture,punch,Robot go left and punch left.,6,left,both,0,both,0,1,0,1,6.8,20.9
+G+gesture,punch,Robot go left and punch right.,5,right,right,1,fell,0,0,0,1,1.98,20.6
+G+gesture,punch,Robot go left and punch right.,6,right,left,0,left,0,1,0,1,4.8,20.57
+G+gesture,punch,Robot go left fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,15.85
+G+gesture,punch,Robot go left fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.07
+G+gesture,punch,Robot go left fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.7
+G+gesture,punch,Robot go left fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.91
+G+gesture,punch,Robot go left fast and punch left.,5,left,left,1,left,1,1,0,1,5.16,20.53
+G+gesture,punch,Robot go left fast and punch left.,6,left,left,1,left,1,1,0,1,6.82,20.3
+G+gesture,punch,Robot go left fast and punch right.,5,right,right,1,right,1,1,0,1,5.4,20.83
+G+gesture,punch,Robot go left fast and punch right.,6,right,right,1,right,1,1,1,0,8.0,20.99
+G+gesture,punch,Robot go left moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,15.71
+G+gesture,punch,Robot go left moderately and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.18
+G+gesture,punch,Robot go left moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.91
+G+gesture,punch,Robot go left moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.96
+G+gesture,punch,Robot go left moderately and punch left.,5,left,left,1,left,1,1,0,1,3.98,21.27
+G+gesture,punch,Robot go left moderately and punch left.,6,left,left,1,left,1,1,0,1,3.66,21.08
+G+gesture,punch,Robot go left moderately and punch right.,5,right,right,1,right,1,1,0,1,5.1,21.16
+G+gesture,punch,Robot go left moderately and punch right.,6,right,right,1,right,1,1,0,1,5.02,20.83
+G+gesture,punch,Robot go left slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.28
+G+gesture,punch,Robot go left slowly and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.04
+G+gesture,punch,Robot go left slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.42
+G+gesture,punch,Robot go left slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.13
+G+gesture,punch,Robot go left slowly and punch left.,5,left,both,0,both,0,1,0,1,5.04,20.96
+G+gesture,punch,Robot go left slowly and punch left.,6,left,left,1,left,1,1,0,1,4.68,20.81
+G+gesture,punch,Robot go left slowly and punch right.,5,right,right,1,right,1,1,0,1,3.9,20.98
+G+gesture,punch,Robot go left slowly and punch right.,6,right,left,0,left,0,1,0,1,4.02,20.8
+G+gesture,punch,Robot go right and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.49
+G+gesture,punch,Robot go right and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.85
+G+gesture,punch,Robot go right and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,15.62
+G+gesture,punch,Robot go right and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.94
+G+gesture,punch,Robot go right and punch left.,5,left,left,1,left,1,1,0,1,6.7,20.89
+G+gesture,punch,Robot go right and punch left.,6,left,left,1,left,1,1,1,0,8.0,21.62
+G+gesture,punch,Robot go right and punch right.,5,right,right,1,right,1,1,1,0,8.0,20.82
+G+gesture,punch,Robot go right and punch right.,6,right,right,1,right,1,1,1,0,8.0,20.71
+G+gesture,punch,Robot go right fast and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.31
+G+gesture,punch,Robot go right fast and keep punching forward.,6,both,both,1,both,1,0,1,0,8.0,16.31
+G+gesture,punch,Robot go right fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,15.9
+G+gesture,punch,Robot go right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.01
+G+gesture,punch,Robot go right fast and punch left.,5,left,left,1,left,1,1,1,0,8.0,20.83
+G+gesture,punch,Robot go right fast and punch left.,6,left,both,0,both,0,1,0,1,6.86,20.81
+G+gesture,punch,Robot go right fast and punch right.,5,right,right,1,right,1,1,1,0,8.0,20.73
+G+gesture,punch,Robot go right fast and punch right.,6,right,both,0,both,0,0,1,0,8.0,21.22
+G+gesture,punch,Robot go right moderately and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.18
+G+gesture,punch,Robot go right moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.91
+G+gesture,punch,Robot go right moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.47
+G+gesture,punch,Robot go right moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.05
+G+gesture,punch,Robot go right moderately and punch left.,5,left,both,0,both,0,1,0,1,7.38,21.13
+G+gesture,punch,Robot go right moderately and punch left.,6,left,left,1,left,1,1,0,1,6.58,20.63
+G+gesture,punch,Robot go right moderately and punch right.,5,right,right,1,right,1,0,0,1,5.26,20.96
+G+gesture,punch,Robot go right moderately and punch right.,6,right,both,0,both,0,1,0,1,4.82,21.15
+G+gesture,punch,Robot go right slowly and keep punching forward.,5,both,both,1,both,1,0,1,0,8.0,16.06
+G+gesture,punch,Robot go right slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.15
+G+gesture,punch,Robot go right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.11
+G+gesture,punch,Robot go right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.82
+G+gesture,punch,Robot go right slowly and punch left.,5,left,left,1,left,1,0,1,0,8.0,20.67
+G+gesture,punch,Robot go right slowly and punch left.,6,left,left,1,left,1,1,0,1,5.44,20.87
+G+gesture,punch,Robot go right slowly and punch right.,5,right,both,0,both,0,0,0,1,4.34,20.83
+G+gesture,punch,Robot go right slowly and punch right.,6,right,both,0,both,0,1,0,1,4.96,20.58
+G+gesture,punch,Robot keep standing and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.02
+G+gesture,punch,Robot keep standing and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.85
+G+gesture,punch,Robot keep standing and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,15.72
+G+gesture,punch,Robot keep standing and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,15.63
+G+gesture,punch,Robot keep standing and punch left.,5,left,left,1,left,1,0,0,1,7.52,20.93
+G+gesture,punch,Robot keep standing and punch left.,6,left,both,0,both,0,0,0,1,6.18,20.85
+G+gesture,punch,Robot keep standing and punch right.,5,right,both,0,both,0,0,0,1,3.98,21.5
+G+gesture,punch,Robot keep standing and punch right.,6,right,both,0,both,0,0,0,1,5.82,20.57
+G+gesture,punch,Robot turn left and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.33
+G+gesture,punch,Robot turn left and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.0
+G+gesture,punch,Robot turn left and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.97
+G+gesture,punch,Robot turn left and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,16.27
+G+gesture,punch,Robot turn left and punch left.,5,left,both,0,both,0,0,0,1,5.02,20.99
+G+gesture,punch,Robot turn left and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.8
+G+gesture,punch,Robot turn left and punch right.,5,right,both,0,both,0,1,0,1,3.98,20.8
+G+gesture,punch,Robot turn left and punch right.,6,right,right,1,right,1,1,0,1,3.7,20.68
+G+gesture,punch,Robot turn left fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.98
+G+gesture,punch,Robot turn left fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.53
+G+gesture,punch,Robot turn left fast and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,15.74
+G+gesture,punch,Robot turn left fast and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.58
+G+gesture,punch,Robot turn left fast and punch left.,5,left,both,0,both,0,0,1,0,8.0,20.65
+G+gesture,punch,Robot turn left fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.66
+G+gesture,punch,Robot turn left fast and punch right.,5,right,right,1,right,1,1,0,1,3.5,21.41
+G+gesture,punch,Robot turn left fast and punch right.,6,right,right,1,right,1,1,0,1,3.82,20.69
+G+gesture,punch,Robot turn left moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,15.98
+G+gesture,punch,Robot turn left moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.7
+G+gesture,punch,Robot turn left moderately and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.06
+G+gesture,punch,Robot turn left moderately and punch alternately with right and left hand.,6,both,left,0,left,0,1,1,0,8.0,15.81
+G+gesture,punch,Robot turn left moderately and punch left.,5,left,left,1,left,1,1,0,1,4.62,20.74
+G+gesture,punch,Robot turn left moderately and punch left.,6,left,both,0,both,0,1,0,1,7.2,20.75
+G+gesture,punch,Robot turn left moderately and punch right.,5,right,both,0,both,0,1,0,1,4.62,21.97
+G+gesture,punch,Robot turn left moderately and punch right.,6,right,both,0,both,0,1,0,1,5.04,21.31
+G+gesture,punch,Robot turn left slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.58
+G+gesture,punch,Robot turn left slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.37
+G+gesture,punch,Robot turn left slowly and punch alternately with right and left hand.,5,both,left,0,left,0,1,1,0,8.0,16.28
+G+gesture,punch,Robot turn left slowly and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.32
+G+gesture,punch,Robot turn left slowly and punch left.,5,left,left,1,left,1,1,0,1,5.48,21.25
+G+gesture,punch,Robot turn left slowly and punch left.,6,left,left,1,left,1,1,0,1,4.76,21.19
+G+gesture,punch,Robot turn left slowly and punch right.,5,right,both,0,both,0,1,0,1,3.44,21.27
+G+gesture,punch,Robot turn left slowly and punch right.,6,right,right,1,right,1,1,0,1,3.64,20.88
+G+gesture,punch,Robot turn right and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.43
+G+gesture,punch,Robot turn right and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.46
+G+gesture,punch,Robot turn right and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.31
+G+gesture,punch,Robot turn right and punch alternately with right and left hand.,6,both,both,1,both,1,0,1,0,8.0,16.66
+G+gesture,punch,Robot turn right and punch left.,5,left,both,0,both,0,1,0,1,4.58,20.79
+G+gesture,punch,Robot turn right and punch left.,6,left,both,0,both,0,1,0,1,4.4,22.04
+G+gesture,punch,Robot turn right and punch right.,5,right,right,1,right,1,1,1,0,8.0,21.48
+G+gesture,punch,Robot turn right and punch right.,6,right,both,0,both,0,0,0,1,3.94,21.47
+G+gesture,punch,Robot turn right fast and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,17.08
+G+gesture,punch,Robot turn right fast and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.95
+G+gesture,punch,Robot turn right fast and punch alternately with right and left hand.,5,both,both,1,both,1,1,1,0,8.0,16.8
+G+gesture,punch,Robot turn right fast and punch alternately with right and left hand.,6,both,both,1,both,1,1,1,0,8.0,16.42
+G+gesture,punch,Robot turn right fast and punch left.,5,left,both,0,both,0,1,0,1,4.4,21.18
+G+gesture,punch,Robot turn right fast and punch left.,6,left,left,1,left,1,1,1,0,8.0,20.84
+G+gesture,punch,Robot turn right fast and punch right.,5,right,both,0,both,0,1,0,1,3.26,21.3
+G+gesture,punch,Robot turn right fast and punch right.,6,right,both,0,both,0,0,0,1,4.26,21.45
+G+gesture,punch,Robot turn right moderately and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.43
+G+gesture,punch,Robot turn right moderately and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,16.74
+G+gesture,punch,Robot turn right moderately and punch alternately with right and left hand.,5,both,both,1,both,1,0,1,0,8.0,15.99
+G+gesture,punch,Robot turn right moderately and punch alternately with right and left hand.,6,both,both,1,both,1,0,1,0,8.0,15.93
+G+gesture,punch,Robot turn right moderately and punch left.,5,left,right,0,right,0,0,0,1,4.42,21.07
+G+gesture,punch,Robot turn right moderately and punch left.,6,left,left,1,left,1,1,0,1,5.3,20.5
+G+gesture,punch,Robot turn right moderately and punch right.,5,right,both,0,both,0,1,0,1,3.9,20.7
+G+gesture,punch,Robot turn right moderately and punch right.,6,right,both,0,both,0,0,0,1,3.82,21.0
+G+gesture,punch,Robot turn right slowly and keep punching forward.,5,both,both,1,both,1,1,1,0,8.0,16.48
+G+gesture,punch,Robot turn right slowly and keep punching forward.,6,both,both,1,both,1,1,1,0,8.0,15.92
+G+gesture,punch,Robot turn right slowly and punch alternately with right and left hand.,5,both,left,0,left,0,0,1,0,8.0,16.24
+G+gesture,punch,Robot turn right slowly and punch alternately with right and left hand.,6,both,left,0,left,0,0,1,0,8.0,16.2
+G+gesture,punch,Robot turn right slowly and punch left.,5,left,both,0,both,0,0,0,1,5.52,20.58
+G+gesture,punch,Robot turn right slowly and punch left.,6,left,left,1,left,1,0,0,1,5.18,20.73
+G+gesture,punch,Robot turn right slowly and punch right.,5,right,both,0,both,0,1,0,1,3.98,21.05
+G+gesture,punch,Robot turn right slowly and punch right.,6,right,right,1,right,1,0,0,1,6.36,20.76
+G,shake,Robot go backward and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.96
+G,shake,Robot go backward and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.84
+G,shake,Robot go backward and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.27
+G,shake,Robot go backward and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.24
+G,shake,Robot go backward fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.13
+G,shake,Robot go backward fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.12
+G,shake,Robot go backward fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.91
+G,shake,Robot go backward fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,15.99
+G,shake,Robot go backward moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,15.93
+G,shake,Robot go backward moderately and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.1
+G,shake,Robot go backward moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.58
+G,shake,Robot go backward moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,15.96
+G,shake,Robot go backward slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.18
+G,shake,Robot go backward slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.76
+G,shake,Robot go backward slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.11
+G,shake,Robot go backward slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.99
+G,shake,Robot go backward to the left and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.4
+G,shake,Robot go backward to the left and shake both hands.,6,both,none,0,none,0,1,1,0,8.0,16.78
+G,shake,Robot go backward to the left and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,15.99
+G,shake,Robot go backward to the left and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.4
+G,shake,Robot go backward to the left fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.77
+G,shake,Robot go backward to the left fast and shake both hands.,6,both,none,0,none,0,1,1,0,8.0,15.94
+G,shake,Robot go backward to the left fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.6
+G,shake,Robot go backward to the left fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.4
+G,shake,Robot go backward to the left moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.59
+G,shake,Robot go backward to the left moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.42
+G,shake,Robot go backward to the left moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.79
+G,shake,Robot go backward to the left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.68
+G,shake,Robot go backward to the left slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.36
+G,shake,Robot go backward to the left slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.0
+G,shake,Robot go backward to the left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.57
+G,shake,Robot go backward to the left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.28
+G,shake,Robot go backward to the right and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.34
+G,shake,Robot go backward to the right and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.0
+G,shake,Robot go backward to the right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.94
+G,shake,Robot go backward to the right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.03
+G,shake,Robot go backward to the right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.64
+G,shake,Robot go backward to the right fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.54
+G,shake,Robot go backward to the right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.53
+G,shake,Robot go backward to the right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,15.78
+G,shake,Robot go backward to the right moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.37
+G,shake,Robot go backward to the right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.65
+G,shake,Robot go backward to the right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.21
+G,shake,Robot go backward to the right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.21
+G,shake,Robot go backward to the right slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,17.04
+G,shake,Robot go backward to the right slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.11
+G,shake,Robot go backward to the right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.48
+G,shake,Robot go backward to the right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.41
+G,shake,Robot go forward and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.94
+G,shake,Robot go forward and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.78
+G,shake,Robot go forward and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.05
+G,shake,Robot go forward and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.62
+G,shake,Robot go forward fast and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,16.44
+G,shake,Robot go forward fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.87
+G,shake,Robot go forward fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.31
+G,shake,Robot go forward fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,15.87
+G,shake,Robot go forward moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.96
+G,shake,Robot go forward moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.47
+G,shake,Robot go forward moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.78
+G,shake,Robot go forward moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.36
+G,shake,Robot go forward slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.22
+G,shake,Robot go forward slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,17.37
+G,shake,Robot go forward slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.35
+G,shake,Robot go forward slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,15.61
+G,shake,Robot go forward to the left and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.41
+G,shake,Robot go forward to the left and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,17.07
+G,shake,Robot go forward to the left and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,15.98
+G,shake,Robot go forward to the left and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.7
+G,shake,Robot go forward to the left fast and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.74
+G,shake,Robot go forward to the left fast and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,15.94
+G,shake,Robot go forward to the left fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.65
+G,shake,Robot go forward to the left fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.78
+G,shake,Robot go forward to the left moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,15.51
+G,shake,Robot go forward to the left moderately and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.7
+G,shake,Robot go forward to the left moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.75
+G,shake,Robot go forward to the left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.77
+G,shake,Robot go forward to the left slowly and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,15.99
+G,shake,Robot go forward to the left slowly and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.0
+G,shake,Robot go forward to the left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.19
+G,shake,Robot go forward to the left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.56
+G,shake,Robot go forward to the right and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,17.7
+G,shake,Robot go forward to the right and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.88
+G,shake,Robot go forward to the right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.13
+G,shake,Robot go forward to the right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.4
+G,shake,Robot go forward to the right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.72
+G,shake,Robot go forward to the right fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.82
+G,shake,Robot go forward to the right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.34
+G,shake,Robot go forward to the right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.23
+G,shake,Robot go forward to the right moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.42
+G,shake,Robot go forward to the right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.38
+G,shake,Robot go forward to the right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.01
+G,shake,Robot go forward to the right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.47
+G,shake,Robot go forward to the right slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.57
+G,shake,Robot go forward to the right slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.34
+G,shake,Robot go forward to the right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.08
+G,shake,Robot go forward to the right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,15.99
+G,shake,Robot go left and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.73
+G,shake,Robot go left and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.05
+G,shake,Robot go left and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.42
+G,shake,Robot go left and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.53
+G,shake,Robot go left fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.71
+G,shake,Robot go left fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.7
+G,shake,Robot go left fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.3
+G,shake,Robot go left fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.14
+G,shake,Robot go left moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.13
+G,shake,Robot go left moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.34
+G,shake,Robot go left moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.14
+G,shake,Robot go left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.29
+G,shake,Robot go left slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.01
+G,shake,Robot go left slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.88
+G,shake,Robot go left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.04
+G,shake,Robot go left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.03
+G,shake,Robot go right and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,15.57
+G,shake,Robot go right and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,15.47
+G,shake,Robot go right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,15.62
+G,shake,Robot go right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.78
+G,shake,Robot go right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.9
+G,shake,Robot go right fast and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,17.34
+G,shake,Robot go right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.76
+G,shake,Robot go right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.77
+G,shake,Robot go right moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.72
+G,shake,Robot go right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,17.08
+G,shake,Robot go right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.98
+G,shake,Robot go right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.24
+G,shake,Robot go right slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.25
+G,shake,Robot go right slowly and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.92
+G,shake,Robot go right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,15.95
+G,shake,Robot go right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.03
+G,shake,Robot keep standing and shake both hands.,5,both,left,0,left,0,1,1,0,8.0,15.82
+G,shake,Robot keep standing and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.09
+G,shake,Robot keep standing and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.35
+G,shake,Robot keep standing and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.76
+G,shake,Robot turn left and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,16.52
+G,shake,Robot turn left and shake both hands.,6,both,left,0,left,0,1,1,0,8.0,16.61
+G,shake,Robot turn left and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.31
+G,shake,Robot turn left and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.42
+G,shake,Robot turn left fast and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,15.85
+G,shake,Robot turn left fast and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.81
+G,shake,Robot turn left fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.02
+G,shake,Robot turn left fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.05
+G,shake,Robot turn left moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.55
+G,shake,Robot turn left moderately and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.44
+G,shake,Robot turn left moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.35
+G,shake,Robot turn left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.38
+G,shake,Robot turn left slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.26
+G,shake,Robot turn left slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.15
+G,shake,Robot turn left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,15.89
+G,shake,Robot turn left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.61
+G,shake,Robot turn right and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.87
+G,shake,Robot turn right and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,17.23
+G,shake,Robot turn right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.61
+G,shake,Robot turn right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.68
+G,shake,Robot turn right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.87
+G,shake,Robot turn right fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.87
+G,shake,Robot turn right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.69
+G,shake,Robot turn right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.59
+G,shake,Robot turn right moderately and shake both hands.,5,both,right,0,right,0,0,1,0,8.0,16.83
+G,shake,Robot turn right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.28
+G,shake,Robot turn right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.09
+G,shake,Robot turn right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,16.32
+G,shake,Robot turn right slowly and shake both hands.,5,both,right,0,right,0,0,1,0,8.0,16.54
+G,shake,Robot turn right slowly and shake both hands.,6,both,right,0,right,0,0,1,0,8.0,16.4
+G,shake,Robot turn right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,16.13
+G,shake,Robot turn right slowly and shake right hand.,6,right,right,1,right,1,0,1,0,8.0,16.42
+G+gesture,shake,Robot go backward and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.41
+G+gesture,shake,Robot go backward and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,17.33
+G+gesture,shake,Robot go backward and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.66
+G+gesture,shake,Robot go backward and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,19.04
+G+gesture,shake,Robot go backward fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.81
+G+gesture,shake,Robot go backward fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.7
+G+gesture,shake,Robot go backward fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.72
+G+gesture,shake,Robot go backward fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.78
+G+gesture,shake,Robot go backward moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.68
+G+gesture,shake,Robot go backward moderately and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.0
+G+gesture,shake,Robot go backward moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.5
+G+gesture,shake,Robot go backward moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.09
+G+gesture,shake,Robot go backward slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.94
+G+gesture,shake,Robot go backward slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.43
+G+gesture,shake,Robot go backward slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.83
+G+gesture,shake,Robot go backward slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.86
+G+gesture,shake,Robot go backward to the left and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.71
+G+gesture,shake,Robot go backward to the left and shake both hands.,6,both,none,0,none,0,1,1,0,8.0,16.54
+G+gesture,shake,Robot go backward to the left and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.8
+G+gesture,shake,Robot go backward to the left and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.99
+G+gesture,shake,Robot go backward to the left fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.8
+G+gesture,shake,Robot go backward to the left fast and shake both hands.,6,both,none,0,none,0,1,1,0,8.0,17.19
+G+gesture,shake,Robot go backward to the left fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.9
+G+gesture,shake,Robot go backward to the left fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.94
+G+gesture,shake,Robot go backward to the left moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.35
+G+gesture,shake,Robot go backward to the left moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.36
+G+gesture,shake,Robot go backward to the left moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.09
+G+gesture,shake,Robot go backward to the left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.59
+G+gesture,shake,Robot go backward to the left slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.6
+G+gesture,shake,Robot go backward to the left slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.63
+G+gesture,shake,Robot go backward to the left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.54
+G+gesture,shake,Robot go backward to the left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.71
+G+gesture,shake,Robot go backward to the right and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.52
+G+gesture,shake,Robot go backward to the right and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.11
+G+gesture,shake,Robot go backward to the right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.83
+G+gesture,shake,Robot go backward to the right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.62
+G+gesture,shake,Robot go backward to the right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.59
+G+gesture,shake,Robot go backward to the right fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.09
+G+gesture,shake,Robot go backward to the right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,19.24
+G+gesture,shake,Robot go backward to the right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.5
+G+gesture,shake,Robot go backward to the right moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.96
+G+gesture,shake,Robot go backward to the right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.18
+G+gesture,shake,Robot go backward to the right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.33
+G+gesture,shake,Robot go backward to the right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.56
+G+gesture,shake,Robot go backward to the right slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.58
+G+gesture,shake,Robot go backward to the right slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.08
+G+gesture,shake,Robot go backward to the right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.45
+G+gesture,shake,Robot go backward to the right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.34
+G+gesture,shake,Robot go forward and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.12
+G+gesture,shake,Robot go forward and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.45
+G+gesture,shake,Robot go forward and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,19.14
+G+gesture,shake,Robot go forward and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.23
+G+gesture,shake,Robot go forward fast and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,15.87
+G+gesture,shake,Robot go forward fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.08
+G+gesture,shake,Robot go forward fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.28
+G+gesture,shake,Robot go forward fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.24
+G+gesture,shake,Robot go forward moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.86
+G+gesture,shake,Robot go forward moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.3
+G+gesture,shake,Robot go forward moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.22
+G+gesture,shake,Robot go forward moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.5
+G+gesture,shake,Robot go forward slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.02
+G+gesture,shake,Robot go forward slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.13
+G+gesture,shake,Robot go forward slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.61
+G+gesture,shake,Robot go forward slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.2
+G+gesture,shake,Robot go forward to the left and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.08
+G+gesture,shake,Robot go forward to the left and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.23
+G+gesture,shake,Robot go forward to the left and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.41
+G+gesture,shake,Robot go forward to the left and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.29
+G+gesture,shake,Robot go forward to the left fast and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,15.56
+G+gesture,shake,Robot go forward to the left fast and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.11
+G+gesture,shake,Robot go forward to the left fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.35
+G+gesture,shake,Robot go forward to the left fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.81
+G+gesture,shake,Robot go forward to the left moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.23
+G+gesture,shake,Robot go forward to the left moderately and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.11
+G+gesture,shake,Robot go forward to the left moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.06
+G+gesture,shake,Robot go forward to the left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,19.22
+G+gesture,shake,Robot go forward to the left slowly and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,15.93
+G+gesture,shake,Robot go forward to the left slowly and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.43
+G+gesture,shake,Robot go forward to the left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,19.15
+G+gesture,shake,Robot go forward to the left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.26
+G+gesture,shake,Robot go forward to the right and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.76
+G+gesture,shake,Robot go forward to the right and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.92
+G+gesture,shake,Robot go forward to the right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.71
+G+gesture,shake,Robot go forward to the right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,19.29
+G+gesture,shake,Robot go forward to the right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.26
+G+gesture,shake,Robot go forward to the right fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.37
+G+gesture,shake,Robot go forward to the right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.34
+G+gesture,shake,Robot go forward to the right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.5
+G+gesture,shake,Robot go forward to the right moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.9
+G+gesture,shake,Robot go forward to the right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.72
+G+gesture,shake,Robot go forward to the right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.07
+G+gesture,shake,Robot go forward to the right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.21
+G+gesture,shake,Robot go forward to the right slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.7
+G+gesture,shake,Robot go forward to the right slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.36
+G+gesture,shake,Robot go forward to the right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.48
+G+gesture,shake,Robot go forward to the right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.21
+G+gesture,shake,Robot go left and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.78
+G+gesture,shake,Robot go left and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.2
+G+gesture,shake,Robot go left and shake right hand.,5,right,none,0,none,0,1,1,0,8.0,19.82
+G+gesture,shake,Robot go left and shake right hand.,6,right,none,0,none,0,1,1,0,8.0,18.41
+G+gesture,shake,Robot go left fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.97
+G+gesture,shake,Robot go left fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.28
+G+gesture,shake,Robot go left fast and shake right hand.,5,right,none,0,none,0,1,1,0,8.0,18.48
+G+gesture,shake,Robot go left fast and shake right hand.,6,right,none,0,none,0,1,1,0,8.0,18.75
+G+gesture,shake,Robot go left moderately and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.36
+G+gesture,shake,Robot go left moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.05
+G+gesture,shake,Robot go left moderately and shake right hand.,5,right,none,0,none,0,1,1,0,8.0,18.11
+G+gesture,shake,Robot go left moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.79
+G+gesture,shake,Robot go left slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.69
+G+gesture,shake,Robot go left slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.68
+G+gesture,shake,Robot go left slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.6
+G+gesture,shake,Robot go left slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,19.47
+G+gesture,shake,Robot go right and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.47
+G+gesture,shake,Robot go right and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.59
+G+gesture,shake,Robot go right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.69
+G+gesture,shake,Robot go right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.47
+G+gesture,shake,Robot go right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.04
+G+gesture,shake,Robot go right fast and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.17
+G+gesture,shake,Robot go right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.28
+G+gesture,shake,Robot go right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.64
+G+gesture,shake,Robot go right moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.18
+G+gesture,shake,Robot go right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.94
+G+gesture,shake,Robot go right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.54
+G+gesture,shake,Robot go right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,19.86
+G+gesture,shake,Robot go right slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.77
+G+gesture,shake,Robot go right slowly and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,15.82
+G+gesture,shake,Robot go right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.44
+G+gesture,shake,Robot go right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,18.55
+G+gesture,shake,Robot keep standing and shake both hands.,5,both,left,0,left,0,1,1,0,8.0,16.47
+G+gesture,shake,Robot keep standing and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.21
+G+gesture,shake,Robot keep standing and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.88
+G+gesture,shake,Robot keep standing and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.99
+G+gesture,shake,Robot turn left and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,16.28
+G+gesture,shake,Robot turn left and shake both hands.,6,both,left,0,left,0,1,1,0,8.0,16.44
+G+gesture,shake,Robot turn left and shake right hand.,5,right,none,0,none,0,0,1,0,8.0,18.05
+G+gesture,shake,Robot turn left and shake right hand.,6,right,none,0,none,0,1,1,0,8.0,18.51
+G+gesture,shake,Robot turn left fast and shake both hands.,5,both,none,0,none,0,1,1,0,8.0,15.56
+G+gesture,shake,Robot turn left fast and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.5
+G+gesture,shake,Robot turn left fast and shake right hand.,5,right,right,1,right,1,0,1,0,8.0,17.6
+G+gesture,shake,Robot turn left fast and shake right hand.,6,right,right,1,right,1,0,1,0,8.0,18.47
+G+gesture,shake,Robot turn left moderately and shake both hands.,5,both,both,1,both,1,1,1,0,8.0,16.0
+G+gesture,shake,Robot turn left moderately and shake both hands.,6,both,both,1,both,1,1,1,0,8.0,16.45
+G+gesture,shake,Robot turn left moderately and shake right hand.,5,right,right,1,right,1,0,1,0,8.0,18.54
+G+gesture,shake,Robot turn left moderately and shake right hand.,6,right,right,1,right,1,0,1,0,8.0,18.16
+G+gesture,shake,Robot turn left slowly and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.81
+G+gesture,shake,Robot turn left slowly and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.39
+G+gesture,shake,Robot turn left slowly and shake right hand.,5,right,right,1,right,1,0,1,0,8.0,19.29
+G+gesture,shake,Robot turn left slowly and shake right hand.,6,right,right,1,right,1,0,1,0,8.0,18.48
+G+gesture,shake,Robot turn right and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,16.51
+G+gesture,shake,Robot turn right and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,16.48
+G+gesture,shake,Robot turn right and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.18
+G+gesture,shake,Robot turn right and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.91
+G+gesture,shake,Robot turn right fast and shake both hands.,5,both,right,0,right,0,1,1,0,8.0,15.95
+G+gesture,shake,Robot turn right fast and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.38
+G+gesture,shake,Robot turn right fast and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,18.55
+G+gesture,shake,Robot turn right fast and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.63
+G+gesture,shake,Robot turn right moderately and shake both hands.,5,both,right,0,right,0,0,1,0,8.0,15.94
+G+gesture,shake,Robot turn right moderately and shake both hands.,6,both,right,0,right,0,1,1,0,8.0,15.5
+G+gesture,shake,Robot turn right moderately and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.78
+G+gesture,shake,Robot turn right moderately and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.47
+G+gesture,shake,Robot turn right slowly and shake both hands.,5,both,right,0,right,0,0,1,0,8.0,16.06
+G+gesture,shake,Robot turn right slowly and shake both hands.,6,both,right,0,right,0,0,1,0,8.0,14.88
+G+gesture,shake,Robot turn right slowly and shake right hand.,5,right,right,1,right,1,1,1,0,8.0,17.63
+G+gesture,shake,Robot turn right slowly and shake right hand.,6,right,right,1,right,1,1,1,0,8.0,17.36
