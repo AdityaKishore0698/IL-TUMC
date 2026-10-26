@@ -36,6 +36,8 @@ A_POLICY = "output/export/policy_trans_cl20sl_tn_20261001_f313925wip.pt"
 GUIDE = ["--hand_guidance", "12", "--guidance_mode", "per_arm"]
 H_POLICY = "output/export/policy_trans_cl20sl_tn_hand_20261014_629b6d1wip.pt"
 H0_POLICY = "output/export/policy_trans_cl20sl_tn_hand0_20261015_3dfe209wip.pt"
+AG_POLICY = "output/export/policy_trans_cl20sl_tn_Gstats_20261026_34ab41fwip.pt"
+G_POLICY = "output/export/policy_trans_cl20sl_tn_gest4_20261023_9fed470wip.pt"
 MODELS = {
     "CL-20sl": dict(player="trans", args=["--policy", "output/export/policy_trans_cl20sl.pt"]),
     "CL-400sl": dict(player="trans", args=["--policy", "output/export/policy_trans_cl400sl.pt", "--seq_len", "400"]),
@@ -53,6 +55,11 @@ MODELS = {
     # H0: the hand token without dropout
     "H0": dict(player="trans", args=["--policy", H0_POLICY]),
     "H0+per-arm": dict(player="trans", args=["--policy", H0_POLICY], single_hand=GUIDE),
+    # E19: A's setup with G's standardisation statistics, and the four-gesture model G, on the waving protocol
+    "A-Gstats": dict(player="trans", args=["--policy", AG_POLICY]),
+    "A-Gstats+guidance": dict(player="trans", args=["--policy", AG_POLICY], single_hand=GUIDE),
+    "G": dict(player="trans", args=["--policy", G_POLICY]),
+    "G+guidance": dict(player="trans", args=["--policy", G_POLICY], single_hand=GUIDE),
 }
 GRID12 = [f"Robot go {l} and wave {h}." for l in ("forward slowly", "backward moderately", "right fast", "left fast")
           for h in ("left", "right", "both")]

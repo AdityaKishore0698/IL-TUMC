@@ -1,0 +1,93 @@
+{
+ "check": {
+  "G_mean_max_abs_diff": 5.960464477539063e-08,
+  "G_std_max_rel_diff": 4.172325134277344e-07,
+  "n_captions": 410,
+  "per_family": {
+   "wave": 123,
+   "punch": 164,
+   "shake": 82,
+   "salute": 41
+  }
+ },
+ "raw": {
+  "wave": {
+   "hand_vs_loco_distance": 0.319622278213501,
+   "first_pair_cosine": 0.996292233467102
+  },
+  "punch": {
+   "hand_vs_loco_distance": 0.7559367418289185,
+   "first_pair_cosine": 0.9953933358192444
+  },
+  "shake": {
+   "hand_vs_loco_distance": 0.4787067174911499,
+   "first_pair_cosine": 0.9931380748748779
+  },
+  "gesture_nearest_centroid_accuracy": 1.0,
+  "gesture_between_over_within": 1.378150224685669
+ },
+ "A": {
+  "wave": {
+   "hand_vs_loco_distance": 0.3312261998653412,
+   "first_pair_cosine": 0.8543744683265686
+  },
+  "punch": {
+   "hand_vs_loco_distance": 0.830878734588623,
+   "first_pair_cosine": 0.9508485794067383
+  },
+  "shake": {
+   "hand_vs_loco_distance": 0.5409533977508545,
+   "first_pair_cosine": 0.9277889728546143
+  },
+  "gesture_nearest_centroid_accuracy": 1.0,
+  "gesture_between_over_within": 1.5901612043380737
+ },
+ "G": {
+  "wave": {
+   "hand_vs_loco_distance": 0.3233644366264343,
+   "first_pair_cosine": 0.9144442081451416
+  },
+  "punch": {
+   "hand_vs_loco_distance": 0.7601864337921143,
+   "first_pair_cosine": 0.9093814492225647
+  },
+  "shake": {
+   "hand_vs_loco_distance": 0.5243338346481323,
+   "first_pair_cosine": 0.8644497990608215
+  },
+  "gesture_nearest_centroid_accuracy": 1.0,
+  "gesture_between_over_within": 1.3562990427017212
+ },
+ "family": {
+  "wave": {
+   "hand_vs_loco_distance": 0.3312261402606964,
+   "first_pair_cosine": 0.8543747663497925
+  },
+  "punch": {
+   "hand_vs_loco_distance": 0.7364925742149353,
+   "first_pair_cosine": 0.8732136487960815
+  },
+  "shake": {
+   "hand_vs_loco_distance": 0.5081628561019897,
+   "first_pair_cosine": 0.7325066924095154
+  },
+  "gesture_nearest_centroid_accuracy": 0.0,
+  "gesture_between_over_within": 1.5095112360086205e-07
+ },
+ "hier": {
+  "wave": {
+   "hand_vs_loco_distance": 0.3312261402606964,
+   "first_pair_cosine": 0.8979796767234802
+  },
+  "punch": {
+   "hand_vs_loco_distance": 0.7364925742149353,
+   "first_pair_cosine": 0.8965321779251099
+  },
+  "shake": {
+   "hand_vs_loco_distance": 0.5081628561019897,
+   "first_pair_cosine": 0.8306289911270142
+  },
+  "gesture_nearest_centroid_accuracy": 1.0,
+  "gesture_between_over_within": 1.0920205116271973
+ }
+}

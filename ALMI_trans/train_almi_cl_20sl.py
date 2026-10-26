@@ -61,7 +61,12 @@ loss_mse = torch.nn.MSELoss()
 
 train_dataset = dataset_CL_20sl.ALMI_CL_20slDataset(args.dataname, gestures=args.gestures.split(","))
 logger.info(f"training gestures {args.gestures}: {len(train_dataset.data_dict)} trajectories")
-if args.text_norm:
+if args.text_norm and args.text_norm_from:
+    # copy the standardisation statistics of another checkpoint (E19 control: A's data with G's statistics)
+    src = torch.load(args.text_norm_from, map_location='cpu')['trans']
+    trans_encoder.set_text_norm(src['trans_base.text_mean'], src['trans_base.text_std'])
+    logger.info(f'text features standardised with the statistics of {args.text_norm_from}')
+elif args.text_norm:
     # mean and std of the CLIP features of every distinct training caption
     captions = sorted({d['text'][0]['caption'] for d in train_dataset.data_dict.values()})
     with torch.no_grad():

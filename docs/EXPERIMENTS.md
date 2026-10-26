@@ -353,3 +353,81 @@ right arm can drive it into punching. This is a hypothesis, not tested here.
 **Limitations.** The punch criterion is the least specific gesture criterion (E17) and has no human validation;
 "success" counts one forward extension at shoulder height. One model checkpoint; guidance applies only to the
 single-arm captions (246 of 492 runs); run times were measured on a shared machine.
+
+## E19. Does standardising text across four gestures dilute left/right? (2026-10-26, step 1: diagnostic, no training)
+
+**Question / hypothesis.** Model G (four gestures) uses the hand word much less than model A (waving only): hand-swap
+arm change 0.0048 vs 0.0103 (paper's CL-20sl 0.0038), correct waves 5 % vs 34 % without guidance. Hypothesis: the
+text standardisation computed over the captions of four gesture families makes left/right a smaller part of the
+standardised embedding than standardisation over waving captions alone.
+
+**Inspection.**
+* Standardisation (`train_almi_cl_20sl.py`, `--text-norm`): the mean and standard deviation (unbiased, clamped at
+  1e-3) of the CLIP ViT-B/32 embedding over the *distinct* training captions, CLIP on the GPU with fp16 weights;
+  stored in the checkpoint (`trans_base.text_mean/std`) and applied inside the model, so the exported policy applies
+  it too. Model A: 123 waving captions; model G: 410 captions (wave 123, punch 164, shake 82, salute 41). Both use
+  seed 123, batch 128, lr 1e-4, 126k steps; they differ in the training data (3,731 vs 11,357 trajectories) and the
+  standardisation statistics. G therefore also sees each waving trajectory about one third as often as A.
+* Hand-swap test (`eval_text_sensitivity.py`): 2,000 windows of the *waving* training data (the dataset loader's
+  default), arm-action change and arm-error ratio when the hand word is swapped. Same for A and G.
+
+**Diagnostic** (`ALMI_trans/text_norm_diagnostic.py`, cir, 1 min): all 410 captions embedded exactly as in training,
+standardised five ways: none (raw); A's stored statistics; G's stored statistics (recomputed here to within 6e-8, so
+the reconstruction is exact); per-family statistics; and hierarchical (family statistics for the within-family part
+plus G's statistics for the family means, so families stay apart). Measures on the standardised embeddings: distance
+between captions differing only in the hand phrase divided by the median distance between captions differing only in
+the locomotion command (hand / loco), cosine of the left/right pair, and whether gestures stay separable
+(leave-one-out nearest family centroid; between- / within-family distance).
+
+| Scheme | wave hand / loco | punch hand / loco | shake hand / loco | wave L–R cosine | punch L–R cosine | gesture centroid accuracy | between / within |
+|---|---|---|---|---|---|---|---|
+| raw (paper) | 0.32 | 0.76 | 0.48 | 0.996 | 0.995 | 100 % | 1.38 |
+| A's statistics | 0.33 | 0.83 | 0.54 | 0.854 | 0.951 | 100 % | 1.59 |
+| G's statistics | 0.32 | 0.76 | 0.52 | 0.914 | 0.909 | 100 % | 1.36 |
+| per family | 0.33 | 0.74 | 0.51 | 0.854 | 0.873 | **0 %** | 0.00 |
+| hierarchical | 0.33 | 0.74 | 0.51 | 0.898 | 0.897 | 100 % | 1.09 |
+
+**Findings.**
+1. **The hypothesis is not supported at the input.** Relative to the locomotion part of the command, the hand phrase
+   is equally visible under every scheme (wave 0.32–0.33). G's statistics do not shrink it compared with A's. Only
+   the cosine changes, because centring moves the origin; the model's first layer is linear with a bias, so a shift
+   of the origin carries no information.
+2. **Per-family standardisation as proposed is invalid**: centring each family separately removes what distinguishes
+   the gestures (family centroid accuracy 0 %), so the model could no longer tell "wave left" from "punch left" from
+   the text. The hierarchical variant fixes that but leaves the hand signal where it was (0.33).
+3. Per-dimension standardisation is an affine change of the input to a linear layer: it cannot add or remove
+   information, only change how easy it is to learn. A's gain over the paper's model (hand-swap 0.0038 → 0.0103) must
+   therefore come from training dynamics, and the A–G difference can come from the statistics *or* from the training
+   data (G sees waving a third as often and must also learn three other gestures). The diagnostic cannot separate
+   these; a controlled training run can.
+
+**Proposed controlled experiment (not started).** One run, **A-Gstats**: model A's setup exactly (waving data only,
+same seed, batch, learning rate, 126k steps), but with G's standardisation statistics instead of A's. A and A-Gstats
+then differ only in the statistics; G and A-Gstats differ only in the training data. Compare hand-swap sensitivity,
+correct waves with and without guidance (wave protocol, 369 runs each) and falls.
+* If A-Gstats ≈ A: the statistics are not the cause; the loss comes from multi-gesture training (data mix / exposure).
+* If A-Gstats ≈ G: the statistics are the cause.
+Files to change: `ALMI_trans/options/option_transformer.py` and `train_almi_cl_20sl.py` (a `--text-norm-from <checkpoint>`
+option that copies the statistics instead of computing them), `scripts/pipeline_upper_body.sh` (variant), and
+`ALMI_trans/eval_protocol.py` (model entry). About 6 h of training and 1 h of evaluation on cir.
+
+**Files.** `ALMI_trans/text_norm_diagnostic.py`, `results/20261026/text_norm_diagnostic.{md,json}`.
+
+### E19, step 2: controlled run A-Gstats (started 2026-10-26 22:04)
+
+**Setup verified before launch.** Smoke test (100 steps): the training log lists the same 3,731 waving trajectories
+as A, and the saved checkpoint's `text_mean` / `text_std` are bit-identical to G's. The argument lists of A and the
+smoke run differ only in run names, step count of the smoke test, options added after A whose defaults reproduce A's
+behaviour (gestures = wave, mirror_aug = 0, hand_token = False, hand_drop = 0, text_drop = 0) and the new
+`--text-norm-from`. Same seed (123), batch 128, learning rate 1e-4, architecture, 126,000 steps. Caveat: the data
+loader shuffles with Python's unseeded `random`, so A itself is not bit-reproducible; A and A-Gstats see the same data
+in a different order. Inference uses the statistics stored in the checkpoint and exported with the policy, so
+training and evaluation use G's statistics consistently.
+
+Run `cl20sl_tn_Gstats_20261026_34ab41fwip` (`RUNS=tn_Gstats bash scripts/pipeline_upper_body.sh 20261026_34ab41fwip`),
+new files only: `output/cl20sl_tn_Gstats_20261026_34ab41fwip/`, `output/export/policy_trans_cl20sl_tn_Gstats_20261026_34ab41fwip.pt`.
+After export the pipeline runs the hand-swap test; `~/ALMI/bin/chain_e19.sh` then runs the waving protocol
+(123 captions × starts 0–2) for A-Gstats and G with and without per-arm guidance (s = 12) into `output/protocol_e19`,
+where A's E12 logs are reused (same code and machine; E16 reproduced them exactly).
+
+**Results.** Pending.

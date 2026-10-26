@@ -73,6 +73,7 @@ def get_args_parser():
     parser.add_argument("--hand-token", action='store_true', help="condition on an explicit hand token (left/right/both)")
     parser.add_argument("--hand-drop", type=float, default=0.0, help="probability of hiding the hand token in training")
     parser.add_argument("--text-drop", type=float, default=0.0, help="probability of hiding the caption feature in training")
+    parser.add_argument("--text-norm-from", default="", help="with --text-norm: copy the statistics from this checkpoint")
     parser.add_argument("--text-norm", action='store_true', help="standardise CLIP text features over the training captions")
     parser.add_argument("--use-tokenizer", action='store_true', help="use tokenizer")
     parser.add_argument("--add-noise", action='store_true', help="add noise in obs-action in training")
